@@ -215,6 +215,8 @@ on boot
 
 # msm specific files that need to be created on /data
 on post-fs-data
+    write /sys/class/graphics/fb0/idle_time 100
+
     mkdir /data/vendor/misc 01771 system system
 
     # Create directory used for dump collection
