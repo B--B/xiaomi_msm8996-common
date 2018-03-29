@@ -316,22 +316,13 @@ on property:sys.boot_completed=1
     #Reinit lmkd to reconfigure lmkd properties
     setprop lmkd.reinit 1
 
-on property:init.svc.surfaceflinger=stopped
+on property:init.svc.vendor.hwcomposer-2-1=stopped
     stop ppd
 
-on property:init.svc.surfaceflinger=running
+on property:init.svc.vendor.hwcomposer-2-1=running
     start ppd
 
-on property:init.svc.surfaceflinger=restarting
-    stop ppd
-
-on property:init.svc.zygote=stopped
-    stop ppd
-
-on property:init.svc.zygote=running
-    start ppd
-
-on property:init.svc.zygote=restarting
+on property:init.svc.vendor.hwcomposer-2-1=restarting
     stop ppd
 
 service qcom-c_main-sh /vendor/bin/init.class_main.sh
