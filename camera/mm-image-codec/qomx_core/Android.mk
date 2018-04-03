@@ -10,7 +10,8 @@ LOCAL_MODULE_TAGS := optional
 LOCAL_CFLAGS := -Werror \
                    -g -O0
 
-LOCAL_C_INCLUDES := $(LOCAL_PATH)/../qexif
+LOCAL_C_INCLUDES := $(LOCAL_PATH)/../qexif \
+                    $(call project-path-for,qcom-media)/mm-core/inc
 
 LOCAL_HEADER_LIBRARIES := libutils_headers
 LOCAL_HEADER_LIBRARIES += media_plugin_headers
