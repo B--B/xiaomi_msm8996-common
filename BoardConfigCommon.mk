@@ -144,6 +144,10 @@ BOARD_VNDK_VERSION := current
 PRODUCT_FULL_TREBLE_OVERRIDE := true
 PRODUCT_VENDOR_MOVE_ENABLED := true
 
+#KeyDisabler
+JAVA_SOURCE_OVERLAYS := \
+    org.pixelexperience.keydisabler|$(VENDOR_PATH)/keydisabler|**/*.java
+
 # Partitions
 BOARD_BOOTIMAGE_PARTITION_SIZE := 67108864
 BOARD_CACHEIMAGE_FILE_SYSTEM_TYPE := f2fs
