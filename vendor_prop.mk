@@ -104,6 +104,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
     persist.hwc.enable_vds=1 \
     ro.opengles.version=196610 \
     ro.sf.lcd_density=480 \
+    debug.sdm.support_writeback=0 \
     vendor.display.disable_rotator_split=1 \
     vendor.display.disable_skip_validate=1 \
     vendor.display.enable_default_color_mode=1 \
