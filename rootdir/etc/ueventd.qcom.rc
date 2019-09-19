@@ -150,6 +150,7 @@ firmware_directories /vendor/firmware_mnt/image/
 /dev/system_health_monitor 0644  radio      system
 /dev/mdss_rotator         0664   system     system
 /dev/cpu_dma_latency      0660   root       system
+/dev/elliptic0            0777   system     system
 
 #QDSS
 /dev/byte-cntr            0660   system    oem_2902
@@ -224,6 +225,9 @@ firmware_directories /vendor/firmware_mnt/image/
 # Broadcast devices
 /dev/tsc_mux0             0660   media       media
 /dev/tsc_ci0              0660   media       media
+
+# ultrasonic fingerprint
+/sys/devices/soc/757a000.i2c/i2c-6/*                eeprom         0440    system   system
 
 # sensors
 /dev/sensors              0660   system     system
@@ -303,10 +307,8 @@ firmware_directories /vendor/firmware_mnt/image/
 /sys/bus/pci/drivers/wil6210* 0000:01:00.0/net/wigig0/gro_flush_timeout 0660 system system
 /sys/devices/virtual/net/bond0 queues/rx-0/rps_cpus 0660 system system
 
-#nfc permissions
-/dev/nfc-nci              0660    nfc         nfc
-/dev/nq-nci               0660    nfc         nfc
-/dev/assd                 0660    nfc         nfc
+# NFC device
+/dev/pn548                0660   nfc        nfc
 
 # UIO devices
 /dev/uio0                 0660   system     system
@@ -324,13 +326,21 @@ firmware_directories /vendor/firmware_mnt/image/
 
 # Fingerprint device
 /dev/qbt1000              0660   system     system
+/dev/fpc1020              0666   system     system
+
+# Capacitive touch emulation device
+/dev/captouch             0666   system     system
 
 #ImproveTouch device
 /dev/hbtp_input           0660   system     system
 /dev/hbtp_vm              0660   system     system
 
+# IR device
+/dev/lirc0                0660   system     system
+
 # Add device block for FRP
 /dev/block/platform/soc/7824900.sdhci/by-name/config    0600   system     system
+/dev/block/platform/soc/624000.ufshc/by-name/config     0600   system     system
 /dev/block/platform/soc/7464900.sdhci/by-name/frp       0600   system     system
 /dev/block/platform/soc/624000.ufshc/by-name/frp        0600   system     system
 /dev/block/platform/soc/1da4000.ufshc/by-name/frp       0600   system     system
