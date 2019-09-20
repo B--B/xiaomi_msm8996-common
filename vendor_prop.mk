@@ -126,8 +126,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 # NFC
 PRODUCT_PROPERTY_OVERRIDES += \
-    ro.nfc.port=I2C \
-    persist.nfc.smartcard.config=SIM1,SIM2,eSE1
+    ro.nfc.port=I2C
 
 # Perf
 PRODUCT_PROPERTY_OVERRIDES += \
