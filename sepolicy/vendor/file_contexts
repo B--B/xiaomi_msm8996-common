@@ -1,3 +1,6 @@
+# Audio
+/dev/socket/audio_hw_socket           u:object_r:audio_socket:s0
+
 # Devices
 /dev/captouch                         u:object_r:captouch_device:s0
 /dev/stune(/.*)?                      u:object_r:cgroup:s0
