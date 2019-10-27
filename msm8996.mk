@@ -306,7 +306,8 @@ PRODUCT_PACKAGES += \
     libOmxVdec \
     libOmxVenc \
     libstagefrighthw \
-    libmm-omxcore
+    libmm-omxcore \
+    libOmxG711Enc
 
 # Power
 PRODUCT_PACKAGES += \
