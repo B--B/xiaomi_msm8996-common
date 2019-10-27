@@ -149,7 +149,8 @@ PRODUCT_PROPERTY_OVERRIDES += \
     persist.radio.redir_party_num=1 \
     persist.vendor.radio.custom_ecc=1 \
     persist.vendor.radio.rat_on=combine \
-    persist.vendor.radio.sib16_support=1
+    persist.vendor.radio.sib16_support=1 \
+    persist.sys.fflag.override.settings_network_and_internet_v2=true
 
 # TimeService
 PRODUCT_PROPERTY_OVERRIDES += \
