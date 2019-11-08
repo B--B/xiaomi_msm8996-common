@@ -180,6 +180,9 @@ on boot
     write /proc/sys/net/core/rmem_max  16777216
     write /proc/sys/net/core/wmem_max  8388608
 
+    # Set permissions so radio can read
+    chmod 0444 /proc/cmdline
+
     # To prevent out of order acknowledgements from making
     # connection tracking to treat them as not belonging to
     # the connection they belong to.
