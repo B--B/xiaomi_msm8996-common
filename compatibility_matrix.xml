@@ -1,5 +1,13 @@
 <compatibility-matrix version="1.0" type="device">
     <hal format="hidl" optional="false">
+        <name>android.frameworks.displayservice</name>
+        <version>1.0</version>
+        <interface>
+            <name>IDisplayService</name>
+            <instance>default</instance>
+        </interface>
+    </hal>
+    <hal format="hidl" optional="false">
         <name>android.frameworks.schedulerservice</name>
         <version>1.0</version>
         <interface>
@@ -16,16 +24,8 @@
         </interface>
     </hal>
     <hal format="hidl" optional="false">
-        <name>android.hidl.allocator</name>
-        <version>1.0</version>
-        <interface>
-            <name>IAllocator</name>
-            <instance>ashmem</instance>
-        </interface>
-    </hal>
-    <hal format="hidl" optional="false">
         <name>android.hidl.manager</name>
-        <version>1.0</version>
+        <version>1.2</version>
         <interface>
             <name>IServiceManager</name>
             <instance>default</instance>
@@ -48,6 +48,14 @@
         </interface>
     </hal>
     <hal format="hidl" optional="false">
+        <name>android.system.net.netd</name>
+        <version>1.1</version>
+        <interface>
+            <name>INetd</name>
+            <instance>default</instance>
+        </interface>
+    </hal>
+    <hal format="hidl" optional="false">
         <name>android.system.wifi.keystore</name>
         <version>1.0</version>
         <interface>
@@ -55,5 +63,4 @@
             <instance>default</instance>
         </interface>
     </hal>
-
 </compatibility-matrix>
