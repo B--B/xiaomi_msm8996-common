@@ -640,6 +640,9 @@ vendor/lib64/vendor.qti.ims.rcsconfig@1.0.so
 vendor/lib64/vendor.qti.imsrtpservice@1.0-service-Impl.so
 vendor/lib64/vendor.qti.imsrtpservice@1.0.so
 
+# Camera vndk hax
+vendor/lib/libfui.so
+
 # Camera
 vendor/bin/mm-qcamera-daemon
 vendor/lib/libchromaflash.so
@@ -701,13 +704,13 @@ vendor/lib/libmpbase.so
 vendor/lib/libmorpho_easy_hdr.so
 vendor/lib/libmorpho_hdr_checker.so
 vendor/lib/libmorpho_image_stab4.so
-vendor/lib/liboptizoom.so
 vendor/lib/libqomx_jpegdec.so
 vendor/lib/libqomx_jpegenc_pipe.so
 vendor/lib/libqomx_jpegenc.so
 vendor/lib/libseemore.so
 vendor/lib/libtm_interface.so
-vendor/lib/libubifocus.so
+vendor/lib64/liboptizoom.so:lib64/liboptizoom.so
+vendor/lib64/libubifocus.so:lib64/libubifocus.so
 
 # Camera firmware
 etc/firmware/cpp_firmware_v1_10_0.fw:vendor/firmware/cpp_firmware_v1_10_0.fw
