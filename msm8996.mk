@@ -172,7 +172,9 @@ PRODUCT_PACKAGES += \
     init.qti.ims.sh \
     init.recovery.qcom.rc \
     init.device.rc \
-    ueventd.qcom.rc
+    ueventd.qcom.rc \
+    init.bt.sh \
+    init.wlan.sh
 
 # Display
 PRODUCT_PACKAGES += \

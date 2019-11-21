@@ -312,7 +312,7 @@ service bt-sh /vendor/bin/init.bt.sh
 
 service wlan-sh /vendor/bin/init.wlan.sh
     class late_start
-    user root
-    group root
+    user system
+    group system
     disabled
     oneshot

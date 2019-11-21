@@ -17,7 +17,7 @@
 #
 
 # Set the proper hardware based BT mac address
-proc_bt="/proc/mac_bt"
+proc_bt="/mnt/vendor/persist/wlan_bt/bt.mac"
 bt_mac_path="/mnt/vendor/persist/bluetooth/bt_mac"
 if [[ $(xxd -p $proc_bt) == "000000000000" ]] || [[ $(xxd -p $proc_bt) == "666666666666" ]] || [[ ! -f $proc_bt ]]; then
     ran1=$(xxd -l 1 -p /dev/urandom)
