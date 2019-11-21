@@ -159,9 +159,9 @@ vendor/lib64/libsecureui_svcsock.so
 vendor/lib64/libssd.so
 vendor/lib/libQSEEComAPI.so
 
-# DRM Widevine - from crosshatch - PQ3A.190801.002
-vendor/bin/hw/android.hardware.drm@1.1-service.widevine
-vendor/etc/init/android.hardware.drm@1.1-service.widevine.rc
+# DRM Widevine - from LA.UM.8.6.r1-02600-89xx.0
+vendor/bin/hw/android.hardware.drm@1.2-service.widevine
+vendor/etc/init/android.hardware.drm@1.2-service.widevine.rc
 vendor/lib64/libwvhidl.so
 
 # Gatekeeper - from LA.UM.7.5.r1-05300-8x96.0
