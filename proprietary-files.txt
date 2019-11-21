@@ -443,10 +443,6 @@ vendor/lib/libqmi_cci.so
 vendor/lib64/libpdmapper.so
 vendor/lib64/libqmi_cci.so
 
-# QMI
-vendor/lib64/libqminvapi.so
-vendor/lib/libqminvapi.so
-
 # RIL - from LA.UM.8.6.r1-02600-89xx.0
 vendor/bin/adpl
 product/framework/qti-telephony-common.jar
