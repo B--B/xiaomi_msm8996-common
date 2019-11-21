@@ -1,4 +1,4 @@
-# ADSP - from LA.UM.8.6.r1-01900-89xx.0
+# ADSP - from LA.UM.7.5.r1-05300-8x96.0
 vendor/bin/adsprpcd
 vendor/lib64/libadsprpc.so
 vendor/lib64/libadsp_default_listener.so
