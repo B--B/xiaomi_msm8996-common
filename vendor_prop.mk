@@ -120,7 +120,9 @@ PRODUCT_PROPERTY_OVERRIDES += \
 # IMS
 PRODUCT_PROPERTY_OVERRIDES += \
     persist.dbg.volte_avail_ovr=1 \
-    persist.dbg.vt_avail_ovr=1
+    persist.dbg.vt_avail_ovr=1 \
+    service.qti.ims.enabled=1 \
+    persist.dbg.wfc_avail_ovr=1
 
 # Media
 PRODUCT_PROPERTY_OVERRIDES += \
@@ -170,7 +172,11 @@ PRODUCT_PROPERTY_OVERRIDES += \
     persist.vendor.radio.custom_ecc=1 \
     persist.vendor.radio.rat_on=combine \
     persist.vendor.radio.sib16_support=1 \
-    persist.sys.fflag.override.settings_network_and_internet_v2=true
+    persist.sys.fflag.override.settings_network_and_internet_v2=true \
+    persist.vendor.radio.add_power_save=1 \
+    telephony.lteOnCdmaDevice=1 \
+    persist.vendor.radio.sw_mbn_update=0 \
+    persist.vendor.radio.hw_mbn_update=0
 
 # TimeService
 PRODUCT_PROPERTY_OVERRIDES += \
