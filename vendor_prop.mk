@@ -108,7 +108,8 @@ PRODUCT_PROPERTY_OVERRIDES += \
     vendor.display.disable_skip_validate=1 \
     vendor.display.enable_default_color_mode=1 \
     vendor.display.perf_hint_window=50 \
-    vendor.gralloc.enable_fb_ubwc=1
+    vendor.gralloc.enable_fb_ubwc=1 \
+    debug.sf.recomputecrop=0
 
 # Surfaceflinger
 PRODUCT_PROPERTY_OVERRIDES += \
@@ -129,6 +130,15 @@ PRODUCT_PROPERTY_OVERRIDES += \
     vendor.vidc.enc.disable.pq=true \
     vendor.video.disable.ubwc=1 \
     vidc.enc.dcvs.extra-buff-count=2
+    media.stagefright.enable-player=true \
+    media.stagefright.enable-http=true \
+    media.stagefright.enable-aac=true \
+    media.stagefright.enable-qcp=true \
+    media.stagefright.enable-scan=true \
+    mmp.enable.3g2=true \
+    media.aac_51_output_enabled=true \
+    mm.enable.smoothstreaming=true \
+    persist.mm.enable.prefetch=true
 
 # Memory optimizations
 PRODUCT_PROPERTY_OVERRIDES += \
@@ -185,6 +195,13 @@ PRODUCT_PROPERTY_OVERRIDES += \
 # USB
 PRODUCT_PROPERTY_OVERRIDES += \
     sys.usb.controller=6a00000.dwc3
+
+# Sensors
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.qti.sensors.dev_ori=false \
+    ro.qti.sensors.pmd=false \
+    ro.qti.sensors.sta_detect=false \
+    ro.qti.sensors.mot_detect=false
 
 # Wifi
 PRODUCT_PROPERTY_OVERRIDES += \
