@@ -34,7 +34,6 @@ vendor/lib/rfsa/adsp/us-syncproximity.so
 vendor/lib/soundfx/libqcbassboost.so
 vendor/lib/soundfx/libqcreverb.so
 vendor/lib/soundfx/libqcvirt.so
-vendor/lib/soundfx/libshoebox.so|c48015852decd18e1d7df11173678256a315d871
 vendor/lib/libacdb-fts.so
 vendor/lib/libacdbloader.so|ffcadda4baf18a3d05f53d8eb709784555e8ca98
 vendor/lib/libacdbrtac.so
