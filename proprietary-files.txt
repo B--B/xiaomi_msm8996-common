@@ -30,7 +30,7 @@ vendor/lib/rfsa/adsp/libvpp_svc_skel.so
 vendor/lib/rfsa/adsp/libvpp_frc.so
 vendor/lib/rfsa/adsp/us-syncproximity.so
 
-# Audio libraries - from LA.UM.7.5.r1-05300-8x96.0
+# Audio libraries - from LA.UM.8.6.r1-02600-89xx.0
 vendor/lib/soundfx/libqcbassboost.so
 vendor/lib/soundfx/libqcreverb.so
 vendor/lib/soundfx/libqcvirt.so
@@ -42,7 +42,7 @@ vendor/lib/libadm.so
 vendor/lib/libaudcal.so
 vendor/lib/libqtigef.so
 
-# Bluetooth - from LA.UM.7.5.r1-05300-8x96.0
+# Bluetooth - from LA.UM.8.6.r1-02600-89xx.0
 vendor/etc/init/android.hardware.bluetooth@1.0-service-qti.rc
 vendor/lib64/hw/android.hardware.bluetooth@1.0-impl-qti.so
 vendor/lib64/libbtnv.so
@@ -54,14 +54,14 @@ vendor/bin/hw/android.hardware.bluetooth@1.0-service-qti|e29484b7d03c9e47fbb264e
 product/lib64/libaptX_encoder.so
 product/lib64/libaptXHD_encoder.so
 
-# ANT+ - from LA.UM.7.5.r1-04000-8x96.0
+# ANT+ - from LA.UM.8.6.r1-02600-89xx.0
 -lib/libantradio.so
-lib64/com.qualcomm.qti.ant@1.0.so
+product/lib64/com.qualcomm.qti.ant@1.0.so
 -lib64/libantradio.so
 vendor/lib64/com.qualcomm.qti.ant@1.0.so
 vendor/lib64/hw/com.qualcomm.qti.ant@1.0-impl.so
 
-# Charger - from LA.UM.7.5.r1-05300-8x96.0
+# Charger - from LA.UM.8.6.r1-02600-89xx.0
 vendor/bin/hvdcp_opti
 
 # CNE - from LA.UM.8.6.r1-02600-89xx.0
@@ -142,7 +142,7 @@ vendor/etc/init/dpmQmiMgr.rc
 vendor/lib64/com.qualcomm.qti.dpm.api@1.0.so
 vendor/lib64/libdpmqmihal.so
 
-# DRM and SEE - from LA.UM.7.5.r1-05300-8x96.0
+# DRM and SEE - from LA.UM.8.6.r1-02600-89xx.0
 vendor/bin/qseecomd
 vendor/lib64/libGPreqcancel.so
 vendor/lib64/libGPreqcancel_svc.so
@@ -163,9 +163,9 @@ vendor/bin/hw/android.hardware.drm@1.2-service.widevine
 vendor/etc/init/android.hardware.drm@1.2-service.widevine.rc
 vendor/lib64/libwvhidl.so
 
-# Gatekeeper - from LA.UM.7.5.r1-05300-8x96.0
-vendor/lib64/hw/gatekeeper.msm8996.so
-vendor/lib/hw/gatekeeper.msm8996.so
+# Gatekeeper - from LA.UM.8.6.r1-02600-89xx.0
+vendor/lib64/hw/gatekeeper.msm8953.so:vendor/lib64/hw/gatekeeper.msm8996.so
+vendor/lib/hw/gatekeeper.msm8953.so:vendor/lib/hw/gatekeeper.msm8996.so
 
 # GPS - from LA.UM.8.6.r1-02600-89xx.0
 etc/permissions/com.qti.location.sdk.xml
@@ -304,13 +304,13 @@ vendor/lib/libOmxWmaDec.so
 vendor/lib/libvqzip.so
 -vendor/lib64/libgpustats.so
 
-# Keystore - from LA.UM.7.5.r1-05300-8x96.0
-vendor/lib64/hw/keystore.msm8996.so
-vendor/lib/hw/keystore.msm8996.so
+# Keystore - from LA.UM.8.6.r1-02600-89xx.0
+vendor/lib64/hw/keystore.msm8953.so:vendor/lib64/hw/keystore.msm8996.so
+vendor/lib/hw/keystore.msm8953.so:vendor/lib/hw/keystore.msm8996.so
 
-# Listen - from LA.UM.7.5.r1-05300-8x96.0
-vendor/lib64/hw/sound_trigger.primary.msm8996.so
-vendor/lib/hw/sound_trigger.primary.msm8996.so
+# Listen - from LA.UM.8.6.r1-02600-89xx.0
+vendor/lib64/hw/sound_trigger.primary.msm8953.so:vendor/lib64/hw/sound_trigger.primary.msm8996.so
+vendor/lib/hw/sound_trigger.primary.msm8953.so:vendor/lib/hw/sound_trigger.primary.msm8996.so
 vendor/lib/libadpcmdec.so
 vendor/lib/libsmwrapper.so
 
@@ -373,14 +373,14 @@ vendor/lib64/vendor.qti.hardware.alarm@1.0.so
 # Power-off charging daemon
 -sbin/charger:sbin/chargeonlymode;rootfs|664dfa548b81cac348f1699222160f8d2b4d247c
 
-# Sensors - from LA.UM.7.5.r1-05300-8x96.0
+# Sensors - from LA.UM.8.6.r1-02600-89xx.0
 vendor/bin/sensors.qti
-vendor/lib64/hw/activity_recognition.msm8996.so
+vendor/lib64/hw/activity_recognition.msm8953.so:vendor/lib64/hw/activity_recognition.msm8996.so
 vendor/lib64/libsensor1.so
 vendor/lib64/libsensor_reg.so
 vendor/lib64/libsensor_user_cal.so
 vendor/lib64/sensors.ssc.so
-vendor/lib/hw/activity_recognition.msm8996.so
+vendor/lib/hw/activity_recognition.msm8953.so:vendor/lib/hw/activity_recognition.msm8996.so
 vendor/lib/libsensor1.so
 vendor/lib/libsensor_reg.so
 vendor/lib/libsensor_user_cal.so
@@ -398,7 +398,7 @@ bin/move_time_data.sh
 vendor/bin/time_daemon
 vendor/lib64/libtime_genoff.so
 
-# WiFi - from LA.UM.7.5.r1-05300-8x96.0
+# WiFi - from LA.UM.8.6.r1-02600-89xx.0
 vendor/bin/cnss-daemon
 
 # WiFi Display - from LA.UM.8.6.r1-02600-89xx.0
