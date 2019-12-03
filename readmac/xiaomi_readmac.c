@@ -26,7 +26,7 @@
 #include <time.h>
 
 #define MAC_ADDR_SIZE 6
-#define WLAN_MAC_BIN "/persist/wlan_mac.bin"
+#define WLAN_MAC_BIN "/mnt/vendor/wlan_mac.bin"
 
 #define LIB_QMINVAPI "libqminvapi.so"
 
