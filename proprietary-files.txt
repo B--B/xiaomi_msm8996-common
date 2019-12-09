@@ -594,7 +594,7 @@ vendor/lib/libmmcamera2_cpp_module.so
 vendor/lib/libmmcamera2_frame_algorithm.so
 vendor/lib/libmmcamera2_iface_modules.so
 vendor/lib/libmmcamera2_imglib_modules.so
-vendor/lib/libmmcamera2_isp_modules.so|ce36c1b55564acc2026dfece00dc02166fc479df
+vendor/lib/libmmcamera2_isp_modules.so|a4f27abc9db4a0194304ca57070ceae7c0913189
 vendor/lib/libmmcamera2_is.so
 vendor/lib/libmmcamera2_mct.so
 vendor/lib/libmmcamera2_memleak.so
@@ -648,8 +648,8 @@ vendor/lib/libqomx_jpegenc_pipe.so
 vendor/lib/libqomx_jpegenc.so
 vendor/lib/libseemore.so
 vendor/lib/libtm_interface.so
-vendor/lib64/liboptizoom.so:lib64/liboptizoom.so
-vendor/lib64/libubifocus.so:lib64/libubifocus.so
+vendor/lib/liboptizoom.so
+vendor/lib/libubifocus.so
 
 # Camera firmware
 etc/firmware/cpp_firmware_v1_10_0.fw:vendor/firmware/cpp_firmware_v1_10_0.fw
