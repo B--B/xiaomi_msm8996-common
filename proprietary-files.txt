@@ -586,9 +586,6 @@ vendor/lib64/vendor.qti.ims.rcsconfig@1.0.so
 vendor/lib64/vendor.qti.imsrtpservice@1.0-service-Impl.so
 vendor/lib64/vendor.qti.imsrtpservice@1.0.so
 
-# Camera vndk hax
-vendor/lib/libfui.so
-
 # Camera
 vendor/bin/mm-qcamera-daemon
 vendor/lib/libchromaflash.so

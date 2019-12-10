@@ -141,5 +141,6 @@ LOCAL_MODULE_TAGS := optional
 LOCAL_32_BIT_ONLY := $(BOARD_QTI_CAMERA_32BIT_ONLY)
 include $(BUILD_SHARED_LIBRARY)
 
+include $(LOCAL_PATH)/libgui_shim.mk
 include $(call first-makefiles-under,$(LOCAL_PATH))
 endif
