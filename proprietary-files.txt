@@ -378,7 +378,7 @@ vendor/lib64/hw/vendor.qti.hardware.alarm@1.0-impl.so
 vendor/lib64/vendor.qti.hardware.alarm@1.0.so
 
 # Power-off charging daemon
--sbin/charger:sbin/chargeonlymode;rootfs|cdcb3e1992c158c736d5e420299ca74e2c3d0926
+-sbin/charger:bin/chargeonlymode|cdcb3e1992c158c736d5e420299ca74e2c3d0926
 
 # Sensors - from LA.UM.8.6.r1-02600-89xx.0
 vendor/bin/sensors.qti

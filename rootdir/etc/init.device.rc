@@ -255,10 +255,10 @@ on property:init.svc.surfaceflinger=restarting
 on property:slpi.restart=1
     write /sys/kernel/debug/msm_subsys/slpi restart
 
-service charger /sbin/chargeonlymode
+service vendor.charger /system/bin/chargeonlymode
     class charger
     group system graphics
-    seclabel u:r:healthd:s0
+    seclabel u:r:charger:s0
 
 service energy-awareness /vendor/bin/energy-awareness
     class main
