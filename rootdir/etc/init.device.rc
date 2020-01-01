@@ -257,7 +257,8 @@ on property:slpi.restart=1
 
 service vendor.charger /system/bin/chargeonlymode
     class charger
-    group system graphics
+    user system
+    group system graphics input
     seclabel u:r:charger:s0
 
 service energy-awareness /vendor/bin/energy-awareness
