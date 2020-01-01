@@ -429,7 +429,6 @@ PRODUCT_PACKAGES += \
     libQWiFiSoftApCfg \
     libwpa_client \
     hostapd \
-    readmac \
     wpa_supplicant \
     wpa_supplicant.conf
 

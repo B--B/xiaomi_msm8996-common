@@ -193,12 +193,6 @@ on property:sys.shutdown.requested=*
     stop vendor.per_proxy
     stop vendor.ims_rtp_daemon
 
-service readmac /vendor/bin/readmac
-    class main
-    user system
-    group system net_raw
-    oneshot
-
 service thermal-engine /vendor/bin/thermal-engine -c ${sys.qcom.thermalcfg:-/vendor/etc/thermal-engine-8996.conf}
     class main
     user root
