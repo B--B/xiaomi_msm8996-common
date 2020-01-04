@@ -322,6 +322,13 @@ PRODUCT_PACKAGES += \
     libmm-omxcore \
     libOmxG711Enc
 
+# Power
+PRODUCT_PACKAGES += \
+    android.hardware.power@1.3-service.xiaomi-libperfmgr
+
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/configs/powerhint.json:$(TARGET_COPY_OUT_VENDOR)/etc/powerhint.json
+
 # Thermal
 PRODUCT_PACKAGES += \
     thermal.msm8996 \
