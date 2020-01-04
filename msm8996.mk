@@ -322,13 +322,6 @@ PRODUCT_PACKAGES += \
     libmm-omxcore \
     libOmxG711Enc
 
-# Power
-PRODUCT_PACKAGES += \
-    android.hardware.power@1.2-service-qti
-
-PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/configs/powerhint.xml:$(TARGET_COPY_OUT_VENDOR)/etc/powerhint.xml
-
 # Thermal
 PRODUCT_PACKAGES += \
     thermal.msm8996 \
