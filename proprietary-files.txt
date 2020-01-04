@@ -321,6 +321,10 @@ vendor/lib/hw/sound_trigger.primary.msm8953.so:vendor/lib/hw/sound_trigger.prima
 vendor/lib/libadpcmdec.so
 vendor/lib/libsmwrapper.so
 
+# Perf - from Taimen 10.0.0 QQ1A.191205.008
+vendor/lib64/libqti-perfd-client.so
+vendor/lib/libqti-perfd-client.so
+
 # Peripheral manager - from LA.UM.8.6.r1-02600-89xx.0
 vendor/bin/pm-proxy
 vendor/bin/pm-service
