@@ -16,7 +16,7 @@
 
 #define LOG_TAG "android.hardware.power@1.3-service.pixel-libperfmgr"
 
-#include <android/log.h>
+#include <log/log.h>
 #include <hidl/HidlTransportSupport.h>
 
 #include "Power.h"
