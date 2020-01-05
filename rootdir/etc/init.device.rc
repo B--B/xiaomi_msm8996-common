@@ -129,6 +129,12 @@ on property:sys.boot_completed=1
     write /sys/devices/soc/${ro.boot.bootdevice}/clkgate_enable 1
     write /sys/devices/soc/${ro.boot.bootdevice}/${ro.boot.bootdevice}:ufs_variant/pm_qos_enable 1
 
+    # Enable GPU powersaving
+    write /sys/class/kgsl/kgsl-3d0/bus_split 1
+    write /sys/class/kgsl/kgsl-3d0/force_bus_on 0
+    write /sys/class/kgsl/kgsl-3d0/force_rail_on 0
+    write /sys/class/kgsl/kgsl-3d0/force_clk_on 0
+
     # end boot time fs tune
     write /sys/block/sda/queue/read_ahead_kb 128
     write /sys/block/sda/queue/nr_requests 128
