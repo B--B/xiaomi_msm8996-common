@@ -27,7 +27,7 @@
 
 # Data files
 /data/fpc(/.*)?                       u:object_r:fpc_data_file:s0
-/data/vendor/qcam(/.*)?                    u:object_r:camera_socket:s0
+/data/vendor/qcam(/.*)?               u:object_r:vendor_camera_data_file:s0
 /data/connectivity(/.*)?              u:object_r:cnd_core_data_file:s0
 /data/decrypt\.txt                    u:object_r:thermal_data_file:s0
 /data/misc/stargate(/.*)?             u:object_r:qfp-daemon_core_data_file:s0
@@ -58,8 +58,12 @@
 
 # Shell scripts
 /(vendor|system/vendor)/bin/init\.bt\.sh         u:object_r:qti_init_shell_exec:s0
-/(vendor|system/vendor)/bin/init\.panel\.sh    u:object_r:init_panel_exec:s0
-/(vendor|system/vendor)/bin/init\.tfa\.sh      u:object_r:init_tfa_exec:s0
+/(vendor|system/vendor)/bin/init\.panel\.sh      u:object_r:init_panel_exec:s0
+/(vendor|system/vendor)/bin/init\.tfa\.sh        u:object_r:init_tfa_exec:s0
+
+# Power HAL
+/sys/kernel/debug/system_stats                                u:object_r:debugfs_system_stats:s0
+/sys/class/graphics/fb0/idle_state                            u:object_r:sysfs_graphics:s0
 
 /bt_firmware(/.*)?         u:object_r:bt_firmware_file:s0
 /firmware(/.*)?            u:object_r:firmware_file:s0
