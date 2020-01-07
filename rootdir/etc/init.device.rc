@@ -136,11 +136,11 @@ on property:sys.boot_completed=1
     write /sys/class/kgsl/kgsl-3d0/force_clk_on 0
 
     # end boot time fs tune
-    write /sys/block/sda/queue/read_ahead_kb 128
+    write /sys/block/sda/queue/read_ahead_kb 256
     write /sys/block/sda/queue/nr_requests 128
 
     # Set I/O scheduler
-    setprop sys.io.scheduler "bfq"
+    setprop sys.io.scheduler "anxiety"
 
     # Update cpusets now that boot is complete and we want better load balancing
     write /dev/cpuset/top-app/cpus 0-3
