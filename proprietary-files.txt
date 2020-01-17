@@ -372,7 +372,6 @@ vendor/lib64/libthermalioctl.so
 -vendor/lib/libthermalclient.so
 
 # Time services - from LA.UM.8.6.r1-02600-89xx.0
-bin/move_time_data.sh
 -vendor/app/TimeService/TimeService.apk
 vendor/bin/time_daemon
 vendor/lib64/libtime_genoff.so
