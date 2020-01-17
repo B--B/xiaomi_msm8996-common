@@ -159,11 +159,7 @@ on charger
     write /sys/devices/soc/${ro.boot.bootdevice}/${ro.boot.bootdevice}:ufs_variant/pm_qos_enable 1
     write /sys/module/lpm_levels/parameters/sleep_disabled "N"
 
-    write /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor "userspace"
-    write /sys/devices/system/cpu/cpu0/cpufreq/scaling_setspeed 300000
     write /sys/devices/system/cpu/cpu1/online 1
-    write /sys/devices/system/cpu/cpu1/cpufreq/scaling_governor "userspace"
-    write /sys/devices/system/cpu/cpu1/cpufreq/scaling_setspeed 300000
     write /sys/devices/system/cpu/cpu2/online 0
     write /sys/devices/system/cpu/cpu3/online 0
     write /sys/module/msm_thermal/parameters/enabled "N"
@@ -272,12 +268,6 @@ service vendor.charger /system/bin/chargeonlymode
     group system graphics input
     capabilities SYS_BOOT
     seclabel u:r:charger:s0
-
-service energy-awareness /vendor/bin/energy-awareness
-    class main
-    user root
-    group system
-    oneshot
 
 service vendor.hvdcp_opti /vendor/bin/hvdcp_opti
     class main
