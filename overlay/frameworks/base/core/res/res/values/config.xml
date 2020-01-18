@@ -70,7 +70,7 @@
          Wigig is 192.168.50.1 and 255.255.255.0
          Wigig P2P is 192.168.51.1 and 255.255.255.0
     -->
-    <string-array name="config_tether_dhcp_range">
+    <string-array translatable="false" name="config_tether_dhcp_range">
         <item>192.168.42.2</item>
         <item>192.168.42.254</item>
         <item>192.168.43.2</item>
