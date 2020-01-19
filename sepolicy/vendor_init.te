@@ -1,0 +1,4 @@
+typeattribute vendor_init data_between_core_and_vendor_violators;
+
+allow vendor_init nfc_data_file:dir { setattr search };
+allow vendor_init system_data_file:dir create_dir_perms;

@@ -1,3 +1,4 @@
 dontaudit hvdcp self:capability dac_override;
 
-r_dir_file(hvdcp, sysfs_batteryinfo)
+r_dir_file(hvdcp, sysfs_batteryinfo);
+allow hvdcp sysfs_batteryinfo:file write;

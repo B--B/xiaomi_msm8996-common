@@ -65,5 +65,9 @@
 # WiFi
 /vendor/bin/wifi-mac-generator                                u:object_r:wifi-mac-generator_exec:s0
 
+# Bluetooth
+/sys/devices/vendor/vendor:bt_qca6174/extldo                        u:object_r:sysfs_bluetooth_writable:s0
+/sys/devices/vendor/vendor:bt_qca6174/rfkill/rfkill0/state          u:object_r:sysfs_bluetooth_writable:s0
+
 /bt_firmware(/.*)?         u:object_r:bt_firmware_file:s0
 /firmware(/.*)?            u:object_r:firmware_file:s0
