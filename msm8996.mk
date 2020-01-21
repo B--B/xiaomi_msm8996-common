@@ -22,8 +22,7 @@ $(call inherit-product, vendor/xiaomi/msm8996-common/msm8996-common-vendor.mk)
 
 # Overlays
 DEVICE_PACKAGE_OVERLAYS += \
-    $(LOCAL_PATH)/overlay \
-    $(LOCAL_PATH)/overlay-lineage
+    $(LOCAL_PATH)/overlay 
 
 PRODUCT_ENFORCE_RRO_TARGETS := *
 
@@ -382,9 +381,9 @@ PRODUCT_SOONG_NAMESPACES += \
 PRODUCT_PACKAGES += \
     TetheringConfigOverlay
 
-# Trust HAL
+# TextClassifier
 PRODUCT_PACKAGES += \
-    vendor.lineage.trust@1.0-service
+    textclassifier.bundle1
 
 # USB
 PRODUCT_PACKAGES += \
