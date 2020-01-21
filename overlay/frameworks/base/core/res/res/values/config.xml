@@ -334,4 +334,8 @@
     <!-- Does the notification LED support multiple colors?
          Used to decide if the user can change the colors -->
     <bool name="config_multiColorNotificationLed">true</bool>
+
+    <!-- Button backlight -->
+    <bool name="config_button_brightness_support">true</bool>
+    <integer name="config_buttonBrightnessSettingDefault">100</integer>
 </resources>
