@@ -18,7 +18,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="org.lineageos.settings.device"
     android:versionCode="6"
-    android:versionName="2.5"
+    android:versionName="2.6"
     android:sharedUserId="android.uid.system">
 
     <protected-broadcast android:name="org.lineageos.settings.device.CUST_UPDATE" />
@@ -26,7 +26,8 @@
     <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
 
     <uses-sdk
-        android:minSdkVersion="27" />
+        android:minSdkVersion="29"
+        android:targetSdkVersion="29"/>
 
     <application
         android:icon="@mipmap/ic_launcher"
@@ -49,11 +50,20 @@
 
         <activity
             android:name=".ButtonSettingsActivity"
+            android:icon="@drawable/ic_mi"
             android:label="@string/button_panel_title">
             <intent-filter>
-                <action android:name="org.lineageos.settings.device.ADDITIONAL_BUTTONS_SETTINGS" />
-                <category android:name="android.intent.category.DEFAULT" />
+                <action android:name="com.android.settings.action.EXTRA_SETTINGS" />
             </intent-filter>
+            <meta-data
+                android:name="com.android.settings.bg.hint"
+                android:resource="@color/homepage_parts_background" />
+            <meta-data
+                android:name="com.android.settings.category"
+                android:value="com.android.settings.category.ia.homepage" />
+            <meta-data
+                android:name="com.android.settings.summary"
+                android:resource="@string/buttons_dashboard_summary" />
         </activity>
 
         <activity android:name=".KeyHandler" />

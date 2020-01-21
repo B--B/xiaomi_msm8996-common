@@ -17,8 +17,6 @@
 
 package org.lineageos.settings.device;
 
-import org.lineageos.internal.util.FileUtils;
-
 import java.util.HashMap;
 import java.util.Map;
 
