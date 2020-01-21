@@ -338,4 +338,7 @@
     <!-- Button backlight -->
     <bool name="config_button_brightness_support">true</bool>
     <integer name="config_buttonBrightnessSettingDefault">100</integer>
+
+    <!-- Whether navigation bar can be disabled (for devices with hardware keys) -->
+    <bool name="config_canDisableNavigationBar">true</bool>
 </resources>
