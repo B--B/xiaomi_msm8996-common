@@ -19,15 +19,17 @@ import common
 import re
 
 def FullOTA_Assertions(info):
-  AddModemAssertion(info, info.input_zip)
+  input_zip = info.input_zip
+  AddModemAssertion(info, input_zip)
   return
 
 def IncrementalOTA_Assertions(info):
-  AddModemAssertion(info, info.target_zip)
+  input_zip = info.target_zip
+  AddModemAssertion(info, input_zip)
   return
 
 def AddModemAssertion(info, input_zip):
-  android_info = info.input_zip.read("OTA/android-info.txt")
+  android_info = input_zip.read("OTA/android-info.txt")
   m = re.search(r'require\s+version-modem\s*=\s*(.+)', android_info)
   if m:
     timestamp, firmware_version = m.group(1).rstrip().split(',')
@@ -36,3 +38,4 @@ def AddModemAssertion(info, input_zip):
       cmd = 'assert(xiaomi.verify_modem("{}") == "1" || abort("ERROR: This package requires firmware from MIUI {} developer build or newer. Please upgrade firmware and retry!"););'
       info.script.AppendExtra(cmd.format(timestamp, firmware_version))
   return
+
