@@ -354,7 +354,8 @@ PRODUCT_PACKAGES += \
 # Live Wallpapers
 PRODUCT_PACKAGES += \
     LiveWallpapersPicker \
-    librs_jni    
+    librs_jni \
+    WallpapersBReel2019
 
 # Seccomp policy
 PRODUCT_COPY_FILES += \
