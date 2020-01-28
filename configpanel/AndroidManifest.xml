@@ -51,7 +51,7 @@
         <activity
             android:name=".ButtonSettingsActivity"
             android:icon="@drawable/ic_mi"
-            android:label="@string/button_panel_title">
+            android:label="@string/advanced_settings">
             <intent-filter>
                 <action android:name="com.android.settings.action.EXTRA_SETTINGS" />
             </intent-filter>
@@ -63,7 +63,7 @@
                 android:value="com.android.settings.category.ia.homepage" />
             <meta-data
                 android:name="com.android.settings.summary"
-                android:resource="@string/buttons_dashboard_summary" />
+                android:resource="@string/advanced_settings_summary" />
         </activity>
 
         <activity android:name=".KeyHandler" />
