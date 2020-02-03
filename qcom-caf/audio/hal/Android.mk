@@ -493,6 +493,10 @@ ifeq ($(strip $(AUDIO_FEATURE_ENABLED_A2DP_DECODERS)), true)
 endif
 
 LOCAL_SHARED_LIBRARIES += libbase libhidlbase libhwbinder libutils android.hardware.power@1.2 liblog
+
+LOCAL_SHARED_LIBRARIES += android.hardware.power-V2-ndk
+LOCAL_SHARED_LIBRARIES += libbinder_ndk
+
 LOCAL_SRC_FILES += audio_perf.cpp
 
 LOCAL_MODULE := audio.primary.$(TARGET_BOARD_PLATFORM)
