@@ -143,7 +143,9 @@ PRODUCT_PROPERTY_OVERRIDES += \
     mmp.enable.3g2=true \
     media.aac_51_output_enabled=true \
     mm.enable.smoothstreaming=true \
-    persist.mm.enable.prefetch=true
+    persist.mm.enable.prefetch=true \
+    debug.stagefright.omx_default_rank.sw-audio=1 \
+    debug.stagefright.omx_default_rank=0
 
 # Memory optimizations
 PRODUCT_PROPERTY_OVERRIDES += \
