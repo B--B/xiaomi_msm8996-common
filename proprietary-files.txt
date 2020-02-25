@@ -30,7 +30,7 @@ vendor/lib/rfsa/adsp/libvpp_svc_skel.so
 vendor/lib/rfsa/adsp/libvpp_frc.so
 vendor/lib/rfsa/adsp/us-syncproximity.so
 
-# Audio libraries - from LA.UM.8.6.r1-02600-89xx.0
+# Audio libraries - from LA.UM.8.6.r1-03400-89xx.0
 vendor/lib/soundfx/libqcbassboost.so
 vendor/lib/soundfx/libqcreverb.so
 vendor/lib/soundfx/libqcvirt.so
@@ -42,7 +42,7 @@ vendor/lib/libadm.so
 vendor/lib/libaudcal.so
 vendor/lib/libqtigef.so
 
-# Bluetooth - from LA.UM.8.6.r1-02600-89xx.0
+# Bluetooth - from LA.UM.8.6.r1-03400-89xx.0
 vendor/etc/init/android.hardware.bluetooth@1.0-service-qti.rc
 vendor/lib64/hw/android.hardware.bluetooth@1.0-impl-qti.so
 vendor/lib64/libbtnv.so
@@ -61,10 +61,10 @@ lib64/com.qualcomm.qti.ant@1.0.so
 vendor/lib64/com.qualcomm.qti.ant@1.0.so
 vendor/lib64/hw/com.qualcomm.qti.ant@1.0-impl.so
 
-# Charger - from LA.UM.8.6.r1-02600-89xx.0
+# Charger - from LA.UM.8.6.r1-03400-89xx.0
 vendor/bin/hvdcp_opti
 
-# CNE - from LA.UM.8.6.r1-02900-89xx.0
+# CNE - from LA.UM.8.6.r1-03400-89xx.0
 etc/cne/Nexus/ATT/ATT_profiles.xml
 etc/cne/Nexus/ROW/ROW_profiles.xml
 etc/cne/Nexus/VZW/VZW_profiles.xml
@@ -127,7 +127,7 @@ vendor/lib64/vendor.qti.hardware.data.latency@1.0.so
 vendor/lib64/vendor.qti.hardware.data.qmi@1.0.so
 vendor/lib64/vendor.qti.latency@2.0.so
 
-# DPM - from LA.UM.8.6.r1-02900-89xx.0
+# DPM - from LA.UM.8.6.r1-03400-89xx.0
 product/bin/dpmd
 product/etc/dpm/dpm.conf
 product/etc/init/dpmd.rc
@@ -146,7 +146,7 @@ vendor/etc/init/dpmQmiMgr.rc
 vendor/lib64/com.qualcomm.qti.dpm.api@1.0.so
 vendor/lib64/libdpmqmihal.so
 
-# DRM and SEE - from LA.UM.8.6.r1-02600-89xx.0
+# DRM and SEE - from LA.UM.8.6.r1-03400-89xx.0
 vendor/bin/qseecomd
 vendor/lib64/libGPreqcancel.so
 vendor/lib64/libGPreqcancel_svc.so
@@ -162,16 +162,16 @@ vendor/lib64/libsecureui_svcsock.so
 vendor/lib64/libssd.so
 vendor/lib/libQSEEComAPI.so
 
-# DRM Widevine - from LA.UM.8.6.r1-02600-89xx.0
+# DRM Widevine - from LA.UM.8.6.r1-03400-89xx.0
 vendor/bin/hw/android.hardware.drm@1.2-service.widevine
 vendor/etc/init/android.hardware.drm@1.2-service.widevine.rc
 vendor/lib64/libwvhidl.so
 
-# Gatekeeper - from LA.UM.8.6.r1-02600-89xx.0
+# Gatekeeper - from LA.UM.8.6.r1-03400-89xx.0
 vendor/lib64/hw/gatekeeper.msm8953.so:vendor/lib64/hw/gatekeeper.msm8996.so
 vendor/lib/hw/gatekeeper.msm8953.so:vendor/lib/hw/gatekeeper.msm8996.so
 
-# GPS - from LA.UM.8.6.r1-02600-89xx.0
+# GPS - from LA.UM.8.6.r1-03400-89xx.0
 etc/permissions/com.qti.location.sdk.xml
 etc/permissions/com.qualcomm.location.xml
 etc/permissions/izat.xt.srv.xml
@@ -216,7 +216,7 @@ vendor/lib64/vendor.qti.gnss@2.1.so
 vendor/lib64/vendor.qti.gnss@3.0-service.so
 vendor/lib64/vendor.qti.gnss@3.0.so
 
-# Graphics - Adreno - from LA.UM.8.6.r1-02900-89xx.0
+# Graphics - Adreno - from LA.UM.8.6.r1-03400-89xx.0
 vendor/lib/egl/eglSubDriverAndroid.so
 vendor/lib/egl/libEGL_adreno.so
 vendor/lib/egl/libGLESv1_CM_adreno.so
@@ -262,7 +262,7 @@ vendor/lib64/librs_adreno.so
 vendor/lib64/libRSDriver_adreno.so
 vendor/lib64/libscalar.so
 
-# Graphics - SDM - from LA.UM.8.6.r1-02900-89xx.0
+# Graphics - SDM - from LA.UM.8.6.r1-03400-89xx.0
 vendor/lib/libsdm-color.so
 vendor/lib/libsdm-diag.so
 vendor/lib/libsdmextension.so
@@ -273,7 +273,7 @@ vendor/lib64/libsdm-disp-vndapis.so
 vendor/lib64/libsdmextension.so
 vendor/lib64/libtinyxml2_1.so
 
-# Graphics (Vulkan) - from LA.UM.8.6.r1-02900-89xx.0
+# Graphics (Vulkan) - from LA.UM.8.6.r1-03400-89xx.0
 vendor/lib/hw/vulkan.msm8953.so:vendor/lib/hw/vulkan.msm8996.so
 vendor/lib64/hw/vulkan.msm8953.so:vendor/lib64/hw/vulkan.msm8996.so
 
@@ -287,7 +287,7 @@ vendor/firmware/a530v2_seq.fw2
 vendor/firmware/a530v3_gpmu.fw2
 vendor/firmware/a530v3_seq.fw2
 
-# Media - from LA.UM.8.6.r1-02900-89xx.0
+# Media - from LA.UM.8.6.r1-03400-89xx.0
 lib/extractors/libmmparserextractor.so
 lib/libFileMux.so
 lib/libmmosal.so
@@ -314,11 +314,11 @@ vendor/lib/libOmxWmaDec.so
 vendor/lib/libvqzip.so
 -vendor/lib64/libgpustats.so
 
-# Keystore - from LA.UM.8.6.r1-02600-89xx.0
+# Keystore - from LA.UM.8.6.r1-03400-89xx.0
 vendor/lib64/hw/keystore.msm8953.so:vendor/lib64/hw/keystore.msm8996.so
 vendor/lib/hw/keystore.msm8953.so:vendor/lib/hw/keystore.msm8996.so
 
-# Listen - from LA.UM.8.6.r1-02600-89xx.0
+# Listen - from LA.UM.8.6.r1-03400-89xx.0
 vendor/lib64/hw/sound_trigger.primary.msm8953.so:vendor/lib64/hw/sound_trigger.primary.msm8996.so
 vendor/lib/hw/sound_trigger.primary.msm8953.so:vendor/lib/hw/sound_trigger.primary.msm8996.so
 vendor/lib/libadpcmdec.so
@@ -328,13 +328,13 @@ vendor/lib/libsmwrapper.so
 vendor/lib64/libqti-perfd-client.so
 vendor/lib/libqti-perfd-client.so
 
-# Peripheral manager - from LA.UM.8.6.r1-02600-89xx.0
+# Peripheral manager - from LA.UM.8.6.r1-03400-89xx.0
 vendor/bin/pm-proxy
 vendor/bin/pm-service
 vendor/lib64/libperipheral_client.so
 vendor/lib/libperipheral_client.so
 
-# Postprocessing - from LA.UM.8.6.r1-02900-89xx.0
+# Postprocessing - from LA.UM.8.6.r1-03400-89xx.0
 vendor/bin/hw/vendor.display.color@1.0-service
 vendor/bin/mm-pp-dpps
 vendor/etc/init/vendor.display.color@1.0-service.rc
@@ -344,7 +344,7 @@ vendor/lib64/vendor.display.color@1.1.so
 vendor/lib64/vendor.display.color@1.2.so
 vendor/lib64/vendor.display.postproc@1.0.so
 
-# Power-off alarm - from LA.UM.8.6.r1-02900-89xx.0
+# Power-off alarm - from LA.UM.8.6.r1-03400-89xx.0
 vendor/bin/power_off_alarm
 -product/app/PowerOffAlarm/PowerOffAlarm.apk
 vendor/bin/hw/vendor.qti.hardware.alarm@1.0-service
@@ -355,7 +355,7 @@ vendor/lib64/vendor.qti.hardware.alarm@1.0.so
 # Power-off charging daemon
 -sbin/charger:bin/chargeonlymode|cdcb3e1992c158c736d5e420299ca74e2c3d0926
 
-# Sensors - from LA.UM.8.6.r1-02600-89xx.0
+# Sensors - from LA.UM.8.6.r1-03400-89xx.0
 vendor/bin/sensors.qti
 vendor/lib64/hw/activity_recognition.msm8953.so:vendor/lib64/hw/activity_recognition.msm8996.so
 vendor/lib64/libsensor1.so
@@ -368,21 +368,21 @@ vendor/lib/libsensor_reg.so
 vendor/lib/libsensor_user_cal.so
 vendor/lib/sensors.ssc.so
 
-# Thermal - LA.UM.8.6.r1-02600-89xx.0
+# Thermal - LA.UM.8.6.r1-03400-89xx.0
 vendor/bin/thermal-engine
 -vendor/lib64/libthermalclient.so
 vendor/lib64/libthermalioctl.so
 -vendor/lib/libthermalclient.so
 
-# Time services - from LA.UM.8.6.r1-02900-89xx.0
+# Time services - from LA.UM.8.6.r1-03400-89xx.0
 -vendor/app/TimeService/TimeService.apk
 vendor/bin/time_daemon
 vendor/lib64/libtime_genoff.so
 
-# WiFi - from LA.UM.8.6.r1-02600-89xx.0
+# WiFi - from LA.UM.8.6.r1-03400-89xx.0
 vendor/bin/cnss-daemon
 
-# WiFi Display - from LA.UM.8.6.r1-02900-89xx.0
+# WiFi Display - from LA.UM.8.6.r1-03400-89xx.0
 bin/wfdservice
 etc/init/wfdservice.rc
 etc/wfdconfig.xml
@@ -422,12 +422,12 @@ vendor/lib/libwfdmmservice.so
 vendor/lib/libwfdmodulehdcpsession.so
 lib/com.qualcomm.qti.wifidisplayhal@1.0.so:vendor/lib/com.qualcomm.qti.wifidisplayhal@1.0.so
 
-# QMI - from LA.UM.8.6.r1-02900-89xx.0
+# QMI - from LA.UM.8.6.r1-03400-89xx.0
 vendor/lib/libqmi_cci.so
 vendor/lib64/libpdmapper.so
 vendor/lib64/libqmi_cci.so
 
-# RIL - from LA.UM.8.6.r1-02900-89xx.0
+# RIL - from LA.UM.8.6.r1-03400-89xx.0
 vendor/bin/adpl
 product/framework/qti-telephony-common.jar
 -product/priv-app/qcrilmsgtunnel/qcrilmsgtunnel.apk
@@ -438,7 +438,7 @@ vendor/etc/init/port-bridge.rc
 vendor/etc/init/vendor.qti.rmt_storage.rc
 vendor/etc/init/vendor.qti.tftp.rc
 
-# IMS - from LA.UM.8.6.r1-02900-89xx.0
+# IMS - from LA.UM.8.6.r1-03400-89xx.0
 product/etc/permissions/telephony_product_privapp-permissions-qti.xml
 -product/priv-app/ims/ims.apk
 product/lib64/libimscamera_jni.so
