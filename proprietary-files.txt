@@ -449,7 +449,7 @@ product/lib64/libimscamera_jni.so
 product/lib64/libimsmedia_jni.so
 vendor/lib64/vendor.qti.ims.rcsconfig@1.1.so
 
-# QMI - from tissot V10.0.9.0.PDHMIXM
+# QMI - from daisy V10.0.18.0 PDLMIXM
 etc/permissions/qti_libpermissions.xml|ef3c88495f2f61a2d16e1445113a9d80f8db0e0a
 etc/permissions/qti_permissions.xml
 lib/libdiag_system.so
@@ -486,7 +486,7 @@ vendor/lib64/libqmi_csi.so
 vendor/lib64/libqmi_encdec.so
 vendor/lib64/libqmiservices.so
 
-# RIL - from tissot V10.0.9.0.PDHMIXM
+# RIL - from daisy V10.0.18.0 PDLMIXM
 -app/QtiTelephonyService/QtiTelephonyService.apk
 etc/permissions/qcrilhook.xml
 etc/permissions/telephonyservice.xml
@@ -534,7 +534,7 @@ vendor/lib64/vendor.qti.hardware.radio.uim_remote_client@1.0.so
 vendor/lib64/vendor.qti.hardware.radio.uim_remote_server@1.0.so
 vendor/radio/qcril_database/qcril.db
 
-# IMS - from tissot V10.0.9.0.PDHMIXM
+# IMS - from daisy V10.0.18.0 PDLMIXM
 lib64/com.qualcomm.qti.imscmservice@1.0.so
 lib64/com.qualcomm.qti.imscmservice@2.0.so
 lib64/com.qualcomm.qti.imscmservice@2.1.so
