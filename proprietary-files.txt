@@ -1,17 +1,21 @@
-# ADSP - from LA.UM.7.5.r1-05300-8x96.0
+# ADSP - from Oneplus 3T PKQ1.181203.001
 vendor/bin/adsprpcd
-vendor/lib64/libadsprpc.so
-vendor/lib64/libadsp_default_listener.so
-vendor/lib64/libfastcvadsp_stub.so
-vendor/lib64/libfastcvopt.so
-vendor/lib/libadsprpc.so
 vendor/lib/libadsp_default_listener.so
 vendor/lib/libadsp_hvx_callback_skel.so
 vendor/lib/libadsp_hvx_stub.so
+vendor/lib/libadsprpc.so
+vendor/lib/libcdsprpc.so
 vendor/lib/libfastcvadsp_stub.so
 vendor/lib/libfastcvopt.so
+vendor/lib/libsdsprpc.so
+vendor/lib64/libadsp_default_listener.so
+vendor/lib64/libadsprpc.so
+vendor/lib64/libcdsprpc.so
+vendor/lib64/libfastcvadsp_stub.so
+vendor/lib64/libfastcvopt.so
+vendor/lib64/libsdsprpc.so
 
-# ADSP modules - from LA.UM.7.5.r1-05300-8x96.0
+# ADSP modules - from Oneplus 3T PKQ1.181203.001
 vendor/lib/rfsa/adsp/libadsp_fd_skel.so
 vendor/lib/rfsa/adsp/libadsp_hvx_add_constant.so
 vendor/lib/rfsa/adsp/libadsp_hvx_skel.so
@@ -19,16 +23,16 @@ vendor/lib/rfsa/adsp/libadsp_hvx_stats.so
 vendor/lib/rfsa/adsp/libadsp_hvx_zzhdr_BGGR.so
 vendor/lib/rfsa/adsp/libadsp_hvx_zzhdr_RGGB.so
 vendor/lib/rfsa/adsp/libapps_mem_heap.so
+vendor/lib/rfsa/adsp/libdspCV_skel.so
+vendor/lib/rfsa/adsp/libfastcvadsp_skel.so
+vendor/lib/rfsa/adsp/libfastcvadsp.so
+vendor/lib/rfsa/adsp/libmorpho_image_stabilizer4_hvx_skel.so
+vendor/lib/rfsa/adsp/libmorpho_video_denoiser_hvx_skel.so
 vendor/lib/rfsa/adsp/libscveBlobDescriptor_skel.so
 vendor/lib/rfsa/adsp/libscveObjectSegmentation_skel.so
 vendor/lib/rfsa/adsp/libscveT2T_skel.so
-vendor/lib/rfsa/adsp/libdspCV_skel.so
-vendor/lib/rfsa/adsp/libexternal_dog_skel.so
-vendor/lib/rfsa/adsp/libfastcvadsp.so
-vendor/lib/rfsa/adsp/libfastcvadsp_skel.so
-vendor/lib/rfsa/adsp/libvpp_svc_skel.so
 vendor/lib/rfsa/adsp/libvpp_frc.so
-vendor/lib/rfsa/adsp/us-syncproximity.so
+vendor/lib/rfsa/adsp/libvpp_svc_skel.so
 
 # Audio libraries - from LA.UM.8.6.r1-03400-89xx.0
 vendor/lib/soundfx/libqcbassboost.so
