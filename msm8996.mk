@@ -147,10 +147,6 @@ PRODUCT_PACKAGES += \
     libfui \
     libstdc++.vendor
 
-# CNE
-PRODUCT_PACKAGES += \
-    libcnefeatureconfig
-
 # Common config scripts
 PRODUCT_PACKAGES += \
     init.panel.sh
@@ -186,7 +182,6 @@ PRODUCT_PACKAGES += \
     hwcomposer.msm8996 \
     memtrack.msm8996 \
     libdisplayconfig \
-    liboverlay \
     libqdMetaData.system \
     libtinyxml \
     libvulkan
@@ -255,13 +250,6 @@ PRODUCT_PACKAGES += \
 # IPC router config
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/sec_config:$(TARGET_COPY_OUT_VENDOR)/etc/sec_config
-
-# IPv6
-PRODUCT_PACKAGES += \
-    ebtables \
-    ethertypes \
-    libebtc
-
 # Keymaster
 PRODUCT_PACKAGES += \
     android.hardware.keymaster@3.0-impl \
@@ -302,7 +290,6 @@ PRODUCT_PACKAGES += \
 # OMX
 PRODUCT_PACKAGES += \
     libc2dcolorconvert \
-    libextmedia_jni \
     libOmxAacEnc \
     libOmxAmrEnc \
     libOmxCore \
@@ -344,13 +331,6 @@ PRODUCT_ODM_PROPERTIES += \
 # QMI
 PRODUCT_PACKAGES += \
     libjson
-
-# RCS
-PRODUCT_PACKAGES += \
-    rcs_service_aidl \
-    rcs_service_aidl.xml \
-    rcs_service_api \
-    rcs_service_api.xml
 
 # Recorder
 PRODUCT_PACKAGES += \
@@ -400,10 +380,6 @@ PRODUCT_BOOT_JARS += \
 PRODUCT_SOONG_NAMESPACES += \
     device/xiaomi/msm8996-common
 
-# TextClassifier
-PRODUCT_PACKAGES += \
-    textclassifier.bundle1
-
 # Trust HAL
 PRODUCT_PACKAGES += \
     vendor.lineage.trust@1.0-service
@@ -424,8 +400,6 @@ PRODUCT_PACKAGES += \
 # WiFi
 PRODUCT_PACKAGES += \
     android.hardware.wifi@1.0-service \
-    libqsap_sdk \
-    libQWiFiSoftApCfg \
     libwpa_client \
     hostapd \
     wpa_supplicant \
