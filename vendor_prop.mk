@@ -18,7 +18,7 @@
 PRODUCT_PROPERTY_OVERRIDES += \
     af.fast_track_multiplier=1 \
     audio.deep_buffer.media=true \
-    audio.offload.min.duration.secs=15 \
+    audio.offload.min.duration.secs=30 \
     audio.offload.video=true \
     persist.vendor.audio.fluence.speaker=true \
     persist.vendor.audio.fluence.voicecall=true \
@@ -72,16 +72,17 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 # Data modules
 PRODUCT_PROPERTY_OVERRIDES += \
-    persist.data.iwlan.enable=true \
-    persist.data.mode=concurrent \
+    persist.vendor.data.iwlan.enable=true \
+    persist.vendor.data.mode=concurrent \
     persist.data.netmgrd.qos.enable=true \
-    ro.use_data_netmgrd=true
+    ro.vendor.use_data_netmgrd=true
 
 # Display (Qualcomm AD)
 PRODUCT_PROPERTY_OVERRIDES += \
-    ro.qcom.ad=1 \
-    ro.qcom.ad.calib.data=/system/etc/calib.cfg \
-    ro.qcom.ad.sensortype=2 \
+    ro.vendor.display.ad=1 \
+    ro.vendor.display.ad.hdr_calib_data=/vendor/etc/hdr_config.cfg \
+    ro.vendor.display.ad.sdr_calib_data=/vendor/etc/sdr_config.cfg \
+    ro.vendor.display.sensortype=2 \
     ro.vendor.display.cabl=0
 
 # DRM
@@ -107,6 +108,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
     debug.sdm.support_writeback=0 \
     vendor.display.disable_rotator_split=1 \
     vendor.display.disable_skip_validate=1 \
+    sdm.debug.disable_skip_validate=1 \
     vendor.display.enable_default_color_mode=1 \
     vendor.display.perf_hint_window=50 \
     debug.sf.recomputecrop=0
@@ -127,7 +129,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
 PRODUCT_PROPERTY_OVERRIDES += \
     persist.dbg.volte_avail_ovr=1 \
     persist.dbg.vt_avail_ovr=1 \
-    service.qti.ims.enabled=1 \
     persist.dbg.wfc_avail_ovr=1
 
 # Media
@@ -146,10 +147,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
     persist.mm.enable.prefetch=true \
     debug.stagefright.omx_default_rank.sw-audio=1 \
     debug.stagefright.omx_default_rank=0
-
-# Memory optimizations
-PRODUCT_PROPERTY_OVERRIDES += \
-    ro.vendor.qti.sys.fw.bservice_enable=true
 
 # Perf
 PRODUCT_PROPERTY_OVERRIDES += \
@@ -187,12 +184,12 @@ PRODUCT_PROPERTY_OVERRIDES += \
     persist.vendor.radio.custom_ecc=1 \
     persist.vendor.radio.rat_on=combine \
     persist.vendor.radio.sib16_support=1 \
+    persist.vendor.radio.report_codec=1 \
     persist.sys.fflag.override.settings_network_and_internet_v2=true \
     persist.vendor.radio.add_power_save=1 \
     telephony.lteOnCdmaDevice=1 \
-    persist.vendor.radio.sw_mbn_update=0 \
-    persist.vendor.radio.hw_mbn_update=0 \
-    ro.telephony.use_old_mnc_mcc_format=true
+    ro.telephony.use_old_mnc_mcc_format=true \
+    persist.vendor.radio.procedure_bytes=SKIP
 
 # TimeService
 PRODUCT_PROPERTY_OVERRIDES += \
@@ -201,13 +198,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
 # USB
 PRODUCT_PROPERTY_OVERRIDES += \
     sys.usb.controller=6a00000.dwc3
-
-# Sensors
-PRODUCT_PROPERTY_OVERRIDES += \
-    ro.qti.sensors.dev_ori=false \
-    ro.qti.sensors.pmd=false \
-    ro.qti.sensors.sta_detect=false \
-    ro.qti.sensors.mot_detect=false
 
 # Wifi
 PRODUCT_PROPERTY_OVERRIDES += \
