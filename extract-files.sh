@@ -68,17 +68,6 @@ function blob_fixup() {
         sed -i "s|vulkan.msm8953.so|vulkan.msm8996.so|g" "${2}"
         ;;
 
-    vendor/lib/hw/gatekeeper.msm8996.so | vendor/lib64/hw/gatekeeper.msm8996.so)
-        sed -i "s|gatekeeper.msm8953.so|gatekeeper.msm8996.so|g" "${2}"
-        ;;
-
-    vendor/lib/hw/keystore.msm8996.so | vendor/lib64/hw/keystore.msm8996.so)
-        sed -i "s|keystore.msm8953.so|keystore.msm8996.so|g" "${2}"
-        ;;
-    vendor/lib/hw/sound_trigger.primary.msm8996.so | vendor/lib64/hw/sound_trigger.primary.msm8996.so)
-        sed -i "s|sound_trigger.primary.msm8953.so|sound_trigger.primary.msm8996.so|g" "${2}"
-        ;;
-
     vendor/lib/hw/activity_recognition.msm8996.so | vendor/lib64/hw/activity_recognition.msm8996.so)
         sed -i "s|activity_recognition.msm8953.so|activity_recognition.msm8996.so|g" "${2}"
         ;;
