@@ -433,11 +433,13 @@ lib/com.qualcomm.qti.wifidisplayhal@1.0.so:vendor/lib/com.qualcomm.qti.wifidispl
 
 # QMI - from LA.UM.8.6.r1-03400-89xx.0
 vendor/lib/libqmi_cci.so
-vendor/lib64/libpdmapper.so
 vendor/lib64/libqmi_cci.so
 
 # RIL - from LA.UM.8.6.r1-03400-89xx.0
-vendor/bin/adpl
+-product/app/datastatusnotification/datastatusnotification.apk
+-product/app/embms/embms.apk
+product/etc/permissions/embms.xml
+product/framework/embmslibrary.jar
 product/framework/qti-telephony-common.jar
 -product/priv-app/qcrilmsgtunnel/qcrilmsgtunnel.apk
 vendor/etc/init/dataadpl.rc
@@ -496,6 +498,7 @@ etc/permissions/qcrilhook.xml
 etc/permissions/telephonyservice.xml
 framework/QtiTelephonyServicelibrary.jar
 framework/qcrilhook.jar
+vendor/bin/adpl
 vendor/bin/ATFWD-daemon
 vendor/bin/netmgrd
 vendor/bin/qti
@@ -511,6 +514,7 @@ vendor/lib64/libnetmgr.so
 vendor/lib64/libnetmgr_common.so
 vendor/lib64/libnlnetmgr.so
 vendor/lib64/liboemaids_vendor.so
+vendor/lib64/libpdmapper.so
 vendor/lib64/libqcmaputils.so
 vendor/lib64/libqrtr.so
 vendor/lib64/libqsocket.so
