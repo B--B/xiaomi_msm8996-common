@@ -154,20 +154,20 @@ service vendor.qseecomd /vendor/bin/qseecomd
     writepid /dev/cpuset/system-background/tasks
 
 # Start camera server as daemon
-service qcamerasvr /vendor/bin/mm-qcamera-daemon
+service qcamerasvr /system/vendor/bin/mm-qcamera-daemon
     class late_start
     user camera
     group camera system inet input graphics
     writepid /dev/cpuset/system-background/tasks
 
 # Start up peripheral manager
-service vendor.per_mgr /vendor/bin/pm-service
+service vendor.per_mgr /system/vendor/bin/pm-service
     class core
     user system
     group system
     writepid /dev/cpuset/system-background/tasks
 
-service vendor.per_proxy /vendor/bin/pm-proxy
+service vendor.per_proxy /system/vendor/bin/pm-proxy
     class core
     user system
     group system
@@ -181,23 +181,23 @@ on property:sys.shutdown.requested=*
     stop vendor.per_proxy
     stop vendor.ims_rtp_daemon
 
-service thermal-engine /vendor/bin/thermal-engine -c ${sys.qcom.thermalcfg:-/vendor/etc/thermal-engine-8996.conf}
+service thermal-engine /system/vendor/bin/thermal-engine -c ${sys.qcom.thermalcfg:-/vendor/etc/thermal-engine-8996.conf}
     class main
     user root
     socket thermal-send-client stream 0666 system system
     socket thermal-recv-client stream 0660 system system
     socket thermal-recv-passive-client stream 0666 system system
     socket thermal-send-rule stream 0660 system system
-    group system root diag
+    group root
     writepid /dev/cpuset/system-background/tasks
 
-service adsprpcd /vendor/bin/adsprpcd
+service adsprpcd /system/vendor/bin/adsprpcd
     class main
     user media
     group media
 
-# imsdatadaemon starts with root and UID will be downgraded to SYSTEM.
-service vendor.imsqmidaemon /vendor/bin/imsqmidaemon
+## imsdatadaemon starts with root and UID will be downgraded to SYSTEM.
+service vendor.imsqmidaemon /system/vendor/bin/imsqmidaemon
     class main
     user system
     socket ims_qmid stream 0660 system radio
@@ -205,7 +205,7 @@ service vendor.imsqmidaemon /vendor/bin/imsqmidaemon
     writepid /dev/cpuset/system-background/tasks
 
 # imsdatadaemon starts with root and UID will be downgraded to SYSTEM.
-service vendor.imsdatadaemon /vendor/bin/imsdatadaemon
+service vendor.imsdatadaemon /system/vendor/bin/imsdatadaemon
     class main
     user system
     socket ims_datad stream 0660 system radio
@@ -216,32 +216,45 @@ service vendor.imsdatadaemon /vendor/bin/imsdatadaemon
 on property:vendor.ims.QMI_DAEMON_STATUS=1
     start vendor.imsdatadaemon
 
-service vendor.ims_rtp_daemon /vendor/bin/ims_rtp_daemon
-    class main
-    user system
-    group radio diag inet log
+service vendor.ims_rtp_daemon /system/vendor/bin/ims_rtp_daemon
+   class main
+   user system
+   group radio diag inet log
+    writepid /dev/cpuset/system-background/tasks
 
-service vendor.imsrcsservice /vendor/bin/imsrcsd
-    class main
-    user system
-    group radio diag inet log
+service vendor.imsrcsservice /system/vendor/bin/imsrcsd
+   class main
+   user system
+   group radio diag inet log wakelock
     writepid /dev/cpuset/system-background/tasks
 
 on property:vendor.ims.DATA_DAEMON_STATUS=1
     restart vendor.ims_rtp_daemon
 
-service ppd /vendor/bin/mm-pp-dpps
-    class hal
+service ppd /system/vendor/bin/mm-pp-dpps
+    class late_start
+    disabled
     user system
-    group system graphics
     socket pps stream 0660 system system
+    group system graphics
+
+on property:init.svc.surfaceflinger=stopped
+    stop ppd
+
+on property:init.svc.surfaceflinger=running
+    start ppd
 
 on property:init.svc.surfaceflinger=restarting
-    stop vendor.hwcomposer-2-1
-    start vendor.hwcomposer-2-1
+    stop ppd
 
-on property:slpi.restart=1
-    write /sys/kernel/debug/msm_subsys/slpi restart
+on property:init.svc.zygote=stopped
+    stop ppd
+
+on property:init.svc.zygote=running
+    start ppd
+
+on property:init.svc.zygote=restarting
+    stop ppd
 
 service vendor.charger /system/bin/chargeonlymode
     class charger
@@ -250,12 +263,12 @@ service vendor.charger /system/bin/chargeonlymode
     capabilities SYS_BOOT
     seclabel u:r:charger:s0
 
-service vendor.hvdcp_opti /vendor/bin/hvdcp_opti
-    class main
-    user root
-    group system wakelock
+service vendor.hvdcp_opti /system/vendor/bin/hvdcp_opti
+   class main
+   user root
+   group system wakelock
 
-service bt-sh /vendor/bin/init.bt.sh
+service bt-sh /system/vendor/bin/init.bt.sh
     class late_start
     user bluetooth
     group bluetooth
