@@ -106,7 +106,6 @@ on boot
     # Wifi firmware reload path
     chown wifi wifi /sys/module/wlan/parameters/fwpath
 
-
 on property:sys.boot_completed=1
     # Enable GPU powersaving
     write /sys/class/kgsl/kgsl-3d0/bus_split 1
