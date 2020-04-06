@@ -161,8 +161,6 @@ PRODUCT_PACKAGES += \
     init.qcom.sh \
     init.qcom.usb.rc \
     init.qcom.usb.sh \
-    init.qti.ims.sh \
-    init.recovery.qcom.rc \
     init.device.rc \
     ueventd.qcom.rc \
     init.bt.sh
