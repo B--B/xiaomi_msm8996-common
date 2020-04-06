@@ -1,10 +1,4 @@
 on init
-    # Disable UFS powersaving
-    write /sys/devices/soc/${ro.boot.bootdevice}/clkscale_enable 0
-    write /sys/devices/soc/${ro.boot.bootdevice}/clkgate_enable 0
-    write /sys/devices/soc/${ro.boot.bootdevice}/${ro.boot.bootdevice}:ufs_variant/pm_qos_enable 0
-    write /sys/module/lpm_levels/parameters/sleep_disabled Y
-
     write /sys/module/qpnp_rtc/parameters/poweron_alarm 1
 
 on fs
@@ -112,12 +106,8 @@ on boot
     # Wifi firmware reload path
     chown wifi wifi /sys/module/wlan/parameters/fwpath
 
-on property:sys.boot_completed=1
-    # Enable UFS powersaving
-    write /sys/devices/soc/${ro.boot.bootdevice}/clkscale_enable 1
-    write /sys/devices/soc/${ro.boot.bootdevice}/clkgate_enable 1
-    write /sys/devices/soc/${ro.boot.bootdevice}/${ro.boot.bootdevice}:ufs_variant/pm_qos_enable 1
 
+on property:sys.boot_completed=1
     # Enable GPU powersaving
     write /sys/class/kgsl/kgsl-3d0/bus_split 1
     write /sys/class/kgsl/kgsl-3d0/force_bus_on 0
@@ -135,11 +125,6 @@ on property:sys.boot_completed=1
 
 on charger
     wait /dev/block/platform/soc/${ro.boot.bootdevice}
-    # Enable UFS powersaving
-    write /sys/devices/soc/${ro.boot.bootdevice}/clkscale_enable 1
-    write /sys/devices/soc/${ro.boot.bootdevice}/clkgate_enable 1
-    write /sys/devices/soc/${ro.boot.bootdevice}/${ro.boot.bootdevice}:ufs_variant/pm_qos_enable 1
-    write /sys/module/lpm_levels/parameters/sleep_disabled "N"
 
     write /sys/devices/system/cpu/cpu1/online 1
     write /sys/devices/system/cpu/cpu2/online 0
