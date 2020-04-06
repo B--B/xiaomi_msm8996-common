@@ -120,6 +120,11 @@ on property:sys.boot_completed=1
     write /dev/cpuset/system-background/cpus 0-1
     write /dev/cpuset/restricted/cpus 0-1
 
+    # Tune vm
+    write /proc/sys/vm/vfs_cache_pressure 80
+    write /proc/sys/vm/user_reserve_kbytes 0
+    write /proc/sys/vm/admin_reserve_kbytes 0
+
     start bt-sh
 
 on charger
