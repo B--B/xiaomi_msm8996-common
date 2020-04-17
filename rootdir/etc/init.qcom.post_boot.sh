@@ -3596,13 +3596,10 @@ case "$target" in
         bcl_soc_hotplug_mask=`cat /sys/devices/soc/soc:qcom,bcl/hotplug_soc_mask`
         echo 0 > /sys/devices/soc/soc:qcom,bcl/hotplug_soc_mask
         echo -n enable > /sys/devices/soc/soc:qcom,bcl/mode
-        # set sync wakee policy tunable
-        echo 1 > /proc/sys/kernel/sched_prefer_sync_wakee_to_waker
         # configure governor settings for little cluster
         echo "schedutil" > /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor
         echo 20000 > /sys/devices/system/cpu/cpufreq/policy0/schedutil/down_rate_limit_us
         echo 500 > /sys/devices/system/cpu/cpufreq/policy0/schedutil/up_rate_limit_us
-        echo 300000 > /sys/devices/system/cpu/cpu0/cpufreq/scaling_min_freq
         # online CPU2
         echo 1 > /sys/devices/system/cpu/cpu2/online
         # configure governor settings for big cluster
@@ -3620,15 +3617,6 @@ case "$target" in
         echo $bcl_hotplug_mask > /sys/devices/soc/soc:qcom,bcl/hotplug_mask
         echo $bcl_soc_hotplug_mask > /sys/devices/soc/soc:qcom,bcl/hotplug_soc_mask
         echo -n enable > /sys/devices/soc/soc:qcom,bcl/mode
-        # Setting b.L scheduler parameters
-        echo 0 > /proc/sys/kernel/sched_boost
-        echo 1 > /proc/sys/kernel/sched_migration_fixup
-        echo 45 > /proc/sys/kernel/sched_upmigrate
-        echo 45 > /proc/sys/kernel/sched_downmigrate
-        echo 400000 > /proc/sys/kernel/sched_freq_inc_notify
-        echo 400000 > /proc/sys/kernel/sched_freq_dec_notify
-        echo 3 > /proc/sys/kernel/sched_spill_nr_run
-        echo 100 > /proc/sys/kernel/sched_init_task_load
         # Enable bus-dcvs
         for cpubw in /sys/class/devfreq/*qcom,cpubw*
         do
