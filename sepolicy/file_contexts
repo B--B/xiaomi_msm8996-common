@@ -6,6 +6,7 @@
 /dev/sysmatdrv                        u:object_r:sysmatdrv_device:s0
 
 # Sys files
+/sys/devices/soc/70000.qcom,msm-thermal/uio/uio[0-9]+(/.*)?        u:object_r:sysfs_uio_file:s0
 /sys/devices/soc/75b7000\.i2c/i2c-9/9-[0-9a-f]+/leds(/.*)?    u:object_r:sysfs_leds:s0
 /sys/devices/soc/leds-qpnp-[0-9]+/leds(/.*)?                  u:object_r:sysfs_leds:s0
 
@@ -57,7 +58,7 @@
 
 # Power HAL
 /sys/kernel/debug/system_stats                                u:object_r:debugfs_system_stats:s0
-/sys/class/graphics/fb0/idle_state                            u:object_r:sysfs_graphics:s0
+/sys/devices/virtual/graphics/fb0/idle_state		       u:object_r:sysfs_graphics:s0
 
 # WiFi
 /vendor/bin/wifi-mac-generator                                u:object_r:wifi-mac-generator_exec:s0
@@ -66,5 +67,6 @@
 /sys/devices/vendor/vendor:bt_qca6174/extldo                        u:object_r:sysfs_bluetooth_writable:s0
 /sys/devices/vendor/vendor:bt_qca6174/rfkill/rfkill0/state          u:object_r:sysfs_bluetooth_writable:s0
 
+# Firmware
 /bt_firmware(/.*)?         u:object_r:bt_firmware_file:s0
 /firmware(/.*)?            u:object_r:firmware_file:s0
