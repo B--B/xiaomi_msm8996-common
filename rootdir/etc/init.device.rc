@@ -124,6 +124,9 @@ on property:sys.boot_completed=1
 
     start bt-sh
 
+    # Let the magic happen
+    setprop vendor.powerhal.init 1
+
 on charger
     wait /dev/block/platform/soc/${ro.boot.bootdevice}
 
