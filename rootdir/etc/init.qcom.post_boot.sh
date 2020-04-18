@@ -3604,13 +3604,14 @@ case "$target" in
         echo 1 > /sys/devices/system/cpu/cpu2/online
         # configure governor settings for big cluster
         echo "schedutil" > /sys/devices/system/cpu/cpu2/cpufreq/scaling_governor
-        echo 20000 > /sys/devices/system/cpu/cpufreq/policy2/schedutil/down_rate_limit_us
-        echo 500 > /sys/devices/system/cpu/cpufreq/policy2/schedutil/up_rate_limit_us
-        echo 300000 > /sys/devices/system/cpu/cpu2/cpufreq/scaling_min_freq
+        echo 10000 > /sys/devices/system/cpu/cpufreq/policy2/schedutil/down_rate_limit_us
+        echo 1000 > /sys/devices/system/cpu/cpufreq/policy2/schedutil/up_rate_limit_us
         # Set up schedtune
-        echo 1 > /dev/stune/foreground/schedtune.prefer_idle
-        echo 8 > /dev/stune/top-app/schedtune.boost
         echo 1 > /dev/stune/top-app/schedtune.prefer_idle
+        echo 30 > /dev/stune/top-app/schedtune.sched_boost
+        # Set up dynamic stune boost
+        echo 3000 > /sys/module/cpu_boost/parameters/dynamic_stune_boost_ms
+        echo 10 > /sys/module/cpu_boost/parameters/dynamic_stune_boost
         # re-enable thermal and BCL hotplug
         echo 0 > /sys/module/msm_thermal/core_control/enabled
         echo -n disable > /sys/devices/soc/soc:qcom,bcl/mode
