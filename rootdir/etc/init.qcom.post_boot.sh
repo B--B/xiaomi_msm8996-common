@@ -3628,9 +3628,6 @@ case "$target" in
             echo 34 > $cpubw/bw_hwmon/io_percent
             echo 20 > $cpubw/bw_hwmon/hist_memory
             echo 10 > $cpubw/bw_hwmon/hyst_length
-            echo 0 > $cpubw/bw_hwmon/low_power_ceil_mbps
-            echo 34 > $cpubw/bw_hwmon/low_power_io_percent
-            echo 20 > $cpubw/bw_hwmon/low_power_delay
             echo 0 > $cpubw/bw_hwmon/guard_band_mbps
             echo 250 > $cpubw/bw_hwmon/up_scale
             echo 1600 > $cpubw/bw_hwmon/idle_mbps
