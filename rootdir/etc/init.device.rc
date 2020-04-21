@@ -122,8 +122,6 @@ on property:sys.boot_completed=1
     write /proc/sys/vm/user_reserve_kbytes 0
     write /proc/sys/vm/admin_reserve_kbytes 0
 
-    start bt-sh
-
     # Let the magic happen
     setprop vendor.powerhal.init 1
 
@@ -258,8 +256,7 @@ service vendor.hvdcp_opti /system/vendor/bin/hvdcp_opti
    group system wakelock
 
 service bt-sh /system/vendor/bin/init.bt.sh
-    class late_start
+    class main
     user bluetooth
     group bluetooth
-    disabled
     oneshot
