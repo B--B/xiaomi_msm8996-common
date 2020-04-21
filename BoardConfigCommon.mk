@@ -123,6 +123,9 @@ OVERRIDE_RS_DRIVER := libRSDriver_adreno.so
 # DRM
 TARGET_ENABLE_MEDIADRM_64 := true
 
+# Keymaster
+TARGET_PROVIDES_KEYMASTER := true
+
 # Encryption
 TARGET_HW_DISK_ENCRYPTION := true
 

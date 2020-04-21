@@ -155,7 +155,7 @@ vendor/etc/init/dpmQmiMgr.rc
 vendor/lib64/com.qualcomm.qti.dpm.api@1.0.so
 vendor/lib64/libdpmqmihal.so
 
-# DRM and SEE - from LA.UM.7.5.r1-05300-8x96.0
+# DRM and SEE - from LA.UM.8.6.r1-03400-89xx.0
 vendor/bin/qseecomd
 vendor/lib64/libGPreqcancel.so
 vendor/lib64/libGPreqcancel_svc.so
@@ -176,9 +176,11 @@ vendor/bin/hw/android.hardware.drm@1.2-service.widevine
 vendor/etc/init/android.hardware.drm@1.2-service.widevine.rc
 vendor/lib64/libwvhidl.so
 
-# Gatekeeper - from LA.UM.7.5.r1-05300-8x96.0
-vendor/lib64/hw/gatekeeper.msm8996.so
-vendor/lib/hw/gatekeeper.msm8996.so
+# Gatekeeper - from LA.UM.8.6.r1-03400-89xx.0
+vendor/bin/hw/android.hardware.gatekeeper@1.0-service-qti
+vendor/etc/init/android.hardware.gatekeeper@1.0-service-qti.rc
+vendor/lib/hw/android.hardware.gatekeeper@1.0-impl-qti.so
+vendor/lib64/hw/android.hardware.gatekeeper@1.0-impl-qti.so
 
 # GPS - from LA.UM.8.6.r1-03400-89xx.0
 etc/permissions/com.qti.location.sdk.xml
@@ -323,9 +325,13 @@ vendor/lib/libOmxWmaDec.so
 vendor/lib/libvqzip.so
 -vendor/lib64/libgpustats.so
 
-# Keystore - from LA.UM.7.5.r1-05300-8x96.0
-vendor/lib64/hw/keystore.msm8996.so
-vendor/lib/hw/keystore.msm8996.so
+# Keystore - from LA.UM.8.6.r1-03400-89xx.0
+vendor/bin/hw/android.hardware.keymaster@3.0-service-qti
+vendor/etc/init/android.hardware.keymaster@3.0-service-qti.rc
+vendor/lib/hw/android.hardware.keymaster@3.0-impl-qti.so
+vendor/lib/libkeymasterdeviceutils.so
+vendor/lib64/hw/android.hardware.keymaster@3.0-impl-qti.so
+vendor/lib64/libkeymasterdeviceutils.so
 
 # Listen - from LA.UM.7.5.r1-05300-8x96.0
 vendor/lib64/hw/sound_trigger.primary.msm8996.so
