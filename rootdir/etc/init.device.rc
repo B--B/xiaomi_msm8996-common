@@ -142,12 +142,16 @@ on property:sys.boot_completed=1
     setprop vendor.powerhal.init 1
 
 on charger
-    wait /dev/block/platform/soc/${ro.boot.bootdevice}
-
-    write /sys/devices/system/cpu/cpu1/online 1
-    write /sys/devices/system/cpu/cpu2/online 0
-    write /sys/module/msm_thermal/parameters/enabled "N"
     start vendor.hvdcp_opti
+    setprop sys.usb.configfs 1
+
+    wait /dev/block/platform/soc/${ro.boot.bootdevice}
+    symlink /dev/block/platform/soc/${ro.boot.bootdevice} /dev/block/bootdevice
+
+    chmod 0666 /sys/class/leds/red/brightness
+    chmod 0666 /sys/class/leds/green/brightness
+    chmod 0666 /sys/class/leds/blue/brightness
+
     start thermal-engine
 
 service vendor.qseecomd /vendor/bin/qseecomd
