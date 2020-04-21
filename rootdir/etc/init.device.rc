@@ -17,6 +17,8 @@ on post-fs
     # set RLIMIT_MEMLOCK to 64MB
     setrlimit 8 67108864 67108864
 
+    start vendor.qseecomd
+
 on post-fs-data
     # Create folder for mm-qcamera-daemon
     mkdir /data/vendor/qcam 0770 camera camera
