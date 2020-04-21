@@ -27,6 +27,16 @@ on post-fs-data
     mkdir /data/nfc 0770 nfc nfc
     mkdir /data/nfc/param 0770 nfc nfc
 
+    mkdir /data/tombstones 0771 system system
+    mkdir /tombstones/modem 0771 system system
+    mkdir /tombstones/lpass 0771 system system
+    mkdir /tombstones/wcnss 0771 system system
+    mkdir /tombstones/dsps 0771 system system
+    mkdir /persist/data/sfs 0700 system system
+    mkdir /persist/data/tz 0700 system system
+    mkdir /data/misc/dts 0770 media audio
+    mkdir /data/vendor/hbtp 0750 system system
+
 on early-boot
     # SSR setup
     write /sys/bus/msm_subsys/devices/subsys0/restart_level "related"
