@@ -40,7 +40,7 @@
 /(mnt/vendor)/persist/qc_senseid(/.*)?             u:object_r:persist_qc_senseid_file:s0
 
 # Binaries
-/system/bin/chargeonlymode            u:object_r:charger_exec:s0
+/(vendor|system/vendor)/bin/chargeonlymode            u:object_r:vendor_charger_exec:s0
 
 # HALs
 /(vendor|system/vendor)/bin/hw/android\.hardware\.biometrics\.fingerprint@2\.1-service\.gemini   u:object_r:hal_fingerprint_default_exec:s0

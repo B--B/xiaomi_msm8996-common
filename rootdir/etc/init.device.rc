@@ -264,12 +264,12 @@ on property:init.svc.zygote=running
 on property:init.svc.zygote=restarting
     stop ppd
 
-service vendor.charger /system/bin/chargeonlymode
+service vendor.charger /system/vendor/bin/chargeonlymode
     class charger
     user system
     group system graphics input
     capabilities SYS_BOOT
-    seclabel u:r:charger:s0
+    seclabel u:r:vendor_charger:s0
 
 service vendor.hvdcp_opti /system/vendor/bin/hvdcp_opti
    class main

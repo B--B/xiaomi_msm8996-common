@@ -1,1 +1,61 @@
-allow charger rtc_device:chr_file { read open ioctl };
+type vendor_charger, domain;
+type vendor_charger_exec, exec_type, vendor_file_type, file_type;
+
+init_daemon_domain(vendor_charger)
+
+# Write to /dev/kmsg
+allow vendor_charger kmsg_device:chr_file rw_file_perms;
+
+# Read access to pseudo filesystems.
+r_dir_file(vendor_charger, rootfs)
+r_dir_file(vendor_charger, cgroup)
+
+# Allow to read /sys/class/power_supply directory
+allow vendor_charger sysfs_type:dir r_dir_perms;
+
+allow vendor_charger self:global_capability_class_set { sys_tty_config };
+allow vendor_charger self:global_capability_class_set sys_boot;
+
+wakelock_use(vendor_charger)
+
+allow vendor_charger self:netlink_kobject_uevent_socket create_socket_perms_no_ioctl;
+
+# Read/write to /sys/power/state
+allow vendor_charger sysfs_power:file rw_file_perms;
+
+r_dir_file(vendor_charger, sysfs_batteryinfo)
+
+# Read /sys/fs/pstore/console-ramoops
+# Don't worry about overly broad permissions for now, as there's
+# only one file in /sys/fs/pstore
+allow vendor_charger pstorefs:dir r_dir_perms;
+allow vendor_charger pstorefs:file r_file_perms;
+
+allow vendor_charger graphics_device:dir r_dir_perms;
+allow vendor_charger graphics_device:chr_file rw_file_perms;
+allow vendor_charger input_device:dir r_dir_perms;
+allow vendor_charger input_device:chr_file r_file_perms;
+allow vendor_charger tty_device:chr_file rw_file_perms;
+allow vendor_charger proc_sysrq:file rw_file_perms;
+
+# charger needs to tell init to continue the boot
+# process when running in charger mode.
+set_prop(vendor_charger, system_prop)
+set_prop(vendor_charger, exported_system_prop)
+set_prop(vendor_charger, exported2_system_prop)
+set_prop(vendor_charger, exported3_system_prop)
+
+allow charger self:capability2 wake_alarm;
+r_dir_file(charger, sysfs_battery_supply)
+r_dir_file(charger, sysfs_usb_supply)
+
+allow vendor_charger {
+    sysfs_battery_supply
+    sysfs_usb_supply
+}:file w_file_perms;
+
+dontaudit vendor_charger device:dir r_dir_perms;
+dontaudit vendor_charger self:capability sys_admin;
+
+allow vendor_charger rtc_device:chr_file { read open ioctl };
+allow vendor_charger sysfs_leds:file { open read write };
