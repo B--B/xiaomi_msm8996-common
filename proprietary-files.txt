@@ -35,9 +35,6 @@ vendor/lib/rfsa/adsp/libvpp_frc.so
 vendor/lib/rfsa/adsp/libvpp_svc_skel.so
 
 # Audio libraries - from LA.UM.7.5.r1-05300-8x96.0
-vendor/lib/soundfx/libqcbassboost.so
-vendor/lib/soundfx/libqcreverb.so
-vendor/lib/soundfx/libqcvirt.so
 vendor/lib/libacdb-fts.so
 vendor/lib/libacdbloader.so|be45395be21d69e9810827cdec2c6d7c383ce143
 vendor/lib/libacdbrtac.so
