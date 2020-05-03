@@ -651,6 +651,8 @@ vendor/lib/libseemore.so
 vendor/lib/libtm_interface.so
 vendor/lib/liboptizoom.so
 vendor/lib/libubifocus.so
+lib/libtrueportrait.so:vendor/lib/libtrueportrait.so
+lib64/libtrueportrait.so:vendor/lib64/libtrueportrait.so
 
 # Camera firmware
 etc/firmware/cpp_firmware_v1_10_0.fw:vendor/firmware/cpp_firmware_v1_10_0.fw
