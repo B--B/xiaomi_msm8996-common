@@ -1,1 +1,2 @@
 allow adsprpcd_file self:filesystem associate;
+r_dir_file(adsprpcd, public_adsprpcd_file)

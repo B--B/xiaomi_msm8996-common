@@ -23,6 +23,11 @@
 /sys/devices/vendor/vendor:bt_qca6174/rfkill/rfkill0/state                      u:object_r:sysfs_bluetooth_writable:s0
 /sys/devices/vendor/vendor:bt_qca6174/extldo                                    u:object_r:sysfs_bluetooth_writable:s0
 
+# Hexagon DSP-side executable needed for Halide operation
+# This is labeled as public_adsprpcd_file as it needs to be read by apps
+# (e.g. Google Camera App)
+/mnt/vendor/dsp/fastrpc_shell_0                                         u:object_r:public_adsprpcd_file:s0
+
 /sys/module/cnss_common/parameters/bdwlan_file                                  u:object_r:sysfs_cnss_common:s0
 
 # Data files
