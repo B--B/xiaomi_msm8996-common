@@ -36,6 +36,9 @@ bluetooth.profile.pbap.server.enabled?=true
 bluetooth.profile.sap.server.enabled?=true
 qcom.bluetooth.soc=rome
 
+# Camera
+camera.disable_zsl_mode=1
+
 # CNE
 persist.vendor.cne.feature=1
 
