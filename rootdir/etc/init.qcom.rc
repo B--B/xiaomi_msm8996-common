@@ -441,6 +441,7 @@ service vendor.adsprpcd /vendor/bin/adsprpcd
     class main
     user system
     group media
+    task_profiles ServiceCapacityLow
 
 # imsdatadaemon starts with root and UID will be downgraded to SYSTEM.
 service vendor.imsqmidaemon /vendor/bin/imsqmidaemon
@@ -466,6 +467,7 @@ service vendor.ims_rtp_daemon /vendor/bin/ims_rtp_daemon
     class main
     user system
     group radio diag inet log
+    task_profiles ServiceCapacityLow
 
 service vendor.imsrcsservice /vendor/bin/imsrcsd
     class main
@@ -481,6 +483,7 @@ service ppd /vendor/bin/mm-pp-dpps
     user system
     group system graphics
     socket pps stream 0660 system system
+    task_profiles ServiceCapacityLow
 
 on property:init.svc.surfaceflinger=restarting
     stop vendor.hwcomposer-2-1
