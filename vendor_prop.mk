@@ -88,26 +88,26 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 # Graphics
 PRODUCT_PROPERTY_OVERRIDES += \
-    debug.egl.hw=1 \
-    debug.gralloc.gfx_ubwc_disable=0 \
-    debug.sf.enable_hwc_vds=1 \
-    debug.sf.hw=1 \
-    debug.sf.latch_unsignaled=1 \
+    ro.opengles.version=196610 \
     dev.pm.dyn_samplingrate=1 \
     persist.demo.hdmirotationlock=false \
     persist.hwc.enable_vds=1 \
-    ro.opengles.version=196610 \
-    ro.sf.lcd_density=480 \
+    sdm.debug.disable_skip_validate=1 \
     debug.sdm.support_writeback=0 \
     vendor.display.disable_rotator_split=1 \
     vendor.display.disable_skip_validate=1 \
-    sdm.debug.disable_skip_validate=1 \
     vendor.display.enable_default_color_mode=1 \
     vendor.display.perf_hint_window=50 \
-    debug.sf.recomputecrop=0
+    debug.gralloc.gfx_ubwc_disable=0 \
+    vendor.gralloc.enable_fb_ubwc=1
 
 # Surfaceflinger
 PRODUCT_PROPERTY_OVERRIDES += \
+    ro.sf.lcd_density=480 \
+    debug.sf.enable_hwc_vds=1 \
+    debug.sf.latch_unsignaled=1 \
+    debug.sf.recomputecrop=0 \
+    debug.sf.disable_backpressure=1 \
     debug.sf.enable_gl_backpressure=1 \
     ro.surface_flinger.force_hwc_copy_for_virtual_displays=true \
     ro.surface_flinger.max_virtual_display_dimension=4096 \
