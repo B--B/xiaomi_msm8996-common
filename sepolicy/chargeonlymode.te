@@ -46,8 +46,8 @@ set_prop(vendor_charger, exported2_system_prop)
 set_prop(vendor_charger, exported3_system_prop)
 
 allow charger self:capability2 wake_alarm;
-r_dir_file(charger, sysfs_battery_supply)
-r_dir_file(charger, sysfs_usb_supply)
+r_dir_file(vendor_charger, sysfs_battery_supply)
+r_dir_file(vendor_charger, sysfs_usb_supply)
 
 allow vendor_charger {
     sysfs_battery_supply
