@@ -345,7 +345,7 @@ vendor/lib/hw/sound_trigger.primary.msm8996.so
 vendor/lib/libadpcmdec.so
 vendor/lib/libsmwrapper.so
 
-# Perf - from Taimen 10.0.0 QQ1A.191205.008
+# Perf - from Taimen 10.0.0 QQ2A.200501.001.B3
 vendor/lib64/libqti-perfd-client.so
 vendor/lib/libqti-perfd-client.so
 
