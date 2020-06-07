@@ -311,7 +311,7 @@ lib/libmmosal.so
 lib/libmmparser_lite.so
 lib/libOmxMux.so
 lib64/libmmosal.so
--vendor/lib/libgpustats.so
+vendor/lib/libgpustats.so
 vendor/lib/libI420colorconvert.so
 vendor/lib/libmm-color-convertor.so
 vendor/lib/libmmosal_proprietary.so
@@ -329,7 +329,7 @@ vendor/lib/libOmxQcelp13Dec.so
 vendor/lib/libOmxVideoDSMode.so
 vendor/lib/libOmxWmaDec.so
 vendor/lib/libvqzip.so
--vendor/lib64/libgpustats.so
+vendor/lib64/libgpustats.so
 
 # Keystore - from LA.UM.8.6.r1-04400-89xx.0
 vendor/bin/hw/android.hardware.keymaster@3.0-service-qti
