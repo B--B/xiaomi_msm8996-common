@@ -199,7 +199,7 @@ service thermal-engine /system/vendor/bin/thermal-engine -c ${sys.qcom.thermalcf
     socket thermal-recv-client stream 0660 system system
     socket thermal-recv-passive-client stream 0666 system system
     socket thermal-send-rule stream 0660 system system
-    group root
+    group root system
     writepid /dev/cpuset/system-background/tasks
 
 service adsprpcd /system/vendor/bin/adsprpcd
