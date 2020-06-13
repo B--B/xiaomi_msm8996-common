@@ -19,8 +19,6 @@ BOARD_VENDOR := xiaomi
 
 VENDOR_PATH := device/xiaomi/msm8996-common
 
-TARGET_SPECIFIC_HEADER_PATH := $(VENDOR_PATH)/include
-
 # Architecture
 TARGET_ARCH := arm64
 TARGET_ARCH_VARIANT := armv8-a
@@ -35,8 +33,6 @@ TARGET_2ND_CPU_ABI := armeabi-v7a
 TARGET_2ND_CPU_ABI2 := armeabi
 TARGET_2ND_CPU_VARIANT := generic
 TARGET_2ND_CPU_VARIANT_RUNTIME := kryo
-
-TARGET_USES_64_BIT_BINDER := true
 
 # Bootloader
 TARGET_BOOTLOADER_BOARD_NAME := msm8996
@@ -122,9 +118,6 @@ OVERRIDE_RS_DRIVER := libRSDriver_adreno.so
 # DRM
 TARGET_ENABLE_MEDIADRM_64 := true
 
-# Keymaster
-TARGET_PROVIDES_KEYMASTER := true
-
 # Encryption
 TARGET_HW_DISK_ENCRYPTION := true
 
@@ -164,7 +157,6 @@ BOARD_ROOT_EXTRA_SYMLINKS := \
     /vendor/firmware_mnt:/firmware \
     /vendor/bt_firmware:/bt_firmware
 TARGET_COPY_OUT_VENDOR := vendor
-TARGET_USES_MKE2FS := true
 
 # QCOM
 BOARD_USES_QCOM_HARDWARE := true
@@ -196,7 +188,6 @@ TARGET_RECOVERY_DEVICE_MODULES := //$(VENDOR_PATH):libinit.xiaomi_8996
 
 # Wifi
 BOARD_HAS_QCOM_WLAN := true
-BOARD_HAS_QCOM_WLAN_SDK := true
 BOARD_WLAN_DEVICE := qcwcn
 BOARD_WPA_SUPPLICANT_DRIVER := NL80211
 BOARD_WPA_SUPPLICANT_PRIVATE_LIB := lib_driver_cmd_$(BOARD_WLAN_DEVICE)
