@@ -450,8 +450,10 @@ vendor/lib64/libqmi_cci.so
 -product/app/datastatusnotification/datastatusnotification.apk
 -product/app/embms/embms.apk
 product/etc/permissions/embms.xml
+product/etc/permissions/lpa.xml
 product/framework/embmslibrary.jar
 product/framework/qti-telephony-common.jar
+product/framework/uimlpalibrary.jar
 -product/priv-app/qcrilmsgtunnel/qcrilmsgtunnel.apk
 vendor/etc/init/dataadpl.rc
 vendor/etc/init/dataqti.rc
@@ -460,6 +462,7 @@ vendor/etc/init/vendor.qti.rmt_storage.rc
 vendor/etc/init/vendor.qti.tftp.rc
 
 # IMS - from LA.UM.8.6.r1-04400-89xx.0
+-product/app/imssettings/imssettings.apk
 product/etc/permissions/telephony_product_privapp-permissions-qti.xml
 -product/priv-app/ims/ims.apk
 product/lib64/libimscamera_jni.so
