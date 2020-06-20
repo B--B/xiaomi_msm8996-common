@@ -29,6 +29,8 @@
 #include <utils/Log.h>
 #include <utils/Trace.h>
 
+#include "disp-power/DisplayLowPower.h"
+
 #ifndef TAP_TO_WAKE_NODE
 #define TAP_TO_WAKE_NODE "/sys/devices/soc/75ba000.i2c/i2c-12/12-0020/input/input1/wake_gesture"
 #endif
@@ -43,8 +45,9 @@ namespace pixel {
 constexpr char kPowerHalStateProp[] = "vendor.powerhal.state";
 constexpr char kPowerHalRenderingProp[] = "vendor.powerhal.rendering";
 
-Power::Power(std::shared_ptr<HintManager> hm)
+Power::Power(std::shared_ptr<HintManager> hm, std::shared_ptr<DisplayLowPower> dlpw)
     : mHintManager(hm),
+      mDisplayLowPower(dlpw),
       mInteractionHandler(nullptr),
       mSustainedPerfModeOn(false) {
     mInteractionHandler = std::make_unique<InteractionHandler>(mHintManager);
@@ -74,11 +77,15 @@ ndk::ScopedAStatus Power::setMode(Mode type, bool enabled) {
     ATRACE_INT(toString(type).c_str(), enabled);
     switch (type) {
         case Mode::DOUBLE_TAP_TO_WAKE:
-            {
             ::android::base::WriteStringToFile(enabled ? "1" : "0", TAP_TO_WAKE_NODE, true);
             [[fallthrough]];
-            }
         case Mode::LOW_POWER:
+            mDisplayLowPower->SetDisplayLowPower(enabled);
+            if (enabled) {
+                mHintManager->DoHint(toString(type));
+            } else {
+                mHintManager->EndHint(toString(type));
+            }
             break;
         case Mode::SUSTAINED_PERFORMANCE:
             if (enabled) {
