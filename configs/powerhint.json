@@ -151,8 +151,8 @@
       "Name": "CPUBWIOPercent",
       "Path": "/sys/class/devfreq/soc:qcom,cpubw/bw_hwmon/io_percent",
       "Values": [
-        "68",
-        "34"
+        "80",
+        "50"
       ],
       "ResetOnInit": true
     },
@@ -349,7 +349,7 @@
       "PowerHint": "CAMERA_STREAMING",
       "Node": "CPUBWIOPercent",
       "Duration": 0,
-      "Value": "68"
+      "Value": "80"
     },
     {
       "PowerHint": "CAMERA_STREAMING",
@@ -391,7 +391,7 @@
       "PowerHint": "CAMERA_STREAMING_60FPS",
       "Node": "CPUBWIOPercent",
       "Duration": 0,
-      "Value": "68"
+      "Value": "80"
     },
     {
       "PowerHint": "CAMERA_STREAMING_60FPS",
@@ -421,7 +421,7 @@
       "PowerHint": "CAMERA_STREAMING_4K",
       "Node": "CPUBWIOPercent",
       "Duration": 0,
-      "Value": "68"
+      "Value": "80"
     },
     {
       "PowerHint": "CAMERA_STREAMING_4K",
