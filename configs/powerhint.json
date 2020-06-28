@@ -160,7 +160,7 @@
       "Name": "CPUBWMinFreq",
       "Path": "/sys/class/devfreq/soc:qcom,cpubw/min_freq",
       "Values": [
-        "13763",
+        "11863",
         "5195",
         "762"
       ],
@@ -283,7 +283,7 @@
       "PowerHint": "LAUNCH",
       "Node": "CPUBWMinFreq",
       "Duration": 5000,
-      "Value": "13763"
+      "Value": "11863"
     },
     {
       "PowerHint": "LAUNCH",
