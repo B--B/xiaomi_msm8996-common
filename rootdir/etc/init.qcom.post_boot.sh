@@ -3609,6 +3609,7 @@ case "$target" in
         # Set up schedtune
         echo 1 > /dev/stune/top-app/schedtune.prefer_idle
         echo 30 > /dev/stune/top-app/schedtune.sched_boost
+        echo 1 > /dev/stune/foreground/schedtune.prefer_idle
         # Set up dynamic stune boost
         echo 3000 > /sys/module/cpu_boost/parameters/dynamic_stune_boost_ms
         echo 10 > /sys/module/cpu_boost/parameters/dynamic_stune_boost
