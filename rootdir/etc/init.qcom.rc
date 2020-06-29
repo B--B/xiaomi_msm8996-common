@@ -498,6 +498,7 @@ on property:persist.env.fastdorm.enabled=true
 service irsc_util /vendor/bin/irsc_util "/vendor/etc/sec_config"
     class core
     user root
+    writepid /dev/cpuset/system-background/tasks
     oneshot
 
 service vendor.bt-dun /system/bin/dun-server /dev/smd7 /dev/rfcomm0
@@ -944,6 +945,7 @@ service vendor.power_off_alarm /vendor/bin/power_off_alarm
     class core
     group system
     disabled
+    writepid /dev/cpuset/system-background/tasks
     oneshot
 
 service vendor.hbtp /vendor/bin/hbtp_daemon
