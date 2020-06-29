@@ -1,7 +1,7 @@
 {
     "Sensors":[
         {
-            "Name":"tsens_tz_sensor3",
+            "Name":"tsens_tz_sensor4",
             "Type":"CPU",
             "HotThreshold":[
                 "NAN",
@@ -16,7 +16,7 @@
             "Multiplier":0.1
         },
         {
-            "Name":"tsens_tz_sensor5",
+            "Name":"tsens_tz_sensor6",
             "Type":"CPU",
             "HotThreshold":[
                 "NAN",
@@ -31,7 +31,7 @@
             "Multiplier":0.1
         },
         {
-            "Name":"tsens_tz_sensor8",
+            "Name":"tsens_tz_sensor9",
             "Type":"CPU",
             "HotThreshold":[
                 "NAN",
@@ -46,7 +46,7 @@
             "Multiplier":0.1
         },
         {
-            "Name":"tsens_tz_sensor10",
+            "Name":"tsens_tz_sensor11",
             "Type":"CPU",
             "HotThreshold":[
                 "NAN",
@@ -61,7 +61,7 @@
             "Multiplier":0.1
         },
         {
-            "Name":"tsens_tz_sensor13",
+            "Name":"tsens_tz_sensor15",
             "Type":"GPU",
             "HotThreshold":[
                 "NAN",
