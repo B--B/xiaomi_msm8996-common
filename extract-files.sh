@@ -96,6 +96,12 @@ function blob_fixup() {
         sed -i "s|/data/vendor/camera/cam_socket%d|/data/vendor/qcam/camer_socket%d|g" "${2}"
         ;;
 
+    # Assign all daemons to system-background cpuset
+    vendor/etc/init/*.rc)
+        vi -escwq "${2}"
+        echo "    writepid /dev/cpuset/system-background/tasks" >> "${2}"
+        ;;
+
     esac
 }
 
