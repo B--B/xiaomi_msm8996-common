@@ -193,4 +193,8 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 # GPS
 PRODUCT_PROPERTY_OVERRIDES += \
-   persist.backup.ntpServer=0.pool.ntp.org
+    persist.backup.ntpServer=0.pool.ntp.org
+
+# Zygote preforking
+PRODUCT_PROPERTY_OVERRIDES += \
+    persist.device_config.runtime_native.usap_pool_enabled=true
