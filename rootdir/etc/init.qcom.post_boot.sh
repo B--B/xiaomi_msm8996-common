@@ -4545,7 +4545,7 @@ case "$target" in
         echo 1 > /sys/devices/system/cpu/cpu2/online
         # configure governor settings for big cluster
         echo "schedutil" > /sys/devices/system/cpu/cpu2/cpufreq/scaling_governor
-        echo 1000 > /sys/devices/system/cpu/cpufreq/policy2/schedutil/down_rate_limit_us
+        echo 10000 > /sys/devices/system/cpu/cpufreq/policy2/schedutil/down_rate_limit_us
         echo 500 > /sys/devices/system/cpu/cpufreq/policy2/schedutil/up_rate_limit_us
         # Set up schedtune
         echo 1 > /dev/stune/top-app/schedtune.prefer_idle
