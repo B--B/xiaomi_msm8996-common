@@ -134,10 +134,8 @@ case "$baseband" in
         "concurrent")
             start vendor.dataqti
             start vendor.dataadpl
-            start vendor.netmgrd
             ;;
         *)
-            start vendor.netmgrd
             ;;
     esac
 esac
