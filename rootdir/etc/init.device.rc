@@ -142,6 +142,13 @@ on property:sys.boot_completed=1
     write /dev/cpuset/system-background/cpus 0-1
     write /dev/cpuset/restricted/cpus 0-1
 
+    # Setup runtime blkio
+    # value for group_idle is us
+    write /dev/blkio/blkio.weight 1000
+    write /dev/blkio/background/blkio.weight 200
+    write /dev/blkio/blkio.group_idle 2000
+    write /dev/blkio/background/blkio.group_idle 0
+
     # Tune vm
     write /proc/sys/vm/user_reserve_kbytes 0
     write /proc/sys/vm/admin_reserve_kbytes 0
