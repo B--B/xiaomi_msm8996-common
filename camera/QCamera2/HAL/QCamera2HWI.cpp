@@ -7402,7 +7402,6 @@ int32_t QCamera2HardwareInterface::addCaptureChannel()
         if (needSyncCB(CAM_STREAM_TYPE_PREVIEW) == TRUE) {
         pChannel->setStreamSyncCB(CAM_STREAM_TYPE_PREVIEW,
                 synchronous_stream_cb_routine);
-	}
     }
 
     if (!mParameters.getofflineRAW()) {
