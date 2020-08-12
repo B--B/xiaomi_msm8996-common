@@ -327,6 +327,10 @@ PRODUCT_PACKAGES += \
     libstagefright_omx.vendor \
     libOmxG711Enc
 
+# Perf
+PRODUCT_PACKAGES += \
+    libqti-perfd-client
+
 # Power
 PRODUCT_PACKAGES += \
     android.hardware.power@1.3-service.xiaomi-libperfmgr
