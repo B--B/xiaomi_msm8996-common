@@ -380,6 +380,10 @@ PRODUCT_BOOT_JARS += \
 PRODUCT_SOONG_NAMESPACES += \
     device/xiaomi/msm8996-common
 
+# Tethering
+PRODUCT_PACKAGES += \
+    TetheringConfigOverlay
+
 # Trust HAL
 PRODUCT_PACKAGES += \
     vendor.lineage.trust@1.0-service
