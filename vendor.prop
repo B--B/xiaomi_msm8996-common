@@ -46,6 +46,11 @@ camera.disable_zsl_mode=1
 # CNE
 persist.vendor.cne.feature=1
 
+# Dalvik
+dalvik.vm.dex2oat-filter=speed
+dalvik.vm.image-dex2oat-filter=speed
+dalvik.vm.dex2oat64.enabled=true
+
 # Data modules
 ro.vendor.use_data_netmgrd=true
 
