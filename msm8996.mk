@@ -109,7 +109,9 @@ PRODUCT_PACKAGES += \
     libqcomvisualizer \
     libqcomvoiceprocessing \
     libvolumelistener \
-    tinymix
+    tinymix.vendor \
+    libhfp \
+    libsndmonitor
 
 # Bluetooth
 PRODUCT_PACKAGES += \
