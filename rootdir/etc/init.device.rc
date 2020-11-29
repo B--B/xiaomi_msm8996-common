@@ -206,9 +206,9 @@ service thermal-engine /system/vendor/bin/thermal-engine -c ${sys.qcom.thermalcf
     group root system
     writepid /dev/cpuset/system-background/tasks
 
-service adsprpcd /system/vendor/bin/adsprpcd
+service vendor.adsprpcd /system/vendor/bin/adsprpcd
     class main
-    user media
+    user system
     group media
     writepid /dev/cpuset/system-background/tasks
 
