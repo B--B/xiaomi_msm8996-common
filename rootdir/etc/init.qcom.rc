@@ -437,9 +437,9 @@ service thermal-engine /vendor/bin/thermal-engine -c ${sys.qcom.thermalcfg:-/ven
     group system root diag
     task_profiles ServiceCapacityLow
 
-service adsprpcd /vendor/bin/adsprpcd
+service vendor.adsprpcd /vendor/bin/adsprpcd
     class main
-    user media
+    user system
     group media
 
 # imsdatadaemon starts with root and UID will be downgraded to SYSTEM.
