@@ -271,9 +271,10 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 # Set lmkd options
 PRODUCT_PROPERTY_OVERRIDES += \
-    ro.lmk.kill_timeout_ms = 100 \
-    ro.lmk.use_minfree_levels = true \
-    ro.lmk.log_stats = true
+    ro.lmk.critical_upgrade=true \
+    ro.lmk.upgrade_pressure=40 \
+    ro.lmk.downgrade_pressure=60 \
+    ro.lmk.use_psi=false
 
 # GPS
 PRODUCT_PROPERTY_OVERRIDES += \
