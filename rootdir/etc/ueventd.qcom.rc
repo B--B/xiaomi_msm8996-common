@@ -344,10 +344,6 @@ firmware_directories /vendor/firmware_mnt/image/
 # Capacitive touch emulation device
 /dev/captouch             0666   system     system
 
-#ImproveTouch device
-/dev/hbtp_input           0660   system     system
-/dev/hbtp_vm              0660   system     system
-
 # IR device
 /dev/lirc0                0660   system     system
 
