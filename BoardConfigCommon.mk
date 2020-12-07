@@ -40,7 +40,7 @@ TARGET_NO_BOOTLOADER := true
 
 # Kernel
 BOARD_KERNEL_BASE := 0x80000000
-BOARD_KERNEL_CMDLINE := androidboot.hardware=qcom ehci-hcd.park=3
+BOARD_KERNEL_CMDLINE := androidboot.hardware=qcom ehci-hcd.park=3 kpti=off
 BOARD_KERNEL_CMDLINE += loop.max_part=7 androidboot.selinux=permissive
 BOARD_KERNEL_IMAGE_NAME := Image.gz-dtb
 BOARD_KERNEL_PAGESIZE := 4096
