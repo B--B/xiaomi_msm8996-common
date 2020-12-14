@@ -219,15 +219,6 @@ std::map<std::string, SensorInfo> ParseSensorInfo(std::string_view config_path) 
         LOG(INFO) << "Sensor[" << name << "]'s Monitor: " << std::boolalpha << is_monitor
                   << std::noboolalpha;
 
-        bool send_powerhint = false;
-        if (sensors[i]["SendPowerHint"].empty() || !sensors[i]["SendPowerHint"].isBool()) {
-            LOG(INFO) << "Failed to read Sensor[" << name << "]'s SendPowerHint, set to 'false'";
-        } else {
-            send_powerhint = sensors[i]["SendPowerHint"].asBool();
-        }
-        LOG(INFO) << "Sensor[" << name << "]'s SendPowerHint: " << std::boolalpha << send_powerhint
-                  << std::noboolalpha;
-
         sensors_parsed[name] = {
                 .type = sensor_type,
                 .hot_thresholds = hot_thresholds,
@@ -237,7 +228,6 @@ std::map<std::string, SensorInfo> ParseSensorInfo(std::string_view config_path) 
                 .vr_threshold = vr_threshold,
                 .multiplier = multiplier,
                 .is_monitor = is_monitor,
-                .send_powerhint = send_powerhint,
         };
         ++total_parsed;
     }
