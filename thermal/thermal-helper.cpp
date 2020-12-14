@@ -25,6 +25,7 @@
 #include <android-base/properties.h>
 #include <android-base/stringprintf.h>
 #include <android-base/strings.h>
+#include <android/binder_manager.h>
 #include <hidl/HidlTransportSupport.h>
 
 #include "thermal-helper.h"
@@ -54,6 +55,7 @@ constexpr std::string_view kConfigDefaultFileName("thermal_info_config.json");
 
 namespace {
 using android::base::StringPrintf;
+using android::hardware::thermal::V2_0::toString;
 
 /*
  * Pixel don't offline CPU, so std::thread::hardware_concurrency(); should work.
@@ -167,6 +169,91 @@ std::map<std::string, std::string> parseThermalPathMap(std::string_view prefix) 
 }
 
 }  // namespace
+PowerHalService::PowerHalService()
+    : power_hal_aidl_exist_(true), power_hal_aidl_(nullptr), power_hal_ext_aidl_(nullptr) {
+    connect();
+}
+
+bool PowerHalService::connect() {
+    std::lock_guard<std::mutex> lock(lock_);
+    if (!power_hal_aidl_exist_)
+        return false;
+
+    if (power_hal_aidl_ != nullptr)
+        return true;
+
+    const std::string kInstance = std::string(IPower::descriptor) + "/default";
+    ndk::SpAIBinder power_binder = ndk::SpAIBinder(AServiceManager_getService(kInstance.c_str()));
+    ndk::SpAIBinder ext_power_binder;
+
+    if (power_binder.get() == nullptr) {
+        LOG(ERROR) << "Cannot get Power Hal Binder";
+        power_hal_aidl_exist_ = false;
+        return false;
+    }
+
+    power_hal_aidl_ = IPower::fromBinder(power_binder);
+
+    if (power_hal_aidl_ == nullptr) {
+        power_hal_aidl_exist_ = false;
+        LOG(ERROR) << "Cannot get Power Hal AIDL" << kInstance.c_str();
+        return false;
+    }
+
+    if (STATUS_OK != AIBinder_getExtension(power_binder.get(), ext_power_binder.getR()) ||
+        ext_power_binder.get() == nullptr) {
+        LOG(ERROR) << "Cannot get Power Hal Extension Binder";
+        power_hal_aidl_exist_ = false;
+        return false;
+    }
+
+    power_hal_ext_aidl_ = IPowerExt::fromBinder(ext_power_binder);
+    if (power_hal_ext_aidl_ == nullptr) {
+        LOG(ERROR) << "Cannot get Power Hal Extension AIDL";
+        power_hal_aidl_exist_ = false;
+    }
+
+    return true;
+}
+
+bool PowerHalService::isModeSupported(const std::string &type, const ThrottlingSeverity &t) {
+    bool isSupported = false;
+    if (!isPowerHalConnected()) {
+        return false;
+    }
+    std::string power_hint = StringPrintf("THERMAL_%s_%s", type.c_str(), toString(t).c_str());
+    lock_.lock();
+    if (!power_hal_ext_aidl_->isModeSupported(power_hint, &isSupported).isOk()) {
+        LOG(ERROR) << "Fail to check supported mode, Hint: " << power_hint;
+        power_hal_aidl_exist_ = false;
+        power_hal_ext_aidl_ = nullptr;
+        power_hal_aidl_ = nullptr;
+        lock_.unlock();
+        return false;
+    }
+    lock_.unlock();
+    return isSupported;
+}
+
+void PowerHalService::setMode(const std::string &type, const ThrottlingSeverity &t,
+                              const bool &enable) {
+    if (!isPowerHalConnected()) {
+        return;
+    }
+
+    std::string power_hint = StringPrintf("THERMAL_%s_%s", type.c_str(), toString(t).c_str());
+    LOG(INFO) << "Send Hint " << power_hint << " Enable: " << std::boolalpha << enable;
+    lock_.lock();
+    if (!power_hal_ext_aidl_->setMode(power_hint, enable).isOk()) {
+        LOG(ERROR) << "Fail to set mode, Hint: " << power_hint;
+        power_hal_aidl_exist_ = false;
+        power_hal_ext_aidl_ = nullptr;
+        power_hal_aidl_ = nullptr;
+        lock_.unlock();
+        return;
+    }
+    lock_.unlock();
+}
 
 /*
  * Populate the sensor_name_to_file_map_ map by walking through the file tree,
@@ -188,6 +275,7 @@ ThermalHelper::ThermalHelper(const NotificationCallback &cb)
             .severity = ThrottlingSeverity::NONE,
             .prev_hot_severity = ThrottlingSeverity::NONE,
             .prev_cold_severity = ThrottlingSeverity::NONE,
+            .prev_hint_severity = ThrottlingSeverity::NONE,
         };
     }
 
@@ -198,17 +286,6 @@ ThermalHelper::ThermalHelper(const NotificationCallback &cb)
     if (!is_initialized_) {
         LOG(FATAL) << "ThermalHAL could not be initialized properly.";
     }
-    std::set<std::string> cdev_paths;
-    std::transform(cooling_device_info_map_.cbegin(), cooling_device_info_map_.cend(),
-                   std::inserter(cdev_paths, cdev_paths.begin()),
-                   [this](std::pair<std::string, const CoolingType> const &cdev) {
-                       std::string path =
-                               cooling_devices_.getThermalFilePath(std::string_view(cdev.first));
-                       if (!path.empty())
-                           return path;
-                       else
-                           return std::string();
-                   });
     std::set<std::string> monitored_sensors;
     std::transform(sensor_info_map_.cbegin(), sensor_info_map_.cend(),
                    std::inserter(monitored_sensors, monitored_sensors.begin()),
@@ -219,12 +296,18 @@ ThermalHelper::ThermalHelper(const NotificationCallback &cb)
                            return std::string();
                    });
 
-    thermal_watcher_->registerFilesToWatch(monitored_sensors, cdev_paths, initializeTrip(tz_map));
+    thermal_watcher_->registerFilesToWatch(monitored_sensors, initializeTrip(tz_map));
 
     // Need start watching after status map initialized
     is_initialized_ = thermal_watcher_->startWatchingDeviceFiles();
     if (!is_initialized_) {
         LOG(FATAL) << "ThermalHAL could not start watching thread properly.";
+    }
+
+    if (!connectToPowerHal()) {
+        LOG(ERROR) << "Fail to connect to Power Hal";
+    } else {
+        updateSupportedPowerHints();
     }
 }
 
@@ -615,6 +698,7 @@ bool ThermalHelper::thermalWatcherCallbackFunc(const std::set<std::string> &ueve
         }
         if (sensor_status.severity != ThrottlingSeverity::NONE) {
             thermal_triggered = true;
+            LOG(INFO) << temp.name << ": " << temp.value;
         }
     }
     if (!temps.empty() && cb_) {
@@ -624,6 +708,64 @@ bool ThermalHelper::thermalWatcherCallbackFunc(const std::set<std::string> &ueve
     return thermal_triggered;
 }
 
+bool ThermalHelper::connectToPowerHal() {
+    return power_hal_service_.connect();
+}
+
+void ThermalHelper::updateSupportedPowerHints() {
+    for (auto const &name_status_pair : sensor_info_map_) {
+        if (!name_status_pair.second.send_powerhint) {
+            continue;
+        }
+        ThrottlingSeverity current_severity = ThrottlingSeverity::NONE;
+        for (const auto &severity : hidl_enum_range<ThrottlingSeverity>()) {
+            LOG(ERROR) << "sensor: " << name_status_pair.first
+                       << " current_severity :" << toString(current_severity) << " severity "
+                       << toString(severity);
+            if (severity == ThrottlingSeverity::NONE) {
+                supported_powerhint_map_[name_status_pair.first][ThrottlingSeverity::NONE] =
+                        ThrottlingSeverity::NONE;
+                continue;
+            }
+
+            bool isSupported = false;
+            ndk::ScopedAStatus isSupportedResult;
+
+            if (power_hal_service_.isPowerHalExtConnected()) {
+                isSupported = power_hal_service_.isModeSupported(name_status_pair.first, severity);
+            }
+            if (isSupported)
+                current_severity = severity;
+            supported_powerhint_map_[name_status_pair.first][severity] = current_severity;
+        }
+    }
+}
+
+void ThermalHelper::sendPowerExtHint(const Temperature_2_0 &t) {
+    std::lock_guard<std::shared_mutex> lock(sensor_status_map_mutex_);
+    if (!isAidlPowerHalExist())
+        return;
+
+    if (!sensor_info_map_.at(t.name).send_powerhint)
+        return;
+
+    ThrottlingSeverity prev_hint_severity;
+    prev_hint_severity = sensor_status_map_.at(t.name).prev_hint_severity;
+    ThrottlingSeverity current_hint_severity = supported_powerhint_map_[t.name][t.throttlingStatus];
+
+    if (prev_hint_severity == current_hint_severity)
+        return;
+
+    if (prev_hint_severity != ThrottlingSeverity::NONE) {
+        power_hal_service_.setMode(t.name, prev_hint_severity, false);
+    }
+
+    if (current_hint_severity != ThrottlingSeverity::NONE) {
+        power_hal_service_.setMode(t.name, current_hint_severity, true);
+    }
+
+    sensor_status_map_[t.name].prev_hint_severity = current_hint_severity;
+}
 }  // namespace implementation
 }  // namespace V2_0
 }  // namespace thermal
