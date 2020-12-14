@@ -40,8 +40,6 @@
 #include <unordered_map>
 #include <vector>
 
-#include <aidl/android/hardware/power/IPower.h>
-#include <aidl/google/hardware/power/extension/pixel/IPowerExt.h>
 #include <android/hardware/thermal/2.0/IThermal.h>
 
 #include "utils/config_parser.h"
@@ -54,8 +52,6 @@ namespace thermal {
 namespace V2_0 {
 namespace implementation {
 
-using ::aidl::android::hardware::power::IPower;
-using ::aidl::google::hardware::power::extension::pixel::IPowerExt;
 using ::android::hardware::hidl_vec;
 using ::android::hardware::thermal::V1_0::CpuUsage;
 using ::android::hardware::thermal::V2_0::CoolingType;
@@ -76,25 +72,6 @@ struct SensorStatus {
     ThrottlingSeverity severity;
     ThrottlingSeverity prev_hot_severity;
     ThrottlingSeverity prev_cold_severity;
-    ThrottlingSeverity prev_hint_severity;
-};
-
-class PowerHalService {
-  public:
-    PowerHalService();
-    ~PowerHalService() = default;
-    bool connect();
-    bool isAidlPowerHalExist() { return power_hal_aidl_exist_; }
-    bool isModeSupported(const std::string &type, const ThrottlingSeverity &t);
-    bool isPowerHalConnected() { return power_hal_aidl_ != nullptr; }
-    bool isPowerHalExtConnected() { return power_hal_ext_aidl_ != nullptr; }
-    void setMode(const std::string &type, const ThrottlingSeverity &t, const bool &enable);
-
-  private:
-    bool power_hal_aidl_exist_;
-    std::shared_ptr<IPower> power_hal_aidl_;
-    std::shared_ptr<IPowerExt> power_hal_ext_aidl_;
-    std::mutex lock_;
 };
 
 class ThermalHelper {
@@ -128,12 +105,6 @@ class ThermalHelper {
     // Get SensorInfo Map
     const std::map<std::string, SensorInfo> &GetSensorInfoMap() const { return sensor_info_map_; }
 
-    void sendPowerExtHint(const Temperature_2_0 &t);
-
-    bool isAidlPowerHalExist() { return power_hal_service_.isAidlPowerHalExist(); }
-    bool isPowerHalConnected() { return power_hal_service_.isPowerHalConnected(); }
-    bool isPowerHalExtConnected() { return power_hal_service_.isPowerHalExtConnected(); }
-
   private:
     bool initializeSensorMap(const std::map<std::string, std::string> &path_map);
     bool initializeCoolingDevices(const std::map<std::string, std::string> &path_map);
@@ -148,9 +119,6 @@ class ThermalHelper {
         ThrottlingSeverity prev_hot_severity, ThrottlingSeverity prev_cold_severity,
         float value) const;
 
-    bool connectToPowerHal();
-    void updateSupportedPowerHints();
-
     sp<ThermalWatcher> thermal_watcher_;
     ThermalFiles thermal_sensors_;
     ThermalFiles cooling_devices_;
@@ -158,9 +126,6 @@ class ThermalHelper {
     const NotificationCallback cb_;
     const std::map<std::string, CoolingType> cooling_device_info_map_;
     const std::map<std::string, SensorInfo> sensor_info_map_;
-    std::map<std::string, std::map<ThrottlingSeverity, ThrottlingSeverity>>
-            supported_powerhint_map_;
-    PowerHalService power_hal_service_;
 
     mutable std::shared_mutex sensor_status_map_mutex_;
     std::map<std::string, SensorStatus> sensor_status_map_;

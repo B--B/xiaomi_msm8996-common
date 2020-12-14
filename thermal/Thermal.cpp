@@ -241,8 +241,6 @@ void Thermal::sendThermalChangedCallback(const std::vector<Temperature_2_0> &tem
                   << " Type: " << android::hardware::thermal::V2_0::toString(t.type)
                   << " Name: " << t.name << " CurrentValue: " << t.value << " ThrottlingStatus: "
                   << android::hardware::thermal::V2_0::toString(t.throttlingStatus);
-
-        thermal_helper_.sendPowerExtHint(t);
         callbacks_.erase(
             std::remove_if(callbacks_.begin(), callbacks_.end(),
                            [&](const CallbackSetting &c) {
@@ -378,24 +376,6 @@ Return<void> Thermal::debug(const hidl_handle &handle, const hidl_vec<hidl_strin
                     dump_buf << " Monitor: " << std::boolalpha << name_info_pair.second.is_monitor
                              << std::noboolalpha << std::endl;
                 }
-            }
-            {
-                dump_buf << "SendPowerHint:" << std::endl;
-                const auto &map = thermal_helper_.GetSensorInfoMap();
-                for (const auto &name_info_pair : map) {
-                    dump_buf << " Name: " << name_info_pair.first;
-                    dump_buf << " SendPowerHint: " << std::boolalpha
-                             << name_info_pair.second.send_powerhint << std::noboolalpha
-                             << std::endl;
-                }
-            }
-            {
-                dump_buf << "AIDL Power Hal exist: " << std::boolalpha
-                         << thermal_helper_.isAidlPowerHalExist() << std::endl;
-                dump_buf << "AIDL Power Hal connected: " << std::boolalpha
-                         << thermal_helper_.isPowerHalConnected() << std::endl;
-                dump_buf << "AIDL Power Hal Ext connected: " << std::boolalpha
-                         << thermal_helper_.isPowerHalExtConnected() << std::endl;
             }
         }
         std::string buf = dump_buf.str();

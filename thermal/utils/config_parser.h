@@ -45,7 +45,6 @@ struct SensorInfo {
     float vr_threshold;
     float multiplier;
     bool is_monitor;
-    bool send_powerhint;
 };
 
 std::map<std::string, SensorInfo> ParseSensorInfo(std::string_view config_path);
