@@ -335,12 +335,6 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     Recorder
 
-# RCS
-PRODUCT_PACKAGES += \
-    com.android.ims.rcsmanager \
-    PresencePolling \
-    RcsService
-
 # Recovery
 PRODUCT_PACKAGES += \
     librecovery_updater_xiaomi
