@@ -105,6 +105,10 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.vendor.bluetooth.emb_wp_mode=false \
     ro.vendor.bt.bdaddr_path=/mnt/vendor/persist/bluetooth/bt_mac
 
+# Boot
+PRODUCT_PROPERTY_OVERRIDES += \
+    sys.vendor.shutdown.waittime=500
+
 # Camera
 PRODUCT_PROPERTY_OVERRIDES += \
     camera.disable_zsl_mode=1
