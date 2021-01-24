@@ -15,7 +15,7 @@
  */
 
 #define ATRACE_TAG (ATRACE_TAG_POWER | ATRACE_TAG_HAL)
-#define LOG_TAG "android.hardware.power-service.xiaomi-msm8996-libperfmgr"
+#define LOG_TAG "powerhal-libperfmgr"
 
 #include "Power.h"
 
@@ -25,10 +25,12 @@
 #include <android-base/logging.h>
 #include <android-base/properties.h>
 #include <android-base/strings.h>
+#include <cutils/properties.h>
 
 #include <utils/Log.h>
 #include <utils/Trace.h>
 
+#include "adpf/PowerHintSession.h"
 #include "disp-power/DisplayLowPower.h"
 
 #ifndef TAP_TO_WAKE_NODE
@@ -42,34 +44,39 @@ namespace power {
 namespace impl {
 namespace pixel {
 
+using ::aidl::google::hardware::power::impl::pixel::adpf::PowerHintSession;
+
 constexpr char kPowerHalStateProp[] = "vendor.powerhal.state";
 constexpr char kPowerHalRenderingProp[] = "vendor.powerhal.rendering";
+constexpr char kPowerHalAdpfRateProp[] = "vendor.powerhal.adpf.rate";
+constexpr int64_t kPowerHalAdpfRateDefault = -1;
 
 Power::Power(std::shared_ptr<HintManager> hm, std::shared_ptr<DisplayLowPower> dlpw)
     : mHintManager(hm),
       mDisplayLowPower(dlpw),
       mInteractionHandler(nullptr),
-      mSustainedPerfModeOn(false) {
+      mSustainedPerfModeOn(false),
+      mAdpfRate(::android::base::GetIntProperty(kPowerHalAdpfRateProp, kPowerHalAdpfRateDefault)) {
     mInteractionHandler = std::make_unique<InteractionHandler>(mHintManager);
     mInteractionHandler->Init();
 
     std::string state = ::android::base::GetProperty(kPowerHalStateProp, "");
     if (state == "SUSTAINED_PERFORMANCE") {
-        ALOGI("Initialize with SUSTAINED_PERFORMANCE on");
+        LOG(INFO) << "Initialize with SUSTAINED_PERFORMANCE on";
         mHintManager->DoHint("SUSTAINED_PERFORMANCE");
         mSustainedPerfModeOn = true;
     } else {
-        ALOGI("Initialize PowerHAL");
+        LOG(INFO) << "Initialize PowerHAL";
     }
 
     state = ::android::base::GetProperty(kPowerHalRenderingProp, "");
     if (state == "EXPENSIVE_RENDERING") {
-        ALOGI("Initialize with EXPENSIVE_RENDERING on");
+        LOG(INFO) << "Initialize with EXPENSIVE_RENDERING on";
         mHintManager->DoHint("EXPENSIVE_RENDERING");
     }
 
     // Now start to take powerhint
-    ALOGI("PowerHAL ready to process hints");
+    LOG(INFO) << "PowerHAL ready to take hints, Adpf update rate: " << mAdpfRate;
 }
 
 ndk::ScopedAStatus Power::setMode(Mode type, bool enabled) {
@@ -166,6 +173,34 @@ ndk::ScopedAStatus Power::isBoostSupported(Boost type, bool *_aidl_return) {
     bool supported = mHintManager->IsHintSupported(toString(type));
     LOG(INFO) << "Power boost " << toString(type) << " isBoostSupported: " << supported;
     *_aidl_return = supported;
+    return ndk::ScopedAStatus::ok();
+}
+
+ndk::ScopedAStatus Power::createHintSession(int32_t tgid, int32_t uid,
+                                            const std::vector<int32_t> &threadIds,
+                                            int64_t durationNanos,
+                                            std::shared_ptr<IPowerHintSession> *_aidl_return) {
+    if (mAdpfRate == -1) {
+        *_aidl_return = nullptr;
+        return ndk::ScopedAStatus::fromExceptionCode(EX_UNSUPPORTED_OPERATION);
+    }
+    if (threadIds.size() == 0) {
+        LOG(ERROR) << "Error: threadIds.size() shouldn't be " << threadIds.size();
+        *_aidl_return = nullptr;
+        return ndk::ScopedAStatus::fromExceptionCode(EX_ILLEGAL_ARGUMENT);
+    }
+    std::shared_ptr<IPowerHintSession> session =
+            ndk::SharedRefBase::make<PowerHintSession>(tgid, uid, threadIds, durationNanos);
+    *_aidl_return = session;
+    return ndk::ScopedAStatus::ok();
+}
+
+ndk::ScopedAStatus Power::getHintSessionPreferredRate(int64_t *outNanoseconds) {
+    *outNanoseconds = mAdpfRate;
+    if (mAdpfRate == -1) {
+        return ndk::ScopedAStatus::fromExceptionCode(EX_UNSUPPORTED_OPERATION);
+    }
+
     return ndk::ScopedAStatus::ok();
 }
 
