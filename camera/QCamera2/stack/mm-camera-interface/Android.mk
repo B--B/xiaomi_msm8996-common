@@ -5,6 +5,7 @@ include $(CLEAR_VARS)
 
 LOCAL_HEADER_LIBRARIES := libhardware_headers
 LOCAL_HEADER_LIBRARIES += media_plugin_headers
+LOCAL_HEADER_LIBRARIES += camera_common_headers
 
 MM_CAM_FILES := \
         src/mm_camera_interface.c \
