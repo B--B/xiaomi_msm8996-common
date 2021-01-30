@@ -84,14 +84,6 @@ LOCAL_C_INCLUDES := \
         $(call project-path-for,qcom-media)/mm-core/inc \
         $(TARGET_OUT_HEADERS)/mm-camera-lib/cp/prebuilt
 
-LOCAL_HEADER_LIBRARIES := media_plugin_headers
-LOCAL_HEADER_LIBRARIES += libandroid_sensor_headers
-LOCAL_HEADER_LIBRARIES += libcutils_headers
-LOCAL_HEADER_LIBRARIES += libsystem_headers
-LOCAL_HEADER_LIBRARIES += libhardware_headers
-LOCAL_HEADER_LIBRARIES += camera_common_headers
-LOCAL_HEADER_LIBRARIES += display_headers
-
 #HAL 1.0 Include paths
 LOCAL_C_INCLUDES += \
         $(LOCAL_PATH)/HAL
@@ -112,7 +104,6 @@ ifneq (,$(filter msm8996 msmcobalt msmfalcon,$(TARGET_BOARD_PLATFORM)))
 endif
 
 #LOCAL_STATIC_LIBRARIES := libqcamera2_util
-LOCAL_STATIC_LIBRARIES := android.hardware.camera.common@1.0-helper
 LOCAL_C_INCLUDES += \
         $(call project-path-for,qcom-display)/libqservice
 LOCAL_SHARED_LIBRARIES := liblog libhardware libutils libcutils libdl libsync
@@ -135,7 +126,6 @@ LOCAL_HEADER_LIBRARIES += libsystem_headers
 LOCAL_HEADER_LIBRARIES += libhardware_headers
 
 LOCAL_STATIC_LIBRARIES := android.hardware.camera.common@1.0-helper
-
 
 LOCAL_MODULE_RELATIVE_PATH := hw
 LOCAL_MODULE := camera.$(TARGET_BOARD_PLATFORM)
