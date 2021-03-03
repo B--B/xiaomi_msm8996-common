@@ -190,6 +190,11 @@ PRODUCT_PROPERTY_OVERRIDES += \
     persist.vendor.radio.hw_mbn_update=1 \
     persist.vendor.radio.sw_mbn_update=1
 
+# SoC
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.soc.manufacturer=Qualcomm \
+    ro.soc.model=MSM8996
+
 # TimeService
 PRODUCT_PROPERTY_OVERRIDES += \
     persist.timed.enable=true
