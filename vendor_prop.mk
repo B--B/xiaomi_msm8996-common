@@ -144,7 +144,13 @@ PRODUCT_PROPERTY_OVERRIDES += \
     mm.enable.smoothstreaming=true \
     persist.mm.enable.prefetch=true \
     debug.stagefright.omx_default_rank.sw-audio=1 \
-    debug.stagefright.omx_default_rank=0
+    debug.stagefright.omx_default_rank=0 \
+    mm.sec.enable.smoothstreaming=true \
+    media.stagefright.audio.sink=280 \
+    vendor.mm.enable.qcom_parser=1048575 \
+    vendor.vidc.debug.level=0 \
+    vendor.vidc.disable.split.mode=1 \
+    media.settings.xml=/system/vendor/etc/media_profiles_vendor.xml
 
 # Nitz
 PRODUCT_PROPERTY_OVERRIDES += \
