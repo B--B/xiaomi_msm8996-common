@@ -276,7 +276,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 # USB
 PRODUCT_PROPERTY_OVERRIDES += \
-    sys.usb.controller=6a00000.dwc3
+    vendor.usb.controller=6a00000.dwc3
 
 # Wifi
 PRODUCT_PROPERTY_OVERRIDES += \

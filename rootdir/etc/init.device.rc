@@ -120,6 +120,14 @@ on boot
     # Battery charging knob
     chown system system /sys/class/power_supply/battery/charging_enabled
 
+    #USB controller configuration
+    setprop vendor.usb.rndis.func.name "rndis"
+    setprop vendor.usb.rmnet.func.name "rmnet_bam"
+    setprop vendor.usb.rmnet.inst.name "rmnet_bam_dmux"
+    setprop vendor.usb.dpl.inst.name "dpl_bam_dmux"
+    setprop vendor.usb.qdss.inst.name "qdss"
+    setprop vendor.usb.diag.func.name "diag"
+
 on property:sys.boot_completed=1
     # Enable GPU powersaving
     write /sys/class/kgsl/kgsl-3d0/bus_split 1
@@ -144,7 +152,6 @@ on property:sys.boot_completed=1
 
 on charger
     start vendor.hvdcp_opti
-    setprop sys.usb.configfs 1
 
     wait /dev/block/platform/soc/${ro.boot.bootdevice}
     symlink /dev/block/platform/soc/${ro.boot.bootdevice} /dev/block/bootdevice

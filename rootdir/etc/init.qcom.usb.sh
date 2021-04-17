@@ -1,5 +1,5 @@
 #!/vendor/bin/sh
-# Copyright (c) 2012-2018, The Linux Foundation. All rights reserved.
+# Copyright (c) 2012-2018, 2020 The Linux Foundation. All rights reserved.
 #
 # Redistribution and use in source and binary forms, with or without
 # modification, are permitted provided that the following conditions are
@@ -42,18 +42,12 @@ soc_id=`cat /sys/devices/soc0/soc_id 2> /dev/null`
 esoc_name=`cat /sys/bus/esoc/devices/esoc0/esoc_name 2> /dev/null`
 
 target=`getprop ro.board.platform`
-product=`getprop ro.product.name`
-product=${product:(-4)}
-
-if [ -f /sys/class/android_usb/f_mass_storage/lun/nofua ]; then
-	echo 1  > /sys/class/android_usb/f_mass_storage/lun/nofua
-fi
 
 #
 # Override USB default composition
 #
 # If USB persist config not set, set default configuration
-if [ "$(getprop persist.vendor.usb.config)" == "" -a \
+if [ "$(getprop persist.vendor.usb.config)" == "" -a "$(getprop ro.build.type)" != "user" -a \
 	"$(getprop init.svc.vendor.usb-gadget-hal-1-0)" != "running" ]; then
     if [ "$esoc_name" != "" ]; then
 	  setprop persist.vendor.usb.config diag,diag_mdm,qdss,qdss_mdm,serial_cdev,dpl,rmnet,adb
@@ -70,20 +64,15 @@ if [ "$(getprop persist.vendor.usb.config)" == "" -a \
                   *)
 		  case "$soc_machine" in
 		    "SA")
-			if [ "$product" == "gvmq" ]; then
-				setprop persist.vendor.usb.config adb
-			else
-				setprop persist.vendor.usb.config diag,adb
-			fi
+	              setprop persist.vendor.usb.config diag,adb
 		    ;;
 		    *)
 	            case "$target" in
+#	              "msm8996")
+#	                  setprop persist.vendor.usb.config diag,serial_cdev,serial_tty,rmnet_ipa,mass_storage,adb
+#		      ;;
 	              "msm8909")
-			    if [ -d /config/usb_gadget ]; then
-				    setprop persist.vendor.usb.config diag,serial_cdev,rmnet,adb
-			    else
-				    setprop persist.vendor.usb.config diag,serial_smd,rmnet_qti_bam,adb
-			    fi
+		          setprop persist.vendor.usb.config diag,serial_smd,rmnet_qti_bam,adb
 		      ;;
 	              "msm8937")
 			    if [ -d /config/usb_gadget ]; then
@@ -112,7 +101,7 @@ if [ "$(getprop persist.vendor.usb.config)" == "" -a \
 	              "sdm845" | "sdm710")
 		          setprop persist.vendor.usb.config diag,serial_cdev,rmnet,dpl,adb
 		      ;;
-	              "msmnile" | "sm6150" | "trinket" | "lito" | "atoll" | "bengal")
+	              "msmnile" | "sm6150" | "trinket" | "lito" | "atoll" | "bengal" | "lahaina" | "holi")
 			  setprop persist.vendor.usb.config diag,serial_cdev,rmnet,dpl,qdss,adb
 		      ;;
 	              *)
@@ -126,6 +115,12 @@ if [ "$(getprop persist.vendor.usb.config)" == "" -a \
 	      ;;
 	  esac
       fi
+fi
+
+# This check is needed for GKI 1.0 targets where QDSS is not available
+if [ "$(getprop persist.vendor.usb.config)" == "diag,serial_cdev,rmnet,dpl,qdss,adb" -a \
+     ! -d /config/usb_gadget/g1/functions/qdss.qdss ]; then
+      setprop persist.vendor.usb.config diag,serial_cdev,rmnet,dpl,adb
 fi
 
 # Start peripheral mode on primary USB controllers for Automotive platforms
@@ -142,21 +137,11 @@ case "$soc_machine" in
     ;;
 esac
 
-# set rndis transport to BAM2BAM_IPA for 8920 and 8940
-if [ "$target" == "msm8937" ]; then
-	if [ ! -d /config/usb_gadget ]; then
-	   case "$soc_id" in
-		"313" | "320")
-		   echo BAM2BAM_IPA > /sys/class/android_usb/android0/f_rndis_qc/rndis_transports
-		;;
-		*)
-		;;
-	   esac
-	fi
-fi
-
 # check configfs is mounted or not
 if [ -d /config/usb_gadget ]; then
+	model=`getprop ro.product.model`
+	setprop vendor.usb.product_string "$model"
+
 	# ADB requires valid iSerialNumber; if ro.serialno is missing, use dummy
 	serialnumber=`cat /config/usb_gadget/g1/strings/0x409/serialnumber 2> /dev/null`
 	if [ "$serialnumber" == "" ]; then
