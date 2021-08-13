@@ -170,6 +170,18 @@ PRODUCT_PROPERTY_OVERRIDES += \
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.vendor.extension_library=libqti-perfd-client.so \
 
+# Disable iorapd
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.iorapd.enable=false
+
+# Disable iorapd perfetto tracing for app starts
+PRODUCT_PROPERTY_OVERRIDES += \
+    iorapd.perfetto.enable=false
+
+# Disable iorapd readahead for app starts
+PRODUCT_PROPERTY_OVERRIDES += \
+    iorapd.readahead.enable=false
+
 # Radio
 PRODUCT_PROPERTY_OVERRIDES += \
     DEVICE_PROVISIONED=1 \
