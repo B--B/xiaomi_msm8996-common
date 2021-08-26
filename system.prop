@@ -10,7 +10,8 @@ ro.config.vc_call_vol_steps=7
 bluetooth.hfp.client=1
 
 # Camera
-persist.camera.gyro.disable=0
+persist.camera.gyro.android=0
+persist.camera.gyro.disable=1
 persist.camera.iface.logs=0
 persist.camera.imglib.fddsp=1
 persist.camera.imglib.logs=0
