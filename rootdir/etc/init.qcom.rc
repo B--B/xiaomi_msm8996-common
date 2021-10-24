@@ -482,7 +482,7 @@ service vendor.qrtr-ns /vendor/bin/qrtr-ns -f
 service irsc_util /vendor/bin/irsc_util "/vendor/etc/sec_config"
     class core
     user root
-    writepid /dev/cpuset/system-background/tasks
+    task_profiles ServiceCapacityLow
     oneshot
 
 service qmiproxy /system/bin/qmiproxy
@@ -496,7 +496,7 @@ service vendor.sensors.qti /vendor/bin/sensors.qti
     user system
     group system
     disabled
-    writepid /dev/cpuset/system-background/tasks
+    task_profiles ServiceCapacityLow
 
 # Data Migration
 service vendor.move_wifi_data /system/bin/move_wifi_data.sh
@@ -574,7 +574,7 @@ service cnss-daemon /system/vendor/bin/cnss-daemon -n -l
     user system
     group system inet net_admin wifi
     capabilities NET_ADMIN
-    writepid /dev/cpuset/system-background/tasks
+    task_profiles ServiceCapacityLow
 
 on property:sys.shutdown.requested=*
     write /sys/kernel/shutdown_wlan/shutdown 1
@@ -606,7 +606,7 @@ service loc_launcher /system/vendor/bin/loc_launcher
     class late_start
     user gps
     group gps
-    writepid /dev/cpuset/system-background/tasks
+    task_profiles ServiceCapacityLow
 
 service qcom-sh /vendor/bin/init.qcom.sh
     class late_start
@@ -653,7 +653,7 @@ service vendor.atfwd /vendor/bin/ATFWD-daemon
     class late_start
     user system
     group system radio
-    writepid /dev/cpuset/system-background/tasks
+    task_profiles ServiceCapacityLow
 
 service hostapd_fst /vendor/bin/hw/hostapd -dd -g /data/vendor/wifi/hostapd/global
     class main
@@ -769,7 +769,7 @@ service time_daemon /vendor/bin/time_daemon
     user system
     group system
     capabilities SYS_TIME
-    writepid /dev/cpuset/system-background/tasks
+    task_profiles ServiceCapacityLow
 
 # Set vendor-ril lib path based on Meta version
 on property:vendor.rild.libpath=*
@@ -782,7 +782,7 @@ service vendor.power_off_alarm /vendor/bin/power_off_alarm
     class core
     group system
     disabled
-    writepid /dev/cpuset/system-background/tasks
+    task_profiles ServiceCapacityLow
     oneshot
 
 service vendor.hbtp /vendor/bin/hbtp_daemon
@@ -824,5 +824,5 @@ service vendor.audio-hal /vendor/bin/hw/android.hardware.audio.service
     group audio camera drmrpc inet media mediadrm net_bt net_bt_admin net_bw_acct oem_2901 wakelock
     capabilities BLOCK_SUSPEND
     ioprio rt 4
-    writepid /dev/cpuset/foreground/tasks /dev/stune/foreground/tasks
+    task_profiles ProcessCapacityHigh HighPerformance
     onrestart restart audioserver
