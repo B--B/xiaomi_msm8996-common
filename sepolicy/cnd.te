@@ -1,4 +1,0 @@
-allow cnd wifi_prop:file { open read getattr };
-
-add_hwservice(cnd,hal_slmadapter_hwservice)
-allow dataservice_app hal_slmadapter_hwservice:hwservice_manager find;
