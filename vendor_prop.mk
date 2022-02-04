@@ -69,7 +69,8 @@ PRODUCT_PRODUCT_PROPERTIES += \
 
 # CNE
 PRODUCT_PROPERTY_OVERRIDES += \
-    persist.vendor.cne.feature=1
+    persist.vendor.cne.feature=1 \
+    persist.vendor.sys.cnd.iwlan=1
 
 # Data modules
 PRODUCT_PROPERTY_OVERRIDES += \
@@ -162,10 +163,11 @@ PRODUCT_PROPERTY_OVERRIDES += \
 PRODUCT_PROPERTY_OVERRIDES += \
     DEVICE_PROVISIONED=1 \
     rild.libpath=/vendor/lib64/libril-qc-qmi-1.so \
+    vendor.rild.libpath=/vendor/lib64/libril-qc-qmi-1.so \
     ril.subscription.types=NV,RUIM \
     ro.telephony.call_ring.multiple=false \
     ro.telephony.default_cdma_sub=0 \
-    ro.telephony.default_network=20,20 \
+    ro.telephony.default_network=22,22 \
     persist.vendor.net.doxlat=true \
     persist.vendor.radio.apm_sim_not_pwdn=1 \
     persist.vendor.radio.force_on_dc=true \
@@ -178,8 +180,10 @@ PRODUCT_PROPERTY_OVERRIDES += \
     persist.sys.fflag.override.settings_network_and_internet_v2=true \
     persist.vendor.radio.add_power_save=1 \
     telephony.lteOnCdmaDevice=1 \
-    ro.telephony.use_old_mnc_mcc_format=true \
-    persist.vendor.radio.procedure_bytes=SKIP
+    persist.vendor.radio.mt_sms_ack=30 \
+    persist.vendor.radio.procedure_bytes=SKIP \
+    persist.vendor.radio.hw_mbn_update=1 \
+    persist.vendor.radio.sw_mbn_update=1
 
 # TimeService
 PRODUCT_PROPERTY_OVERRIDES += \

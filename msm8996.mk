@@ -369,9 +369,11 @@ PRODUCT_PACKAGES += \
 
 # RIL
 PRODUCT_PACKAGES += \
-    android.hardware.radio@1.4.vendor \
-    android.hardware.radio.config@1.0.vendor \
-    android.hardware.secure_element@1.0.vendor \
+    android.hardware.radio@1.5.vendor \
+    android.hardware.radio.config@1.2.vendor \
+    android.hardware.radio.deprecated@1.0.vendor \
+    android.hardware.secure_element@1.2 \
+    android.hardware.secure_element@1.2.vendor \
     libprotobuf-cpp-full \
     librmnetctl \
     libxml2
@@ -434,6 +436,12 @@ PRODUCT_PACKAGES += \
 #VNDK
 PRODUCT_PACKAGES += \
     vndk_package
+
+# FIXME: master: compat for libprotobuf
+# See https://android-review.googlesource.com/c/platform/prebuilts/vndk/v28/+/1109518
+PRODUCT_PACKAGES += \
+    libprotobuf-cpp-full-vendorcompat \
+    libprotobuf-cpp-lite-vendorcompat
 
 # WiFi
 PRODUCT_PACKAGES += \
