@@ -163,10 +163,8 @@ vendor/lib/vendor.qti.hardware.tui_comm@1.0.so|933eb7026797f3dadad3d10fd69443b11
 vendor/lib64/vendor.qti.hardware.tui_comm@1.0.so|16baab27397ad493e845515c20ac0c0c063c775d
 
 # Gatekeeper - from LA.UM.8.6.r1-04400-89xx.0
-vendor/bin/hw/android.hardware.gatekeeper@1.0-service-qti
-vendor/etc/init/android.hardware.gatekeeper@1.0-service-qti.rc
-vendor/lib/hw/android.hardware.gatekeeper@1.0-impl-qti.so
-vendor/lib64/hw/android.hardware.gatekeeper@1.0-impl-qti.so
+vendor/lib/hw/gatekeeper.msm8953.so:vendor/lib/hw/gatekeeper.msm8996.so|73b6ae8dfe405c2f20af1ef9364bd37eb9809438
+vendor/lib64/hw/gatekeeper.msm8953.so:vendor/lib64/hw/gatekeeper.msm8996.so|3b72f1b6c336201a160317810de34d346fc411e6
 
 # GPS - from LA.UM.8.6.r1-04400-89xx.0
 etc/permissions/com.qti.location.sdk.xml
