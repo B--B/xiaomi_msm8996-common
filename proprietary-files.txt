@@ -300,6 +300,14 @@ vendor/firmware/a530v2_seq.fw2
 vendor/firmware/a530v3_gpmu.fw2
 vendor/firmware/a530v3_seq.fw2
 
+# Hotword enrollment - from qssi-user 11 RKQ1.200826.002-21.6.2 release-keys
+-product/priv-app/HotwordEnrollmentOKGoogleHEXAGON/HotwordEnrollmentOKGoogleHEXAGON.apk;PRESIGNED
+-product/priv-app/HotwordEnrollmentXGoogleHEXAGON/HotwordEnrollmentXGoogleHEXAGON.apk;PRESIGNED
+system_ext/etc/permissions/com.android.hotwordenrollment.common.util.xml
+system_ext/framework/com.android.hotwordenrollment.common.util.jar
+product/etc/permissions/privapp-permissions-google-hotword.xml
+product/etc/sysconfig/hotword-hiddenapi-package-whitelist.xml
+
 # Media - from LA.UM.8.6.r1-04400-89xx.0
 lib/extractors/libmmparserextractor.so
 lib/libFileMux.so
