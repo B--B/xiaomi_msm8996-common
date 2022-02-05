@@ -571,12 +571,16 @@ system_ext/lib64/vendor.qti.imsrtpservice@3.0.so|4cf9e97f526c6278c5e2136e00d1fb8
 vendor/bin/ims_rtp_daemon|3fbadd85fa6057fbc165f149d65854d76c9e5eef
 vendor/etc/init/ims_rtp_daemon_legacy.rc|104b2a879db4d3dd44e74a3d7f6e69f6972c9129
 vendor/etc/seccomp_policy/imsrtp.policy|7ea8b4012da7bde98fc91bd882185b32784793cc
+vendor/lib64/lib-dplmedia.so|797d298dab6eae56eee0ca1e523c98610eed0236
 vendor/lib64/lib-imsdpl.so|f9761582c1ff5136a040556c806a7b2edd198e88
 vendor/lib64/lib-imsvtcore.so|30bcb9198a51d1e9e27b8d3ac05a0e4ebd31fec5
 vendor/lib64/lib-rtpcommon.so|227d40ba32da82a045727b054a046d95712e6a00
 vendor/lib64/lib-rtpcore.so|0dc461a259eaedf207a5b333a0528d80af078ef4
+vendor/lib64/lib-rtpdaemoninterface.so|34a4e7ce92cfebf0c6e030408f0eb1341768ec6d
 vendor/lib64/lib-rtpsl.so|ff5b49e61349a1255aadd524c74b2237ee3a5b69
 vendor/lib64/librcc.so|e9130f3df8df5be385d245c54a1b6692736f6bf4
+vendor/lib64/vendor.qti.imsrtpservice@1.0-service-Impl.so|f4eef520bbf98e6e1ac8697ef7eef0109487dba1
+vendor/lib64/vendor.qti.imsrtpservice@1.0.so|559a2dbf409d86746ed4303f2e0089256bb91a07
 vendor/lib64/vendor.qti.imsrtpservice@3.0-service-Impl.so|068b2a657e3451dbcc6e84009c9cac0bfb6aaac0
 vendor/lib64/vendor.qti.imsrtpservice@3.0.so|460e589128fce0b0e83bb3c75aa32f7e1a9494fd
 
