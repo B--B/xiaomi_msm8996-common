@@ -313,6 +313,8 @@ PRODUCT_PACKAGES += \
 
 # OMX
 PRODUCT_PACKAGES += \
+    android.hardware.media.omx@1.0-impl \
+    android.hardware.media.omx@1.0-service \
     libc2dcolorconvert \
     libOmxAacEnc \
     libOmxAmrEnc \
@@ -324,6 +326,7 @@ PRODUCT_PACKAGES += \
     libOmxVenc \
     libstagefrighthw \
     libmm-omxcore \
+    libstagefright_omx.vendor \
     libOmxG711Enc
 
 # Power
