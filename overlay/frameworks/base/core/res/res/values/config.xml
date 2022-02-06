@@ -99,6 +99,9 @@
     -->
     <bool name="config_wifiDisplaySupportsProtectedBuffers">true</bool>
 
+    <!-- Configuration to enable non-default PDP during IWLAN -->
+    <bool name="config_feature_iwlan_enabled">true</bool>
+
     <!-- IWLAN -->
     <string name="config_wlan_data_service_package" translatable="false">vendor.qti.iwlan</string>
     <string name="config_wlan_network_service_package" translatable="false">vendor.qti.iwlan</string>
