@@ -349,6 +349,12 @@ IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
         <fqname>@1.0::IDspService/dspservice</fqname>
     </hal>
     <hal format="hidl">
+        <name>com.qualcomm.qti.wifidisplayhal</name>
+        <transport>hwbinder</transport>
+            <fqname>@1.0::IDSManager/wifidisplaydshal</fqname>
+           <fqname>@1.0::IHDCPSession/wifidisplayhdcphal</fqname>
+    </hal>
+    <hal format="hidl">
         <name>vendor.qti.hardware.radio.am</name>
         <transport>hwbinder</transport>
         <fqname>@1.0::IQcRilAudio/slot1</fqname>
