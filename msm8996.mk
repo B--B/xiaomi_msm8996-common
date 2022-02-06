@@ -362,7 +362,8 @@ PRODUCT_ODM_PROPERTIES += \
 
 # QMI
 PRODUCT_PACKAGES += \
-    libjson
+    libjson \
+    libjson.vendor
 
 # Recorder
 PRODUCT_PACKAGES += \
