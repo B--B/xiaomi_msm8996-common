@@ -387,11 +387,11 @@ vendor/lib/libsmwrapper.so
 vendor/lib64/libqti-perfd-client.so
 vendor/lib/libqti-perfd-client.so
 
-# Peripheral manager - from LA.UM.8.6.r1-04400-89xx.0
-vendor/bin/pm-proxy
-vendor/bin/pm-service
-vendor/lib64/libperipheral_client.so
-vendor/lib/libperipheral_client.so
+# Peripheral manager - from LA.UM.9.6.2.r1-04100-89xx.0
+vendor/bin/pm-proxy|782599642da7fbfc21f5e9a9965d898efeb75859
+vendor/bin/pm-service|189948eee015a50d52817d70854f531f5eed8668
+vendor/lib/libperipheral_client.so|cee6426ce3629de3488f86eb5ac9de76264e9e17
+vendor/lib64/libperipheral_client.so|0820ee76c595691935b7d8896471ea0b172b0f58
 
 # Postprocessing - from LA.UM.8.6.r1-04400-89xx.0
 vendor/bin/hw/vendor.display.color@1.0-service
