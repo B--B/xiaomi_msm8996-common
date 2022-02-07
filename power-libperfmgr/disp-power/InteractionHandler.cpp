@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-#define LOG_TAG "android.hardware.power@1.3-service.xiaomi-libperfmgr"
+#define LOG_TAG "android.hardware.power@-service.xiaomi-libperfmgr"
 #define ATRACE_TAG (ATRACE_TAG_POWER | ATRACE_TAG_HAL)
 
 #include <fcntl.h>
@@ -22,7 +22,7 @@
 #include <sys/eventfd.h>
 #include <time.h>
 #include <unistd.h>
-#include <log/log.h>
+#include <utils/Log.h>
 #include <utils/Trace.h>
 #include <memory>
 
@@ -126,10 +126,8 @@ void InteractionHandler::Acquire(int32_t duration) {
     ATRACE_CALL();
 
     std::lock_guard<std::mutex> lk(mLock);
-    if (mState == INTERACTION_STATE_UNINITIALIZED) {
-        ALOGW("%s: called while uninitialized", __func__);
+    if (mState == INTERACTION_STATE_UNINITIALIZED)
         return;
-    }
 
     int inputDuration = duration + 650;
     int finalDuration;
