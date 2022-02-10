@@ -55,10 +55,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.vendor.bluetooth.emb_wp_mode=false \
     ro.vendor.bt.bdaddr_path=/mnt/vendor/persist/bluetooth/bt_mac
 
-# BPF
-PRODUCT_PROPERTY_OVERRIDES += \
-    ro.kernel.ebpf.supported=true
-
 # Camera
 PRODUCT_PROPERTY_OVERRIDES += \
     camera.disable_zsl_mode=1
@@ -78,10 +74,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
     persist.vendor.data.mode=concurrent \
     persist.data.netmgrd.qos.enable=true \
     ro.vendor.use_data_netmgrd=true
-
-# Device released with android M
-PRODUCT_PROPERTY_OVERRIDES += \
-    ro.product.first_api_level=23
 
 # Display (Qualcomm AD)
 PRODUCT_PROPERTY_OVERRIDES += \
