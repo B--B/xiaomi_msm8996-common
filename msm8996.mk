@@ -194,6 +194,7 @@ PRODUCT_PACKAGES += \
     memtrack.msm8996 \
     libdisplayconfig \
     libdisplayconfig.vendor \
+    libdisplayconfig.qti \
     libqdMetaData.system \
     libtinyxml \
     libvulkan
