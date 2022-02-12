@@ -379,6 +379,10 @@ vendor/lib64/libmmosal.so|e9fdb48163e92b089cea0c397723a8416436c272
 vendor/lib64/libswvdec.so|f2ca69b50c339ce350eb4e6c151db19de3e5c9a9
 vendor/lib64/libvpplibrary.so|30e8e7cf1495fb88162beeb65e6273f28563b43b
 
+# Keystore - from LA.UM.8.6.r1-04400-89xx.0
+vendor/lib/hw/keystore.msm8953.so:vendor/lib/hw/keystore.msm8996.so|9486565408fa52c012bdb32b33c0b4c4f50f97d1
+vendor/lib64/hw/keystore.msm8953.so:vendor/lib64/hw/keystore.msm8996.so|9ad2d76083fd4cc79d258cd47ae5e20c005d8ae9
+
 # Listen - from LA.UM.7.5.r1-05300-8x96.0
 vendor/lib64/hw/sound_trigger.primary.msm8996.so
 vendor/lib/hw/sound_trigger.primary.msm8996.so
