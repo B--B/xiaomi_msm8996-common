@@ -137,8 +137,6 @@ LOCAL_MODULE_TAGS := optional
 LOCAL_32_BIT_ONLY := $(BOARD_QTI_CAMERA_32BIT_ONLY)
 include $(BUILD_SHARED_LIBRARY)
 
-include $(LOCAL_PATH)/libgui_shim.mk
-
 include $(CLEAR_VARS)
 LOCAL_MODULE := camera_common_headers
 LOCAL_EXPORT_C_INCLUDE_DIRS := $(LOCAL_PATH)/stack/common
