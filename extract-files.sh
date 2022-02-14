@@ -21,57 +21,6 @@ if [ ! -f "${HELPER}" ]; then
 fi
 source "${HELPER}"
 
-function blob_fixup() {
-    case "${1}" in
-    system_ext/etc/init/dpmd.rc)
-        sed -i "s/\/system\/product\/bin\//\/system\/system_ext\/bin\//g" "${2}"
-        ;;
-    system_ext/etc/permissions/com.qti.dpmframework.xml)
-        ;&
-    system_ext/etc/permissions/dpmapi.xml)
-        sed -i "s/\/system\/product\/framework\//\/system\/system_ext\/framework\//g" "${2}"
-        ;;
-    system_ext/etc/permissions/qcrilhook.xml)
-        ;&
-    system_ext/etc/permissions/telephonyservice.xml)
-        sed -i "s/\/system\/framework\//\/system\/system_ext\/framework\//g" "${2}"
-        ;;
-    system_ext/etc/permissions/qti_libpermissions.xml)
-        sed -i "s/name=\"android.hidl.manager-V1.0-java/name=\"android.hidl.manager@1.0-java/g" "${2}"
-        ;;
-    system_ext/lib64/libdpmframework.so)
-        sed -i "s/libhidltransport.so/libcutils-v29.so\x00\x00\x00/" "${2}"
-        ;;
-    vendor/bin/imsrcsd)
-        sed -i "s/libhidltransport.so/libbase_shim.so\x00\x00\x00\x00/" "${2}"
-        ;;
-    vendor/bin/slim_daemon)
-        "${PATCHELF}" --replace-needed "android.frameworks.sensorservice@1.0.so" "android.frameworks.sensorservice@1.0-v27.so" "${2}"
-        ;;
-    vendor/lib64/hw/android.hardware.bluetooth@1.0-impl-qti.so)
-        sed -i "s/libhidltransport.so/libbase_shim.so\x00\x00\x00\x00/" "${2}"
-        ;;
-    vendor/lib64/hw/vulkan.msm8996.so)
-        sed -i "s/vulkan.msm8953.so/vulkan.msm8996.so/g" "${2}"
-        ;;
-    vendor/lib64/lib-uceservice.so)
-        sed -i "s/libhidltransport.so/libbase_shim.so\x00\x00\x00\x00/" "${2}"
-        ;;
-    vendor/lib64/libsettings.so)
-        "${PATCHELF}" --replace-needed "libprotobuf-cpp-full.so" "libprotobuf-cpp-full-v28.so" "${2}"
-        ;;
-    vendor/lib64/vendor.qti.gnss@1.0_vendor.so)
-        "${PATCHELF}" --replace-needed "android.hardware.gnss@1.0.so" "android.hardware.gnss@1.0-v27.so" "${2}"
-        ;;
-    vendor/lib/hw/vulkan.msm8996.so)
-        sed -i "s/vulkan.msm8953.so/vulkan.msm8996.so/g" "${2}"
-        ;;
-    vendor/lib/libwvhidl.so)
-        "${PATCHELF}" --replace-needed "libprotobuf-cpp-lite.so" "libprotobuf-cpp-lite-v28.so" "${2}"
-        ;;
-    esac
-}
-
 # Default to sanitizing the vendor folder before extraction
 CLEAN_VENDOR=true
 
@@ -108,6 +57,53 @@ done
 if [ -z "${SRC}" ]; then
     SRC="adb"
 fi
+
+function blob_fixup() {
+    case "${1}" in
+
+    # Rename msm8953 to msm8996
+    vendor/lib/hw/activity_recognition.msm8996.so | vendor/lib64/hw/activity_recognition.msm8996.so)
+        sed -i "s|activity_recognition.msm8937.so|activity_recognition.msm8996.so|g" "${2}"
+        ;;
+
+    vendor/lib64/hw/keystore.msm8996.so)
+        sed -i "s|keystore.msm8937.so|keystore.msm8996.so|g" "${2}"
+        ;;
+
+    vendor/lib64/hw/gatekeeper.msm8996.so)
+        sed -i "s|gatekeeper.msm8937.so|gatekeeper.msm8996.so|g" "${2}"
+        ;;
+
+    vendor/lib/hw/sound_trigger.primary.msm8996.so)
+        sed -i "s|sound_trigger.primary.msm8937.so|sound_trigger.primary.msm8996.so|g" "${2}"
+        ;;
+
+    # Camera hax
+    vendor/lib/libmmcamera2_stats_modules.so)
+        patchelf --remove-needed "libgui.so" "${2}"
+        sed -i "s|/data/misc/camera|/data/vendor/qcam|g" "${2}"
+        patchelf --remove-needed libandroid.so "${2}"
+        ;;
+
+    vendor/lib/libmpbase.so)
+        patchelf --remove-needed libandroid.so "${2}"
+        ;;
+
+   vendor/lib/libmm-qcamera.so | vendor/lib/libmmcamera2_cpp_module.so | vendor/lib/libmmcamera2_iface_modules.so | vendor/lib/libmmcamera2_imglib_modules.so | vendor/lib/libmmcamera2_mct.so | vendor/lib/libmmcamera2_pproc_modules.so | vendor/lib/libmmcamera2_stats_algorithm.so | vendor/lib/libmmcamera_dbg.so | vendor/lib/libmmcamera_hvx_grid_sum.so | vendor/lib/libmmcamera_hvx_zzHDR.so | vendor/lib/libmmcamera_imglib.so | vendor/lib/libmmcamera_isp_mesh_rolloff44.so | vendor/lib/libmmcamera_pdaf.so | vendor/lib/libmmcamera_pdafcamif.so | vendor/lib/libmmcamera_tintless_algo.so | vendor/lib/libmmcamera_tintless_bg_pca_algo.so | vendor/lib/libmmcamera_tuning.so)
+        sed -i "s|/data/misc/camera|/data/vendor/qcam|g" "${2}"
+        ;;
+
+    vendor/lib/libmmcamera2_sensor_modules.so)
+        sed -i "s|/system/etc/camera|/vendor/etc/camera|g" "${2}"
+        sed -i "s|/data/misc/camera|/data/vendor/qcam|g" "${2}"
+        ;;
+
+    vendor/bin/mm-qcamera-daemon)
+        sed -i "s|/data/vendor/camera/cam_socket%d|/data/vendor/qcam/camer_socket%d|g" "${2}"
+        ;;
+
+    esac
+}
 
 if [ -z "${ONLY_TARGET}" ]; then
     # Initialize the helper for common device
