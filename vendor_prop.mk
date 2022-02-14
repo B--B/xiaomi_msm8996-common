@@ -14,6 +14,11 @@
 # limitations under the License.
 #
 
+# Adreno
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.hardware.vulkan=adreno \
+    ro.hardware.egl=adreno
+
 # Audio
 PRODUCT_PROPERTY_OVERRIDES += \
     af.fast_track_multiplier=1 \
