@@ -40,13 +40,13 @@ vendor/lib/rfsa/adsp/libscveT2T_skel.so
 vendor/lib/rfsa/adsp/libvpp_frc.so
 vendor/lib/rfsa/adsp/libvpp_svc_skel.so
 
-# Audio libraries - from LA.UM.7.5.r1-05300-8x96.0
-vendor/lib/libacdb-fts.so|4f86d94582dd5134dbcf7b23e3963a5f3e0a680a
-vendor/lib/libacdbloader.so|929ad04120b8f8adac4bdf82deb457f99bb96648
-vendor/lib/libacdbrtac.so|4ca5d96caf61eb2b4967d1dd3dfde78a19bfbf21
-vendor/lib/libadiertac.so|f8776c34269c49f87840a3ec5ef6141a11b016b8
-vendor/lib/libadm.so|bd574dd1f10937386df3626e2ed9d4de7d5d8ba3
-vendor/lib/libqtigef.so|784fcf30bcb94db37c67ea5c8cbc93c8c4a19c2c
+# Audio libraries - from LA.UM.9.6.2.r1-03600-89xx.0
+vendor/lib/libacdb-fts.so
+vendor/lib/libacdbloader.so
+vendor/lib/libacdbrtac.so
+vendor/lib/libadiertac.so
+vendor/lib/libadm.so
+vendor/lib/libqtigef.so
 
 # Libaudcal  - from LA.UM.9.6.2.r1-04100-89xx.0
 vendor/lib/libaudcal.so|1c956f24d14b574e9d5b3eb45419334d0955a8e3
@@ -383,9 +383,8 @@ vendor/lib64/libvpplibrary.so|30e8e7cf1495fb88162beeb65e6273f28563b43b
 vendor/lib/hw/keystore.msm8953.so:vendor/lib/hw/keystore.msm8996.so|9486565408fa52c012bdb32b33c0b4c4f50f97d1
 vendor/lib64/hw/keystore.msm8953.so:vendor/lib64/hw/keystore.msm8996.so|9ad2d76083fd4cc79d258cd47ae5e20c005d8ae9
 
-# Listen - from LA.UM.7.5.r1-05300-8x96.0
-vendor/lib64/hw/sound_trigger.primary.msm8996.so
-vendor/lib/hw/sound_trigger.primary.msm8996.so
+# Listen - from LA.UM.9.6.2.r1-03600-89xx.0
+vendor/lib/hw/sound_trigger.primary.msm8937.so:vendor/lib/hw/sound_trigger.primary.msm8996.so
 vendor/lib/libadpcmdec.so
 vendor/lib/libsmwrapper.so
 
