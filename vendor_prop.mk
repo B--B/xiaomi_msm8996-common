@@ -257,13 +257,15 @@ PRODUCT_PROPERTY_OVERRIDES += \
     persist.vendor.radio.rat_on=combine \
     persist.vendor.radio.sib16_support=1 \
     persist.vendor.radio.report_codec=1 \
-    persist.sys.fflag.override.settings_network_and_internet_v2=true \
     persist.vendor.radio.add_power_save=1 \
+    persist.vendor.radio.data_ltd_sys_ind=1 \
+    persist.vendor.radio.data_con_rprt=1 \
     telephony.lteOnCdmaDevice=1 \
     persist.vendor.radio.mt_sms_ack=30 \
     persist.vendor.radio.procedure_bytes=SKIP \
     persist.vendor.radio.hw_mbn_update=1 \
-    persist.vendor.radio.sw_mbn_update=1
+    persist.vendor.radio.sw_mbn_update=1 \
+    persist.vendor.radio.aosp_usr_pref_sel=true
 
 # SoC
 PRODUCT_PROPERTY_OVERRIDES += \
