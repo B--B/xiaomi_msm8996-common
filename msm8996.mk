@@ -206,7 +206,7 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/calib.cfg:$(TARGET_COPY_OUT_VENDOR)/etc/sdr_config.cfg
 
 # Doze mode
-PRODUCT_PACKAGES += \
+# PRODUCT_PACKAGES += \
     XiaomiDoze
 
 # DRM
