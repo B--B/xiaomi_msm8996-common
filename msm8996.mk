@@ -188,16 +188,13 @@ PRODUCT_PACKAGES += \
     vendor.display.color@1.0-impl \
     vendor.display.color@1.0-service \
     vendor.display.config@1.0.vendor \
-    vendor.display.config@2.0 \
-    vendor.display.config@2.0.vendor \
-    copybit.msm8996 \
     gralloc.msm8996 \
     hwcomposer.msm8996 \
     memtrack.msm8996 \
     libdisplayconfig \
     libdisplayconfig.vendor \
     libdisplayconfig.qti \
-    libqdMetaData.system \
+    libqdMetaData \
     libtinyxml \
     libvulkan
 
@@ -226,7 +223,7 @@ PRODUCT_PACKAGES += \
 
 # GPS
 PRODUCT_PACKAGES += \
-    android.hardware.gnss@2.1-impl-qti \
+    android.hardware.gnss@2.1-impl-qti:64 \
     android.hardware.gnss@2.1-service-qti \
     android.hardware.gnss@1.1.vendor \
     android.hardware.gnss@2.1.vendor \
@@ -342,8 +339,7 @@ PRODUCT_PACKAGES += \
     libOmxVenc \
     libstagefrighthw \
     libmm-omxcore \
-    libstagefright_omx.vendor \
-    libOmxG711Enc
+    libstagefright_omx.vendor
 
 # Perf
 PRODUCT_PACKAGES += \
@@ -369,9 +365,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 # QCOM
 PRODUCT_PACKAGES += \
-    libqti_vndfwk_detect \
     libqti_vndfwk_detect.vendor \
-    libvndfwk_detect_jni.qti \
     libvndfwk_detect_jni.qti.vendor
 
 PRODUCT_COPY_FILES += \
@@ -386,8 +380,7 @@ PRODUCT_ODM_PROPERTIES += \
 
 # QMI
 PRODUCT_PACKAGES += \
-    libjson \
-    libjson.vendor
+    libjson
 
 # Recorder
 PRODUCT_PACKAGES += \
