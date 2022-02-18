@@ -372,6 +372,10 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PROPERTY_OVERRIDES += \
     vendor.thermal.config=thermal_info_config.json
 
+# Touch HAL
+PRODUCT_PACKAGES += \
+    vendor.lineage.touch@1.0-service.xiaomi_8996
+
 # QCOM
 PRODUCT_PACKAGES += \
     libqti_vndfwk_detect.vendor \
