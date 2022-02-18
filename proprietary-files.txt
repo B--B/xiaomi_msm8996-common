@@ -212,9 +212,8 @@ vendor/etc/init/vendor.qti.hardware.tui_comm@1.0-service-qti.rc|2cfc563d7e157937
 vendor/lib/vendor.qti.hardware.tui_comm@1.0.so|933eb7026797f3dadad3d10fd69443b11f6563f3
 vendor/lib64/vendor.qti.hardware.tui_comm@1.0.so|16baab27397ad493e845515c20ac0c0c063c775d
 
-# Gatekeeper - from LA.UM.8.6.r1-04400-89xx.0
-vendor/lib/hw/gatekeeper.msm8953.so:vendor/lib/hw/gatekeeper.msm8996.so|73b6ae8dfe405c2f20af1ef9364bd37eb9809438
-vendor/lib64/hw/gatekeeper.msm8953.so:vendor/lib64/hw/gatekeeper.msm8996.so|3b72f1b6c336201a160317810de34d346fc411e6
+# Gatekeeper - from LA.UM.9.6.2.r1-04100-89xx.0
+vendor/lib64/hw/gatekeeper.msm8937.so:vendor/lib64/hw/gatekeeper.msm8996.so|73b6ae8dfe405c2f20af1ef9364bd37eb9809438
 
 # GPS - from LA.UM.9.6.2.r1-04100-89xx.0
 system_ext/etc/permissions/izat.xt.srv.xml
