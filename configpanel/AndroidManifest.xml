@@ -25,9 +25,12 @@
 
     <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
 
+    <uses-sdk
+        android:minSdkVersion="29"
+        android:targetSdkVersion="29"/>
+
     <application
         android:icon="@mipmap/ic_launcher"
-        android:persistent="true"
         android:label="@string/device_settings_app_name"
         android:theme="@style/Theme.Main"
         android:defaultToDeviceProtectedStorage="true"
@@ -48,8 +51,7 @@
         <activity
             android:name=".ButtonSettingsActivity"
             android:icon="@drawable/ic_mi"
-            android:label="@string/device_settings_app_name"
-            android:exported="true">
+            android:label="@string/device_settings_app_name">
             <intent-filter>
                 <action android:name="com.android.settings.action.EXTRA_SETTINGS" />
             </intent-filter>
@@ -64,12 +66,9 @@
                 android:resource="@string/home_button_extra_settings" />
         </activity>
 
-        <activity android:name=".KeyHandler"
-            android:exported="false">
-        </activity>
+        <activity android:name=".KeyHandler" />
 
-        <receiver android:name=".BootCompletedReceiver"
-            android:exported="true">
+        <receiver android:name=".BootCompletedReceiver" >
             <intent-filter>
                 <action android:name="android.intent.action.BOOT_COMPLETED" />
                 <category android:name="android.intent.category.DEFAULT" />
