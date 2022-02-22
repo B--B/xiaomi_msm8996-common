@@ -248,8 +248,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
     telephony.lteOnCdmaDevice=1 \
     persist.vendor.radio.mt_sms_ack=30 \
     persist.vendor.radio.procedure_bytes=SKIP \
-    persist.vendor.radio.hw_mbn_update=1 \
-    persist.vendor.radio.sw_mbn_update=1 \
     persist.vendor.radio.aosp_usr_pref_sel=true
 
 # SoC
