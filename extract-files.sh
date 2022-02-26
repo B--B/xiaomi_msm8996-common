@@ -102,6 +102,9 @@ function blob_fixup() {
         sed -i "s|/data/vendor/camera/cam_socket%d|/data/vendor/qcam/camer_socket%d|g" "${2}"
         ;;
 
+    lib64/libwfdnative.so | lib/libwfdnative.so | lib/libwfdservice.so | lib/libwfdcommonutils.so | lib/libwfdmmsrc.so | lib/libwfdmmsink.so)
+        "${PATCHELF}" --add-needed "libshim_wfd.so" "${2}"
+        ;;
     esac
 }
 
