@@ -260,7 +260,7 @@ system_ext/etc/permissions/com.qti.dpmframework.xml|c4b7ad0879d00c1eba4f3fe3a88d
 system_ext/etc/permissions/dpmapi.xml|9158c9789cc7135a685b3fb27f8cc27108b51fef
 system_ext/framework/com.qti.dpmframework.jar|96a29e28b3abffb9223daadd67459e3f5a3271df
 system_ext/framework/dpmapi.jar|2e2fbe2257a697b96a644c774136da0554430d3f
--system_ext/lib64/com.qualcomm.qti.dpm.api@1.0.so|b992e1f565f7b8b814eac0c88517543e6d0de603
+-system_ext/lib64/com.qualcomm.qti.dpm.api@1.0.so;MODULE=com.qualcomm.qti.dpm.api@1.0_system_ext|b992e1f565f7b8b814eac0c88517543e6d0de603
 -system_ext/lib64/libdpmctmgr.so|8a687fce30df9483a96065e6cc4154f03562dfa9
 -system_ext/lib64/libdpmfdmgr.so|bf3666db17e77da3a303c10579baec0bd018089f
 -system_ext/lib64/libdpmframework.so|235fbb48b47baebd48dbe56f72c77d97ca12c07c
@@ -268,7 +268,7 @@ system_ext/framework/dpmapi.jar|2e2fbe2257a697b96a644c774136da0554430d3f
 system_ext/priv-app/dpmserviceapp/dpmserviceapp.apk|10828ba0d987fa884ad0b4a87a46bf9f505535ea
 -vendor/bin/dpmQmiMgr|61a421804559b0e461439c19088acc01b871982a
 vendor/etc/init/dpmQmiMgr.rc|1538743661a5c48c15cd105beaad20f72953885a
--vendor/lib64/com.qualcomm.qti.dpm.api@1.0.so|d9f1aa7f93b928f42499d613d20ccbc60f279097
+-vendor/lib64/com.qualcomm.qti.dpm.api@1.0.so;MODULE=com.qualcomm.qti.dpm.api@1.0_vendor|d9f1aa7f93b928f42499d613d20ccbc60f279097
 -vendor/lib64/libdpmqmihal.so|41eb89e66ba065c43a5eb79cd3c72cef0ee167aa
 
 # DRM and SEE - from LA.UM.9.6.2.r1-04200-89xx.0
@@ -389,8 +389,8 @@ vendor/etc/init/vendor.display.color@1.0-service.rc|bb6700d72ee8d1c5bd5ce1b6bd0c
 -vendor/lib64/vendor.display.postproc@1.0.so|6ed50478f3b6c4ff6871ce715b9944c5e8a42eb7
 
 # Graphics (shared deps) - from LA.UM.10.6.2.r1-01600-89xx.0
--system_ext/lib64/libgralloc.qti.so|8d5f08f480c121eab46bc64e3d6a8c9913a4c9f2
--system_ext/lib64/libqdMetaData.so|9092b482aa50935b9dc008b79a2ee8305869bd6c
+-system_ext/lib64/libgralloc.qti.so;MODULE=libgralloc.qti_system_ext|8d5f08f480c121eab46bc64e3d6a8c9913a4c9f2
+-system_ext/lib64/libqdMetaData.so;MODULE=libqdMetaData_system_ext|9092b482aa50935b9dc008b79a2ee8305869bd6c
 
 # Graphics (Vulkan) - from LA.UM.10.6.2.r1-01600-89xx.0
 -vendor/lib/hw/vulkan.adreno.so|15185d60e0615009a39b6341755ec9de98725803
@@ -426,14 +426,14 @@ vendor/firmware/a530v3_seq.fw2|8963a53acc689725dee4b22881a4dd4b80e5def8
 -lib/libOmxMux.so|e444f3b38f7d2469ff3965243f93180f8fc18329
 -system_ext/lib/extractors/libmmparserextractor.so|2e4430f1fffdf458ca48f9b27b54edfa50e3bd65
 -system_ext/lib/libavenhancements.so|9372b77cbd6667a2144c55da1adf3859ae37f849
--system_ext/lib/libmmosal.so|1e32cc6c1d78ec7d6aa77499dd4c1601b2e52a94
+-system_ext/lib/libmmosal.so;MODULE=libmmosal_system_ext|1e32cc6c1d78ec7d6aa77499dd4c1601b2e52a94
 -system_ext/lib/libmmparser_lite.so|1662216531f8e5d298505d6bb6fb49c706df2c30
 -system_ext/lib64/libavenhancements.so|884d8585fe7554ee332e6436241a82f27a098890
--system_ext/lib64/libmmosal.so|2a59fead77df59d9b2c3bec3db4fc0594d0abd73
+-system_ext/lib64/libmmosal.so;MODULE=libmmosal_system_ext|2a59fead77df59d9b2c3bec3db4fc0594d0abd73
 vendor/etc/seccomp_policy/mediacodec.policy|3dec19ed56099a36b44cc72ad04ab23b9cc22ace
 vendor/etc/seccomp_policy/mediaextractor.policy|4234a844e9b1aef37397c8cfbd19566966ecd622
 -vendor/lib/libFlacSwDec.so|cf635f2627fb277fce39d34d77986bc29ed56f43
--vendor/lib/libmmosal.so|28d324f37d535d53916cb894caf3bb037bbf146d
+-vendor/lib/libmmosal.so;MODULE=libmmosal_vendor|28d324f37d535d53916cb894caf3bb037bbf146d
 -vendor/lib/libOmxAacDec.so|ce6447b7138f0e0cf365d97668a5ded072683234
 -vendor/lib/libOmxAmrDec.so|78ad175f009fe3fe3e316c9469184142ae813b24
 -vendor/lib/libOmxAmrwbplusDec.so|087c71ccc858e4e5d048f5150c39b7f3619ccf02
@@ -446,7 +446,7 @@ vendor/etc/seccomp_policy/mediaextractor.policy|4234a844e9b1aef37397c8cfbd195669
 -vendor/lib/libOmxVideoDSMode.so|58c76ededad030bf9fc89afd47eab863ddb184fb
 -vendor/lib/libOmxWmaDec.so|f93ed022df05fbf6b7cbda0bd88eebfac47f47da
 -vendor/lib/libvqzip.so|c56eaffef2066339493fa6810930e58556891027
--vendor/lib64/libmmosal.so|d400435a7bb49c1589efd0a63274cbf6d53f0c7b
+-vendor/lib64/libmmosal.so;MODULE=libmmosal_vendor|d400435a7bb49c1589efd0a63274cbf6d53f0c7b
 
 # Peripheral manager - from Fairphone/FP3/FP3:13/6.A.018.0/gms-1f4b2a90:user/release-keys
 -vendor/bin/pm-proxy|910437c11108aa66e803bbc760ce3998d141a6b4
@@ -635,7 +635,7 @@ vendor/etc/init/imsrcsd.rc|2dc42ff6e4b6dd389bd3bc9a7af30dec2f1a45df
 -system_ext/lib64/libimsmedia_jni.so|9351850c0b1499e1539303b8b177456a6ab83fd9
 -system_ext/lib64/lib-imsvtextutils.so|1acf1de305e455a3a924483e5652b37133d10fd1
 -system_ext/lib64/lib-imsvt.so|0b2065c9b500a11d39aa49f32dd06267e083fabb
--system_ext/lib64/vendor.qti.imsrtpservice@3.0.so|4cf9e97f526c6278c5e2136e00d1fb800fb941aa
+-system_ext/lib64/vendor.qti.imsrtpservice@3.0.so;MODULE=vendor.qti.imsrtpservice@3.0_system_ext|4cf9e97f526c6278c5e2136e00d1fb800fb941aa
 system_ext/priv-app/ims/ims.apk|d4d9a0e9aa59a94d0eeb70a2d448107031015018
 -vendor/bin/ims_rtp_daemon|98cc873938607bc9c29df69b6c856f60694fa7bb
 vendor/etc/init/ims_rtp_daemon_legacy.rc|104b2a879db4d3dd44e74a3d7f6e69f6972c9129
@@ -647,7 +647,7 @@ vendor/etc/seccomp_policy/imsrtp.policy|fb5f1f63dbc3a002ac0f203cce3b8d3434752fa2
 -vendor/lib64/lib-rtpcore.so|885ccb4c6019232d62862be8e312423586ec904a
 -vendor/lib64/lib-rtpsl.so|5b666bdb137ffb51fc39151858259879b59cccfc
 -vendor/lib64/vendor.qti.imsrtpservice@3.0-service-Impl.so|ca8afe08d6244cc9fdfcc38ca950fafa4b147625
--vendor/lib64/vendor.qti.imsrtpservice@3.0.so|460e589128fce0b0e83bb3c75aa32f7e1a9494fd
+-vendor/lib64/vendor.qti.imsrtpservice@3.0.so;MODULE=vendor.qti.imsrtpservice@3.0_vendor|460e589128fce0b0e83bb3c75aa32f7e1a9494fd
 
 # IMS (VT) - from Redmi/sweet_global/sweet:12/SKQ1.210908.001/V13.0.3.0.SKFMIXM:user/release-keys
 -system_ext/lib64/lib-imsvideocodec.so|b7001bb1008106ccb9ef92dd2560e2052b40c325
