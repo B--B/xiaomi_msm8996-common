@@ -382,7 +382,6 @@ vendor/lib64/libvpplibrary.so|30e8e7cf1495fb88162beeb65e6273f28563b43b
 vendor/lib64/hw/keystore.msm8937.so:vendor/lib64/hw/keystore.msm8996.so
 
 # Listen - from LA.UM.9.6.2.r1-03600-89xx.0
-vendor/lib/hw/sound_trigger.primary.msm8937.so:vendor/lib/hw/sound_trigger.primary.msm8996.so
 vendor/lib/libadpcmdec.so
 vendor/lib/libsmwrapper.so
 
