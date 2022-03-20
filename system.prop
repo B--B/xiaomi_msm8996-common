@@ -1,0 +1,56 @@
+#
+# system.prop for msm8996-common
+#
+
+# Audio
+ro.config.media_vol_steps=25
+ro.config.vc_call_vol_steps=7
+
+# BPF
+ro.kernel.ebpf.supported=true
+
+# Display
+vendor.display.disable_skip_validate=1
+vendor.display.enable_default_color_mode=1
+vendor.gralloc.enable_fb_ubwc=1
+
+# IMS
+service.qti.ims.enabled=1
+vendor.service.qti.ims.enabled=1
+
+# Media
+vendor.video.disable.ubwc=1
+vendor.vidc.disable.split.mode=1
+mmp.enable.3g2=true
+media.aac_51_output_enabled=true
+
+# Nitz
+persist.rild.nitz_plmn=
+persist.rild.nitz_long_ons_0=
+persist.rild.nitz_long_ons_1=
+persist.rild.nitz_long_ons_2=
+persist.rild.nitz_long_ons_3=
+persist.rild.nitz_short_ons_0=
+persist.rild.nitz_short_ons_1=
+persist.rild.nitz_short_ons_2=
+persist.rild.nitz_short_ons_3=
+
+# Qualcomm
+ro.vendor.qti.va_aosp.support=1
+
+# Surfaceflinger
+debug.sf.enable_hwc_vds=1
+debug.sf.latch_unsignaled=1
+debug.sf.recomputecrop=0
+ro.surface_flinger.force_hwc_copy_for_virtual_displays=true
+ro.surface_flinger.max_virtual_display_dimension=4096
+ro.surface_flinger.max_frame_buffer_acquired_buffers=3
+
+# Telephony
+DEVICE_PROVISIONED=1
+ro.telephony.call_ring.multiple=false
+telephony.lteOnCdmaDevice=1
+ro.telephony.default_network=20,20
+
+# Zygote preforking
+persist.device_config.runtime_native.usap_pool_enabled=true

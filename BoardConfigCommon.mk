@@ -38,6 +38,13 @@ TARGET_2ND_CPU_VARIANT_RUNTIME := kryo
 TARGET_BOOTLOADER_BOARD_NAME := msm8996
 TARGET_NO_BOOTLOADER := true
 
+# Device Props
+TARGET_ODM_PROP := $(VENDOR_PATH)/odm.prop
+TARGET_PRODUCT_PROP := $(VENDOR_PATH)/product.prop
+TARGET_SYSTEM_EXT_PROP := $(VENDOR_PATH)/system_ext.prop
+TARGET_SYSTEM_PROP := $(VENDOR_PATH)/system.prop
+TARGET_VENDOR_PROP := $(VENDOR_PATH)/vendor.prop
+
 # Kernel
 BOARD_KERNEL_BASE := 0x80000000
 BOARD_KERNEL_CMDLINE := androidboot.hardware=qcom ehci-hcd.park=3 kpti=off

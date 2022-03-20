@@ -1,0 +1,9 @@
+#
+# product.prop for msm8996-common
+#
+
+# Default to CFQ I/O scheduler
+persist.sys.io.scheduler=cfq
+
+# Product launched with M
+ro.product.first_api_level=23
