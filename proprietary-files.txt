@@ -351,6 +351,7 @@ system_ext/lib64/libmmosal.so|ef19a38be8283c87eabe96f74bc8a71881ab1f0a
 vendor/lib/libAlacSwDec.so|9404a482dd25bb77cdfec7b1ddef8a68d6946fec
 vendor/lib/libApeSwDec.so|cecc7a897711b96321128210efbfa03ecbd02714
 vendor/lib/libFlacSwDec.so|7d661ac115de794bc6f6f7d20d4f93735b698c52
+vendor/lib/libgpustats.so|75fc8f58b071f3c27d708010e1b40eafba091a14
 vendor/lib/libI420colorconvert.so|721698d6898ff8eb905ea15d180b3d54d5018659
 vendor/lib/libMpeg4SwEncoder.so|ddc71f9b9dcecbef4925d11176d9032f3131710b
 vendor/lib/libmm-color-convertor.so|7e1536ab3926ece1da6c6a73cb5b1635f75762c7
@@ -374,6 +375,7 @@ vendor/lib/libOmxQcelp13Dec.so|4424762bcf639284112395b4c9d63cb58c799638
 vendor/lib/libOmxVideoDSMode.so|71c4f23de93e91931c077ed511301185152422da
 vendor/lib/libOmxWmaDec.so|e24b41b1540ab1ad67ecf658033a82fd0db7cd76
 vendor/lib/libvqzip.so|f85628ea634df1c31d69380d960ad7ea3396e7b2
+vendor/lib64/libgpustats.so|a899ae72983277442cdacf8f43271986c91ce710
 vendor/lib64/libmmosal.so|e9fdb48163e92b089cea0c397723a8416436c272
 vendor/lib64/libswvdec.so|f2ca69b50c339ce350eb4e6c151db19de3e5c9a9
 vendor/lib64/libvpplibrary.so|30e8e7cf1495fb88162beeb65e6273f28563b43b
