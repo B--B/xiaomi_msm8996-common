@@ -54,7 +54,7 @@ TARGET_KERNEL_SOURCE := kernel/xiaomi/msm8996
 TARGET_KERNEL_CLANG_COMPILE := true
 TARGET_KERNEL_VERSION := 4.4
 TARGET_KERNEL_ADDITIONAL_FLAGS := \
-    HOSTCFLAGS="-fuse-ld=lld"
+    HOSTCFLAGS="-fuse-ld=lld -Wno-unused-command-line-argument"
 
 # Platform
 TARGET_BOARD_PLATFORM := msm8996
