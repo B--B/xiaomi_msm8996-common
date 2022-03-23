@@ -1,0 +1,9 @@
+type init_pixel_dance, domain;
+type init_pixel_dance_exec, exec_type, vendor_file_type, file_type;
+
+# Allow for transition from init domain to init_pixel_dance
+init_daemon_domain(init_pixel_dance)
+
+allow init_pixel_dance sysfs_leds:dir search;
+allow init_pixel_dance sysfs_leds:file { open write };
+allow init_pixel_dance vendor_shell_exec:file rx_file_perms;
