@@ -32,6 +32,10 @@ chown -LR system.system /proc/buttons
 chown -L system.system /proc/touchpanel/reversed_keys_enable
 chown -L system.system /proc/touchpanel/capacitive_keys_enable
 
+# HACK: Set shared buttons and touchpanel nodes ownership (these are the real sysfs nodes)
+chown -L system.system /sys/devices/soc/75ba000.i2c/i2c-12/12-0020/input/input1/reversed_keys
+chown -L system.system /sys/devices/soc/75ba000.i2c/i2c-12/12-0020/input/input1/0dbutton
+
 target=`getprop ro.board.platform`
 low_ram=`getprop ro.config.low_ram`
 if [ -f /sys/devices/soc0/soc_id ]; then

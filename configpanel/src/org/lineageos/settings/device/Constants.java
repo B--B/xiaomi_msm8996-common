@@ -32,11 +32,11 @@ public class Constants {
     public static final String FP_WAKEUP_KEY = "fp_wakeup";
 
     // Nodes
-    public static final String CYTTSP_BUTTON_SWAP_NODE = "/proc/buttons/reversed_keys_enable";
+    public static final String CYTTSP_BUTTON_SWAP_NODE = "/sys/devices/soc/75ba000.i2c/i2c-12/12-0020/input/input1/reversed_keys";
     public static final String FP_HOME_KEY_NODE = "/sys/devices/soc/soc:fpc_fpc1020/enable_key_events";
     public static final String FP_WAKEUP_NODE = "/sys/devices/soc/soc:fpc_fpc1020/enable_wakeup";
-    public static final String TOUCHPANEL_BUTTON_SWAP_NODE = "/proc/touchpanel/reversed_keys_enable";
-    public static final String VIRTUAL_KEYS_NODE = "/proc/touchpanel/capacitive_keys_enable";
+    public static final String TOUCHPANEL_BUTTON_SWAP_NODE = "/sys/devices/soc/75ba000.i2c/i2c-12/12-0020/input/input1/reversed_keys";
+    public static final String VIRTUAL_KEYS_NODE = "/sys/devices/soc/75ba000.i2c/i2c-12/12-0020/input/input1/0dbutton";
 
     // Intents
     public static final String CUST_INTENT = "org.lineageos.settings.device.CUST_UPDATE";

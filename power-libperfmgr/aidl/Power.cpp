@@ -30,7 +30,7 @@
 #include <utils/Trace.h>
 
 #ifndef TAP_TO_WAKE_NODE
-#define TAP_TO_WAKE_NODE "/proc/touchpanel/double_tap_enable"
+#define TAP_TO_WAKE_NODE "/sys/devices/soc/75ba000.i2c/i2c-12/12-0020/input/input1/wake_gesture"
 #endif
 
 namespace aidl {
