@@ -439,7 +439,7 @@ PRODUCT_SOONG_NAMESPACES += \
     hardware/xiaomi
 
 QCOM_SOONG_NAMESPACE := \
-    $(LOCAL_PATH)/msm8996-LA.UM.9.6.2.r1-04100-89xx.0
+    $(LOCAL_PATH)/qcom-caf
 
 # Telephony
 PRODUCT_PACKAGES += \
