@@ -37,6 +37,10 @@ persist.rild.nitz_short_ons_3=
 # Qualcomm
 ro.vendor.qti.va_aosp.support=1
 
+# Skia
+# (b/183612348): Enable skia reduceOpsTaskSplitting
+renderthread.skia.reduceopstasksplitting=true
+
 # Surfaceflinger
 debug.sf.enable_hwc_vds=1
 debug.sf.latch_unsignaled=1
