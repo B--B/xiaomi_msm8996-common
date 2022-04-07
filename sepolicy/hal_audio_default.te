@@ -1,6 +1,4 @@
 r_dir_file(hal_audio_default, persist_usf_cal_file)
-allow hal_audio_default persist_file:dir search;
-allow hal_audio_default hal_audio_default:process execmem;
-allow hal_audio_default audio_data_file:dir search;
-allow hal_audio_default acdbdelta_vendor_data_file:dir rw_dir_perms;
-allow hal_audio_default acdbdelta_vendor_data_file:file create_file_perms;
+r_dir_file(hal_audio_default, sysfs)
+
+allow hal_audio_default self:fifo_file ioctl;

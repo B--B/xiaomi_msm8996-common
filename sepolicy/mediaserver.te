@@ -1,3 +1,0 @@
-# Allow mediaserver to create socket files for audio arbitration
-allow mediaserver audio_data_file:sock_file { create setattr unlink };
-allow mediaserver audio_data_file:dir remove_name;
