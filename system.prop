@@ -4,7 +4,6 @@
 
 # Audio
 ro.config.media_vol_steps=25
-ro.config.vc_call_vol_steps=7
 
 # BPF
 ro.kernel.ebpf.supported=true
