@@ -86,6 +86,10 @@ persist.log.tag.ContrastColorUtil=S
 # Media
 vendor.vidc.enc.disable.pq=true
 
+# Media transcoding
+persist.sys.fuse.transcode_user_control=true
+persist.sys.fuse.transcode_enabled=false
+
 # Radio
 ro.telephony.call_ring.multiple=false
 ro.telephony.default_cdma_sub=0
