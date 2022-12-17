@@ -26,6 +26,9 @@ persist.data.netmgrd.qos.enable=true
 persist.data.wda.enable=true
 persist.rmnet.data.enable=true
 
+# Disable MTE Async for system server
+arm64.memtag.process.system_server=off
+
 # DRM
 drm.service.enabled=true
 
