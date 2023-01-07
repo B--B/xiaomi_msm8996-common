@@ -51,6 +51,7 @@ ro.vendor.display.cabl=0
 # Graphics
 debug.egl.hw=0
 debug.hwui.renderer=skiagl
+debug.hwui.skia_atrace_enabled=false
 debug.gralloc.gfx_ubwc_disable=0
 debug.renderengine.backend=skiaglthreaded
 debug.sf.enable_hwc_vds=1
