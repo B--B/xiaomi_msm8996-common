@@ -69,10 +69,6 @@ vendor/lib64/soundfx/libqcbassboost.so|4e45199a07afd3c49c20f3ff224b16c5ff68d04d
 vendor/lib64/soundfx/libqcreverb.so|3839275ec638720d7e0127e80f9105de8863810b
 vendor/lib64/soundfx/libqcvirt.so|37003334f2f10689e2f6f5913404a9793c9782e8
 
-# AudioSphere
-system/etc/permissions/audiosphere.xml
-system/framework/audiosphere.jar
-
 # ANT+ (system) - from enchilada - PKQ1.180716.001
 system/lib/com.qualcomm.qti.ant@1.0.so|fcd6a7130c480bfe4e4d9cc00702ed8444cddc82
 -system/lib/libantradio.so|7506f2577f2f1068688b623ca85e432be9c3dac9
