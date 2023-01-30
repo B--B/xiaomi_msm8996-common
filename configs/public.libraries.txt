@@ -2,4 +2,3 @@ libadsprpc.so
 libOpenCL.so
 libprotobuf-cpp-full.so
 libprotobuf-cpp-lite.so
-libqti-perfd-client.so

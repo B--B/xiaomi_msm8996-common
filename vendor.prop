@@ -67,9 +67,6 @@ persist.dbg.vt_avail_ovr=1
 # Media
 vendor.vidc.enc.disable.pq=true
 
-# Perf
-ro.vendor.extension_library=libqti-perfd-client.so
-
 # Radio
 ro.telephony.call_ring.multiple=false
 ro.telephony.default_cdma_sub=0

@@ -154,18 +154,10 @@ on post-fs-data
 
     setprop vold.post_fs_data_done 1
 
-    # Create PERFD deamon related dirs
-    mkdir /data/vendor/perfd 0770 root system
-    chmod 2770 /data/vendor/perfd
-    rm /data/vendor/perfd/default_values
-
     # NFC local data and nfcee xml storage
     setprop ro.nfc.port "I2C"
     mkdir /data/vendor/nfc 0777 nfc nfc
     mkdir /data/vendor/nfc/param 0777 nfc nfc
-
-    # Create IOP  deamon related dirs
-    mkdir /data/vendor/iop 0700 root system
 
     # Mark the copy complete flag to not completed
     write /data/vendor/radio/copy_complete 0
