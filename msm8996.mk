@@ -353,7 +353,12 @@ PRODUCT_PACKAGES += \
 # Soong namespaces
 PRODUCT_SOONG_NAMESPACES += \
     $(LOCAL_PATH) \
+    hardware/google/interfaces \
+    hardware/google/pixel \
     hardware/xiaomi
+
+QCOM_SOONG_NAMESPACE := \
+    $(LOCAL_PATH)/qcom-caf
 
 # Telephony
 PRODUCT_PACKAGES += \
