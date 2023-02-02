@@ -49,7 +49,12 @@
 /(vendor|system/vendor)/bin/hw/android\.hardware\.biometrics\.fingerprint@2\.3-service\.gemini   u:object_r:hal_fingerprint_default_exec:s0
 /(vendor|system/vendor)/bin/hw/android\.hardware\.ir@1\.0-service\.xiaomi            u:object_r:hal_ir_default_exec:s0
 /(vendor|system/vendor)/bin/hw/android\.hardware\.light@2\.0-service\.xiaomi_8996    u:object_r:hal_light_default_exec:s0
+/(vendor|system/vendor)/bin/hw/android\.hardware\.power-service\.xiaomi-libperfmgr   u:object_r:hal_power_default_exec:s0
 /(vendor|system/vendor)/bin/hw/vendor\.lineage\.touch@1\.0-service\.xiaomi_8996      u:object_r:hal_lineage_touch_default_exec:s0
 
 # Shell scripts
 /(vendor|system/vendor)/bin/pixel\.dance\.sh     u:object_r:init_pixel_dance_exec:s0
+
+# Power HAL
+/sys/kernel/debug/system_stats                   u:object_r:debugfs_system_stats:s0
+/sys/devices/virtual/graphics/fb0/idle_state     u:object_r:sysfs_graphics:s0
