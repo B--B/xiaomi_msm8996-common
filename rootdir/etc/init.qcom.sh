@@ -29,6 +29,7 @@
 # Set shared buttons and touchpanel nodes ownership (these are proc_symlinks to the real sysfs nodes)
 chown -LR system.system /proc/buttons
 chown -LR system.system /proc/touchpanel
+chmod 664 /proc/touchpanel/double_tap_enable
 
 #
 # Make modem config folder and copy firmware config to that folder for RIL
