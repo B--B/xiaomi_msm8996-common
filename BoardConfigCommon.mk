@@ -170,6 +170,7 @@ VENDOR_SECURITY_PATCH := 2018-10-01
 include device/qcom/sepolicy-legacy-um/SEPolicy.mk
 
 BOARD_VENDOR_SEPOLICY_DIRS += $(VENDOR_PATH)/sepolicy/vendor
+PRODUCT_PRIVATE_SEPOLICY_DIRS += $(VENDOR_PATH)/sepolicy/private
 
 # Treble
 PRODUCT_FULL_TREBLE_OVERRIDE := true

@@ -1,27 +1,82 @@
-dual.camera.cs.br          u:object_r:camera_prop:s0
-persist.camera.            u:object_r:camera_prop:s0
+# adsprpc
+fastrpc.debug.trace        u:object_r:vendor_adsprpc_prop:s0 exact int
+fastrpc.perf.kernel        u:object_r:vendor_adsprpc_prop:s0 exact int
+fastrpc.perf.adsp          u:object_r:vendor_adsprpc_prop:s0 exact int
+fastrpc.perf.freq          u:object_r:vendor_adsprpc_prop:s0 exact int
+fastrpc.process.attrs      u:object_r:vendor_adsprpc_prop:s0 exact int
 
+# Audio
+audio.adm.                 u:object_r:vendor_default_prop:s0
+persist.audio.calfile0     u:object_r:vendor_default_prop:s0
+
+# Bluetooth
+persist.set.rx_delay       u:object_r:vendor_bluetooth_prop:s0
 qcom.bluetooth.soc         u:object_r:vendor_bluetooth_prop:s0
 ro.bluetooth.emb_wp_mode   u:object_r:vendor_bluetooth_prop:s0
 wc_transport.              u:object_r:vendor_bluetooth_prop:s0
 
+# Camera
+camera.cpp.dumppreviewpayload    u:object_r:camera_prop:s0
+camera.cts.clientname      u:object_r:camera_prop:s0
+cameradaemon.SaveMemAtBoot u:object_r:camera_prop:s0
+cpp.set.clock              u:object_r:vendor_default_prop:s0
+disable.cpp.power.collapse u:object_r:vendor_default_prop:s0
+dual.camera.cs.br          u:object_r:camera_prop:s0
+persist.camera.            u:object_r:camera_prop:s0
+persist.cam.pp.feat.mask   u:object_r:vendor_default_prop:s0
+persist.capture.burst.exposures  u:object_r:camera_prop:s0
+persist.debug.sf.showfps   u:object_r:vendor_default_prop:s0
+persist.debug.set.fixedfps       u:object_r:camera_prop:s0
+persist.denoise.process.plates   u:object_r:camera_prop:s0
+persist.enable.max.pending.buf   u:object_r:vendor_default_prop:s0
+persist.partial.skip       u:object_r:vendor_default_prop:s0
+ro.camera.res.fmq.size     u:object_r:camera_ro_prop:s0
+ro.camera.req.fmq.size     u:object_r:camera_ro_prop:s0
+ro.vendor.camera.          u:object_r:camera_ro_prop:s0
+ubwc.no.compression        u:object_r:vendor_default_prop:s0
+
+# CNSS
+persist.cnss-daemon.debug_level  u:object_r:cnss_prop:s0
+persist.vendor.wigig.npt.enable  u:object_r:cnss_prop:s0
+
+#Fingerprint
+sys.domekey.down           u:object_r:vendor_fp_prop:s0
+
+# Freq
+vendor.min_freq_0          u:object_r:vendor_freq_prop:s0
+vendor.min_freq_4          u:object_r:vendor_freq_prop:s0
+
+# HVDCP
 persist.hvdcp.             u:object_r:vendor_hvdcp_opti_prop:s0
 
+# imsrtp
+perist.vendor.ims.enable_rateadapt  u:object_r:vendor_qcom_ims_prop:s0
+
+# NFC
+ro.nfc.port                u:object_r:vendor_nfc_prop:s0
+persist.vendor.nfc.        u:object_r:vendor_nfc_prop:s0
+
+# Power
+vendor.powerhal.           u:object_r:vendor_power_prop:s0
+
+# Radio
 persist.data_netmgrd_mtu   u:object_r:vendor_default_prop:s0
 persist.data.              u:object_r:vendor_default_prop:s0
+persist.env.spec           u:object_r:vendor_default_prop:s0
 persist.net.doxlat         u:object_r:vendor_xlat_prop:s0
 persist.net.logmask        u:object_r:vendor_default_prop:s0
 persist.rmnet.data.enable  u:object_r:vendor_default_prop:s0
+persist.sys.labtest_flag   u:object_r:vendor_radio_prop:s0
+ro.cust.test               u:object_r:exported_system_prop:s0
 ro.sys.oem.sno             u:object_r:vendor_radio_prop:s0
 sys.fake_bs_flag0          u:object_r:vendor_radio_prop:s0
 sys.fake_bs_flag1          u:object_r:vendor_radio_prop:s0
 
+# Sensors
+ro.qti.                    u:object_r:vendor_default_prop:s0
+
+# Tee
 sys.listeners.registered   u:object_r:vendor_tee_listener_prop:s0
 
+# Thermal
 sys.thermal.para           u:object_r:vendor_thermal_prop:s0
-
-vendor.min_freq_0          u:object_r:vendor_freq_prop:s0
-vendor.min_freq_4          u:object_r:vendor_freq_prop:s0
-
-# Power
-vendor.powerhal.           u:object_r:vendor_power_prop:s0

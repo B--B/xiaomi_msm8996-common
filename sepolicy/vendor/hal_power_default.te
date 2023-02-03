@@ -1,7 +1,5 @@
 type proc_schedboost, proc_type;
 
-vendor_internal_prop(vendor_power_prop)
-
 # Allow writing to files in /proc/touchpanel
 allow hal_power_default proc_touchpanel:dir search;
 allow hal_power_default proc_touchpanel:file rw_file_perms;
