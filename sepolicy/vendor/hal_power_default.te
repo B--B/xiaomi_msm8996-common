@@ -1,19 +1,23 @@
-type proc_schedboost, proc_type;
-
 # Allow writing to files in /proc/touchpanel
 allow hal_power_default proc_touchpanel:dir search;
 allow hal_power_default proc_touchpanel:file rw_file_perms;
 
+allow hal_power_default input_device:dir search;
+allow hal_power_default input_device:chr_file rw_file_perms;
+
 allow hal_power_default cgroup:dir search;
 allow hal_power_default cgroup:file rw_file_perms;
-allow hal_power_default device_latency:chr_file { open write };
-allow hal_power_default proc_schedboost:file { open write };
+allow hal_power_default device_latency:chr_file rw_file_perms;
+allow hal_power_default proc_sysctl_schedboost:file rw_file_perms;
 allow hal_power_default sysfs_devices_system_cpu:file rw_file_perms;
 allow hal_power_default sysfs_devfreq:dir search;
 allow hal_power_default sysfs_devfreq:file rw_file_perms;
 allow hal_power_default sysfs_devfreq:lnk_file read;
-allow hal_power_default sysfs_kgsl:file rw_file_perms;
 allow hal_power_default sysfs_kgsl:lnk_file read;
+allow hal_power_default sysfs_kgsl:file rw_file_perms;
+allow hal_power_default sysfs_msm_subsys:dir search;
+allow hal_power_default sysfs_msm_subsys:file rw_file_perms;
+allow hal_power_default sysfs_graphics:dir search;
 allow hal_power_default sysfs_graphics:file r_file_perms;
 
 # To get/set powerhal state property

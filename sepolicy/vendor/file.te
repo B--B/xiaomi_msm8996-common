@@ -10,5 +10,7 @@ type sysfs_fpc, sysfs_type, fs_type;
 type sysfs_fpc_keyevents, sysfs_type, fs_type;
 type sysfs_fpc_wakeup, sysfs_type, fs_type;
 type sysfs_fpc_proximity, sysfs_type, fs_type;
+type sysfs_msm_subsys, sysfs_type, fs_type;
 type thermal_data_file, core_data_file_type, data_file_type, file_type;
 type debugfs_system_stats, debugfs_type, fs_type;
+type proc_sysctl_schedboost, proc_type, fs_type;
