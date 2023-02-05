@@ -85,3 +85,6 @@ ro.lmk.critical_upgrade=true
 ro.lmk.upgrade_pressure=40
 ro.lmk.downgrade_pressure=60
 ro.lmk.use_psi=false
+
+# Zygote preforking
+persist.device_config.runtime_native.usap_pool_enabled=true
