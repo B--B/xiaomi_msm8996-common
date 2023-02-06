@@ -17,6 +17,7 @@ wc_transport.              u:object_r:vendor_bluetooth_prop:s0
 
 # Camera
 camera.cpp.dumppreviewpayload    u:object_r:camera_prop:s0
+camera.cpp.dumpreprocesspayload  u:object_r:camera_prop:s0
 camera.cts.clientname      u:object_r:camera_prop:s0
 cameradaemon.SaveMemAtBoot u:object_r:camera_prop:s0
 cpp.set.clock              u:object_r:vendor_default_prop:s0
