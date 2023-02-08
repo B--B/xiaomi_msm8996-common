@@ -91,3 +91,4 @@ ro.lmk.use_psi=false
 
 # Zygote preforking
 persist.device_config.runtime_native.usap_pool_enabled=true
+zygote.critical_window.minute=10
