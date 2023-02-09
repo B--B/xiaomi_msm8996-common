@@ -1,2 +1,2 @@
-allow nfc nfc_vendor_data_file:dir search;
-allow nfc nfc_vendor_data_file:file { open read write };
+allow nfc nfc_vendor_data_file:dir { create_dir_perms add_name search read write create remove_name };
+allow nfc nfc_vendor_data_file:file create_file_perms;
