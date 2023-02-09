@@ -1,6 +1,9 @@
 allow qti_init_shell proc_buttons:dir { r_dir_perms setattr };
 allow qti_init_shell proc_buttons:file { getattr setattr };
+allow qti_init_shell proc_page_cluster:file { open read write } ;
 allow qti_init_shell proc_touchpanel:dir { r_dir_perms setattr };
 allow qti_init_shell proc_touchpanel:file { getattr setattr };
+
+allow qti_init_shell sysfs:file write;
 
 allow qti_init_shell vendor_radio_data_file:dir search;
