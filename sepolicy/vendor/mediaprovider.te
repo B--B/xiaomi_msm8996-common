@@ -1,0 +1,5 @@
+allow mediaprovider adsprpcd_file:dir r_dir_perms;
+allow mediaprovider mediametrics_service:service_manager find;
+allow mediaprovider public_adsprpcd_file:file r_file_perms;
+
+get_prop(mediaprovider, vendor_adsprpc_prop)
