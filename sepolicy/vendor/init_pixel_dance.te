@@ -5,5 +5,8 @@ type init_pixel_dance_exec, exec_type, vendor_file_type, file_type;
 init_daemon_domain(init_pixel_dance)
 
 allow init_pixel_dance sysfs_leds:dir search;
-allow init_pixel_dance sysfs_leds:file { open write };
+allow init_pixel_dance sysfs_leds:file rw_file_perms;
 allow init_pixel_dance vendor_shell_exec:file rx_file_perms;
+allow init_pixel_dance vendor_toolbox_exec:file execute_no_trans;
+
+get_prop(init_pixel_dance, boot_status_prop)
