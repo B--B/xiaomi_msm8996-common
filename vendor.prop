@@ -90,6 +90,9 @@ vendor.vidc.enc.disable.pq=true
 persist.sys.fuse.transcode_user_control=true
 persist.sys.fuse.transcode_enabled=false
 
+# Perf
+ro.vendor.extension_library=libqti-perfd-client.so
+
 # Radio
 ro.telephony.call_ring.multiple=false
 ro.telephony.default_cdma_sub=0
