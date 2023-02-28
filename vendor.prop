@@ -45,6 +45,15 @@ persist.vendor.cne.feature=1
 # Data modules
 ro.vendor.use_data_netmgrd=true
 
+# Disable iorapd
+ro.iorapd.enable=false
+
+# Disable iorapd perfetto tracing for app starts
+iorapd.perfetto.enable=false
+
+# Disable iorapd readahead for app starts
+iorapd.readahead.enable=false
+
 # Display
 ro.vendor.display.cabl=0
 
