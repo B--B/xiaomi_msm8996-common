@@ -370,6 +370,9 @@ subsystem mem_buf_vm
 # Capacitive touch emulation device
 /dev/captouch             0666   system     system
 
+# Charger
+/sys/class/power_supply/battery  charging_enabled       0660    system  system
+
 # IR device
 /dev/lirc0                0660   system     system
 
