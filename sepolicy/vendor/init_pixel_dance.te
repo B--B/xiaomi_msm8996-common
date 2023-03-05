@@ -8,5 +8,3 @@ allow init_pixel_dance sysfs_leds:dir search;
 allow init_pixel_dance sysfs_leds:file rw_file_perms;
 allow init_pixel_dance vendor_shell_exec:file rx_file_perms;
 allow init_pixel_dance vendor_toolbox_exec:file execute_no_trans;
-
-get_prop(init_pixel_dance, boot_status_prop)
