@@ -7555,7 +7555,6 @@ int QCamera3HardwareInterface::initStaticMetadata(uint32_t cameraId)
     Vector<uint8_t> availableVstabModes;
     availableVstabModes.add(ANDROID_CONTROL_VIDEO_STABILIZATION_MODE_OFF);
     char eis_prop[PROPERTY_VALUE_MAX];
-    bool eisSupported = false;
     memset(eis_prop, 0, sizeof(eis_prop));
     property_get("persist.camera.eis.enable", eis_prop, "1");
     uint8_t eis_prop_set = (uint8_t)atoi(eis_prop);
@@ -7564,12 +7563,8 @@ int QCamera3HardwareInterface::initStaticMetadata(uint32_t cameraId)
     for (size_t i = 0; i < count; i++) {
         if ((gCamCapability[cameraId]->supported_is_types[i] == IS_TYPE_EIS_2_0) ||
             (gCamCapability[cameraId]->supported_is_types[i] == IS_TYPE_EIS_3_0)) {
-            eisSupported = true;
             break;
         }
-    }
-    if (facingBack && eis_prop_set && eisSupported) {
-        availableVstabModes.add(ANDROID_CONTROL_VIDEO_STABILIZATION_MODE_ON);
     }
     staticInfo.update(ANDROID_CONTROL_AVAILABLE_VIDEO_STABILIZATION_MODES,
                       availableVstabModes.array(), availableVstabModes.size());
