@@ -98,7 +98,16 @@ persist.log.tag.ContrastColorUtil=S
 persist.log.tag.GoogleTagManager=S
 
 # Media
+debug.stagefright.omx_default_rank.sw-audio=1
+debug.stagefright.omx_default_rank=0
+media.stagefright.thumbnail.prefer_hw_codecs=true
+mm.enable.smoothstreaming=true
+mmp.enable.3g2=true
+persist.mm.enable.prefetch=true
 vendor.vidc.enc.disable.pq=true
+vendor.vidc.disable.split.mode=1
+vendor.video.disable.ubwc=1
+vidc.enc.dcvs.extra-buff-count=2
 
 # Media transcoding
 persist.sys.fuse.transcode_user_control=true
