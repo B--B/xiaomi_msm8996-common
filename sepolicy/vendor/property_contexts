@@ -7,6 +7,7 @@ fastrpc.process.attrs      u:object_r:vendor_adsprpc_prop:s0 exact int
 
 # Audio
 audio.adm.                 u:object_r:vendor_default_prop:s0
+audio_hal.in_period_size   u:object_r:vendor_default_prop:s0
 persist.audio.calfile0     u:object_r:vendor_default_prop:s0
 
 # Bluetooth
