@@ -114,6 +114,15 @@
       "ResetOnInit": true
     },
     {
+      "Name": "CDSchedtuneBoost",
+      "Path": "/dev/stune/camera-daemon/schedtune.boost",
+      "Values": [
+        "50",
+        "0"
+      ],
+      "ResetOnInit": true
+    },
+    {
       "Name": "CDCpusBoost",
       "Path": "/dev/cpuset/camera-daemon/cpus",
       "Values": [
@@ -382,6 +391,12 @@
     },
     {
       "PowerHint": "CAMERA_STREAMING",
+      "Node": "CDSchedtuneBoost",
+      "Duration": 0,
+      "Value": "50"
+    },
+    {
+      "PowerHint": "CAMERA_STREAMING",
       "Node": "CDCpusBoost",
       "Duration": 0,
       "Value": "0-3"
@@ -391,6 +406,12 @@
       "Node": "PowerHALMainState",
       "Duration": 0,
       "Value": "CAMERA_STREAMING_60FPS"
+    },
+    {
+      "PowerHint": "CAMERA_STREAMING_60FPS",
+      "Node": "CDSchedtuneBoost",
+      "Duration": 0,
+      "Value": "50"
     },
     {
       "PowerHint": "CAMERA_STREAMING_60FPS",
