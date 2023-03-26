@@ -311,6 +311,7 @@ on property:sys.boot_completed=1
 service irsc_util /vendor/bin/irsc_util "/vendor/etc/sec_config"
     class core
     user root
+    task_profiles ServiceCapacityLow
     oneshot
 
 service vendor.rmt_storage /vendor/bin/rmt_storage
@@ -359,6 +360,7 @@ service cnss-daemon /vendor/bin/cnss-daemon -n -l
     user system
     group system inet net_admin wifi
     capabilities NET_ADMIN
+    task_profiles ServiceCapacityLow
 
 on property:sys.shutdown.requested=*
     stop cnss-daemon

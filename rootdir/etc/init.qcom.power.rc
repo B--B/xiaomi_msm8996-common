@@ -160,6 +160,7 @@ service vendor.power_off_alarm /vendor/bin/power_off_alarm
     class core
     group system
     disabled
+    task_profiles ServiceCapacityLow
     oneshot
 
 service qcom-post-boot /vendor/bin/init.qcom.post_boot.sh
