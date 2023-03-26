@@ -59,16 +59,6 @@ system/lib/libmmrtpencoder.so|3d334ce2c3073a09835605db781bd7a791cce1f5
 system/lib64/libmmrtpdecoder.so|719a126cc557a8512d73e9e148cb9bdfb7830c11
 system/lib64/libmmrtpencoder.so|df4a7d6679003547cbafe38608d24b434ae23cf9
 
-# Soundfx - from LA.UM.8.6.r1-04400-89xx.0
-vendor/lib/soundfx/libasphere.so|4d0ccf1c282bb70619d20bf7d79021dc3815a579
-vendor/lib/soundfx/libqcbassboost.so|223896ecb679384ba4e66d0b6905ca24ae1dda4d
-vendor/lib/soundfx/libqcreverb.so|62be9233cf5e259370a821ef6dc0cb0304b9416c
-vendor/lib/soundfx/libqcvirt.so|b6c332827ad84fdde9b7e57ca073928a23bbd807
-vendor/lib64/soundfx/libasphere.so|f552a053f935299b3fd9be03a596eb4c40dee50e
-vendor/lib64/soundfx/libqcbassboost.so|4e45199a07afd3c49c20f3ff224b16c5ff68d04d
-vendor/lib64/soundfx/libqcreverb.so|3839275ec638720d7e0127e80f9105de8863810b
-vendor/lib64/soundfx/libqcvirt.so|37003334f2f10689e2f6f5913404a9793c9782e8
-
 # ANT+ (system) - from enchilada - PKQ1.180716.001
 system/lib/com.qualcomm.qti.ant@1.0.so|fcd6a7130c480bfe4e4d9cc00702ed8444cddc82
 -system/lib/libantradio.so|7506f2577f2f1068688b623ca85e432be9c3dac9
