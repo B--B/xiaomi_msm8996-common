@@ -1,7 +1,7 @@
 # Audio
 af.fast_track_multiplier=1
 audio.deep_buffer.media=true
-audio.offload.min.duration.secs=15
+audio.offload.min.duration.secs=30
 audio.offload.video=true
 ro.config.media_vol_steps=25
 ro.config.vc_call_vol_steps=7
