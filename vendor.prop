@@ -114,25 +114,28 @@ ro.vendor.display.sensortype=2
 ro.vendor.display.cabl=0
 
 # Graphics
-debug.egl.hw=1
 debug.hwui.renderer=skiagl
 debug.hwui.skia_atrace_enabled=false
 debug.gralloc.gfx_ubwc_disable=0
 debug.renderengine.backend=skiaglthreaded
-debug.sf.enable_hwc_vds=1
-debug.sf.hw=1
 dev.pm.dyn_samplingrate=1
 renderthread.skia.reduceopstasksplitting=true
 ro.opengles.version=196610
-ro.surface_flinger.force_hwc_copy_for_virtual_displays=true
-ro.surface_flinger.max_frame_buffer_acquired_buffers=3
-ro.surface_flinger.max_virtual_display_dimension=4096
 vendor.display.disable_rotator_split=1
-vendor.display.disable_scaler=1
 vendor.display.disable_skip_validate=1
 vendor.display.enable_default_color_mode=1
 vendor.display.perf_hint_window=50
 vendor.display.support_writeback=0
+vendor.gralloc.enable_fb_ubwc=1
+
+# Surfaceflinger
+debug.sf.enable_hwc_vds=1
+debug.sf.latch_unsignaled=1
+debug.sf.recomputecrop=0
+debug.sf.disable_backpressure=1
+ro.surface_flinger.force_hwc_copy_for_virtual_displays=true
+ro.surface_flinger.max_frame_buffer_acquired_buffers=3
+ro.surface_flinger.max_virtual_display_dimension=4096
 
 # HWUI
 ro.hwui.render_ahead=1
