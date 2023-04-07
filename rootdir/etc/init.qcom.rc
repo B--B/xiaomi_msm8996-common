@@ -166,8 +166,6 @@ on post-fs-data
     # Create /data/vendor/time folder for time-services
     mkdir /data/vendor/time 0700 system system
 
-    setprop vold.post_fs_data_done 1
-
     # NFC local data and nfcee xml storage
     setprop ro.nfc.port "I2C"
     mkdir /data/vendor/nfc 0777 nfc nfc
@@ -185,6 +183,10 @@ on post-fs-data
     write /data/vendor/radio/db_check_done 0
     chown radio radio /data/vendor/radio/db_check_done
     chmod 0660 /data/vendor/radio/db_check_done
+
+    # keep that at the end of on post-fs-data
+    # Set indication (checked by vold) that we have finished this action
+    setprop vold.post_fs_data_done 1
 
 on early-boot
     # Allow subsystem (modem etc) debugging
