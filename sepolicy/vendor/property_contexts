@@ -1,9 +1,11 @@
 # adsprpc
-fastrpc.debug.trace        u:object_r:vendor_adsprpc_prop:s0 exact int
-fastrpc.perf.kernel        u:object_r:vendor_adsprpc_prop:s0 exact int
-fastrpc.perf.adsp          u:object_r:vendor_adsprpc_prop:s0 exact int
-fastrpc.perf.freq          u:object_r:vendor_adsprpc_prop:s0 exact int
-fastrpc.process.attrs      u:object_r:vendor_adsprpc_prop:s0 exact int
+vendor.fastrpc.debug.pddump      u:object_r:vendor_adsprpc_prop:s0 exact int
+vendor.fastrpc.debug.systrace    u:object_r:vendor_adsprpc_prop:s0 exact int
+vendor.fastrpc.debug.trace       u:object_r:vendor_adsprpc_prop:s0 exact int
+vendor.fastrpc.perf.kernel       u:object_r:vendor_adsprpc_prop:s0 exact int
+vendor.fastrpc.perf.adsp         u:object_r:vendor_adsprpc_prop:s0 exact int
+vendor.fastrpc.perf.freq         u:object_r:vendor_adsprpc_prop:s0 exact int
+vendor.fastrpc.process.attr      u:object_r:vendor_adsprpc_prop:s0 exact int
 
 # Audio
 audio.adm.                 u:object_r:vendor_default_prop:s0
