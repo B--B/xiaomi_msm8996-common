@@ -397,7 +397,7 @@ service qcamerasvr /vendor/bin/mm-qcamera-daemon
     class late_start
     user camera
     group camera system inet input graphics
-    writepid /dev/cpuset/camera-daemon/tasks /dev/stune/camera-daemon/tasks
+    task_profiles CameraServiceCapacity CameraServicePerformance
 
 # Start up peripheral manager
 service vendor.per_mgr /vendor/bin/pm-service

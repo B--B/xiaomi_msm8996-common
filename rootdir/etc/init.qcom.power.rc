@@ -51,17 +51,10 @@ on boot
     # we want little cores for camera
     mkdir /dev/cpuset/camera-daemon
     write /dev/cpuset/camera-daemon/cpus 0-1
+    write /dev/cpuset/camera-daemon/mems 0
     chown system system /dev/cpuset/camera-daemon
     chown system system /dev/cpuset/camera-daemon/tasks
     chmod 0664 /dev/cpuset/camera-daemon/tasks
-
-    # Create an stune group for the camera-daemon
-    mkdir /dev/stune/camera-daemon
-    write /dev/stune/camera-daemon/schedtune.prefer_idle 1
-    write /dev/stune/camera-daemon/schedtune.boost 0
-    chown system system /dev/stune/camera-daemon
-    chown system system /dev/stune/camera-daemon/tasks
-    chmod 0664 /dev/stune/camera-daemon/tasks
 
 on charger
     wait /dev/block/platform/soc/${ro.boot.bootdevice}
@@ -112,6 +105,7 @@ on enable-low-power
     write /dev/cpuset/background/cpus 0
     write /dev/cpuset/system-background/cpus 0-1
     write /dev/cpuset/restricted/cpus 0-1
+    write /dev/cpuset/camera-daemon/cpus 0-3
 
     # Setup runtime blkio
     # value for group_idle is us
