@@ -311,6 +311,16 @@ vendor/lib64/libqisl.so
 vendor/lib64/librpmb.so
 vendor/lib64/libssd.so
 
+# DRM - from Coral - Tiramisu/TPP1.220114.016/8158200
+vendor/lib64/libops.so|3c763226ccc3b0f32e131af71a458b41bf2b3d8d
+vendor/lib64/libspl.so|f8bbe0322ce06a545f5dc79c888183ac61673b68
+
+# DRM - Widevine - from Coral - Tiramisu/TPP1.220114.016/8158200
+vendor/bin/hw/android.hardware.drm@1.4-service.widevine|1ad2e046be16d2ee422925dba60b8ef4d9d10e43
+vendor/etc/init/android.hardware.drm@1.4-service.widevine.rc|225dd006bfecf6c1dca6793fa1c13a455ce4eae6
+vendor/etc/vintf/manifest/manifest_android.hardware.drm@1.4-service.widevine.xml|91d7c0996133556cb7f7c5d1b7e5d9e7f07b78b2
+vendor/lib64/libwvhidl.so|aa31972bf48749785f3e5d91aaafac21f226ac87
+
 # Gatekeeper
 vendor/lib/hw/gatekeeper.msm8996.so
 vendor/lib64/hw/gatekeeper.msm8996.so
@@ -647,14 +657,6 @@ vendor/app/TimeService/TimeService.apk|27f9b81621c446baa8c37581d9bfbca2fd67b496
 vendor/bin/time_daemon|75b8a6a14cfb4424499ccb2bf1cad011df295d0e
 vendor/etc/init/init.time_daemon.rc|b253ca2a498757e14e1d7a051bf504ae09218f51
 vendor/lib64/libtime_genoff.so|06df52867790cdbbcc674a3a28d7ad7c8cc161ac
-
-# Widevine - from daisy - QKQ1.191002.002
-vendor/bin/hw/android.hardware.drm@1.2-service.widevine|e130b8f1c8d46d8a185b00cba5ff8a2a871ee94c
-vendor/etc/init/android.hardware.drm@1.2-service.widevine.rc|dee5b7838ac561a2292e89fc0c4ccd1932224215
-vendor/etc/vintf/manifest/manifest_android.hardware.drm@1.2-service.widevine.xml|1b556a6b981dfe8c5d62311b59758d370dd6dd10
-vendor/lib/mediadrm/libwvdrmengine.so|53e578d72fbd6b2f56eed7529c15ec3818656ce3
-vendor/lib64/libwvhidl.so|a701374f4c0a6b6924b3f81c304505db48b3f9e1
-vendor/lib64/mediadrm/libwvdrmengine.so|9576cf6a0350a3b6fdc4982cede62c542f257011
 
 # WiFi
 vendor/bin/cnss-daemon
