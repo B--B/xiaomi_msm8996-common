@@ -3,6 +3,7 @@ allow gmscore_app public_adsprpcd_file:file r_file_perms;
 
 get_prop(gmscore_app, aac_drc_prop)
 get_prop(gmscore_app, ab_update_gki_prop)
+get_prop(gmscore_app, adaptive_haptics_prop)
 get_prop(gmscore_app, apexd_config_prop)
 get_prop(gmscore_app, apexd_prop)
 get_prop(gmscore_app, apk_verity_prop)
