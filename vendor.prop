@@ -104,6 +104,7 @@ dalvik.vm.image-dex2oat-filter=speed
 dalvik.vm.dex2oat64.enabled=true
 
 # Data modules
+persist.vendor.data.iwlan.enable=true
 ro.vendor.use_data_netmgrd=true
 
 # Display
