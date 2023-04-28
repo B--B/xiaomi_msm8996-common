@@ -58,6 +58,9 @@ persist.hvdcp.             u:object_r:vendor_hvdcp_opti_prop:s0
 # imsrtp
 perist.vendor.ims.enable_rateadapt  u:object_r:vendor_qcom_ims_prop:s0
 
+# MWQEM
+persist.vendor.mwqem.           u:object_r:vendor_mwqem_prop:s0
+
 # NFC
 ro.nfc.port                u:object_r:vendor_nfc_prop:s0
 persist.vendor.nfc.        u:object_r:vendor_nfc_prop:s0
