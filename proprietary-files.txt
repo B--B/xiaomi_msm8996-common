@@ -505,11 +505,6 @@ vendor/lib64/libmmosal.so|e9fdb48163e92b089cea0c397723a8416436c272
 vendor/lib64/libswvdec.so|f2ca69b50c339ce350eb4e6c151db19de3e5c9a9
 vendor/lib64/libvpplibrary.so|30e8e7cf1495fb88162beeb65e6273f28563b43b
 
-# NFC - SmartCardService
-system/etc/permissions/org.simalliance.openmobileapi.xml
-system/framework/org.simalliance.openmobileapi.jar
-system/priv-app/SmartcardService/SmartcardService.apk
-
 # Peripheral manager - from daisy - QKQ1.191002.002
 vendor/bin/pm-proxy|1f216a6f54e9b97c026f3f3bc4d7d441d58d90a7
 vendor/bin/pm-service|8a521f14576d0d2edf03b4500a54379d37e15d4e
