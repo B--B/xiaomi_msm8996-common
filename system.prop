@@ -30,7 +30,6 @@ ro.frp.pst=/dev/block/bootdevice/by-name/frp
 
 # Graphics
 persist.demo.hdmirotationlock=false
-renderthread.skia.reduceopstasksplitting=true
 
 # IMS
 persist.vendor.ims.disableIMSLogs=1
