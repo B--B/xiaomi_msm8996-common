@@ -138,7 +138,7 @@ on property:sys.boot_completed=1
 on property:init.svc.recovery=running
     trigger enable-low-power
 
-service vendor.charger /system/bin/chargeonlymode
+service charger /system/bin/charger
     class charger
     user system
     group system graphics input
