@@ -331,6 +331,7 @@ service vendor.sensors.qti /vendor/bin/sensors.qti
     class core
     user system
     group system
+    disabled
     task_profiles ServiceCapacityLow
 
 service cnss-daemon /vendor/bin/cnss-daemon -n -l
@@ -348,6 +349,11 @@ service loc_launcher /vendor/bin/loc_launcher
     user gps
     group gps
     task_profiles ServiceCapacityLow
+
+service vendor-sensor-sh /vendor/bin/init.qcom.sensors.sh
+    class core
+    user root
+    oneshot
 
 service qcom-sh /vendor/bin/init.qcom.sh
     class late_start
