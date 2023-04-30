@@ -388,7 +388,8 @@ service qcamerasvr /vendor/bin/mm-qcamera-daemon
 service vendor.per_mgr /vendor/bin/pm-service
     class core
     user system
-    group system
+    group system net_raw
+    ioprio rt 4
     task_profiles ServiceCapacityLow
 
 service vendor.per_proxy /vendor/bin/pm-proxy
