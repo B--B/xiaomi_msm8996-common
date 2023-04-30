@@ -215,8 +215,8 @@ vendor/lib/libmmcamera_isp_sce40.so
 vendor/lib/libmmcamera_isp_snr47.so
 vendor/lib/libmmcamera_isp_sub_module.so
 
-# Charger
-vendor/bin/hvdcp_opti
+# Charger - from LA.UM.9.6.2.r1-04200-89xx.0
+vendor/bin/hvdcp_opti|d160d2193640a21b7eff70425bcdbfc775063cd5
 
 # CNE - from LA.UM.9.6.3.r1-06200-89xx.0
 system_ext/lib64/com.quicinc.cne.api@1.0.so|76440d7953db0808e855eee393e116841b59c6d5
