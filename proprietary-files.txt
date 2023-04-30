@@ -88,6 +88,7 @@ vendor/lib64/vendor.qti.hardware.fm@1.0_vendor.so
 
 # Camera
 vendor/bin/mm-qcamera-daemon
+vendor/lib/libblurbuster.so
 vendor/lib/libchromaflash.so
 vendor/lib/libflash_pmic.so
 vendor/lib/libjpegdhw.so
@@ -95,6 +96,7 @@ vendor/lib/libjpegdmahw.so
 vendor/lib/libjpegehw.so
 vendor/lib/libmmcamera2_c2d_module.so
 vendor/lib/libmmcamera2_cpp_module.so
+vendor/lib/libmmcamera2_dcrf.so
 vendor/lib/libmmcamera2_frame_algorithm.so
 vendor/lib/libmmcamera2_iface_modules.so
 vendor/lib/libmmcamera2_imglib_modules.so
@@ -111,6 +113,7 @@ vendor/lib/libmmcamera2_stats_modules.so
 vendor/lib/libmmcamera_chromaflash_lib.so
 vendor/lib/libmmcamera_csidtg.so
 vendor/lib/libmmcamera_dbg.so
+vendor/lib/libmmcamera_dcrf_lib.so
 vendor/lib/libmmcamera_dummyalgo.so
 vendor/lib/libmmcamera_eebinparse.so
 vendor/lib/libmmcamera_eeprom_util.so
@@ -130,7 +133,8 @@ vendor/lib/libmmcamera_paaf_lib.so
 vendor/lib/libmmcamera_pdaf.so
 vendor/lib/libmmcamera_pdafcamif.so
 vendor/lib/libmmcamera_ppbase_module.so
-vendor/lib/libmmcamera_stillmore_lib.so
+vendor/lib/libmmcamera_ppeiscore.so
+vendor/lib/libmmcamera_stillmore_lib.so|3b15e48502c61d1c638f270befaa6a546c96f184
 vendor/lib/libmmcamera_sw2d_lib.so
 vendor/lib/libmmcamera_thread_services.so
 vendor/lib/libmmcamera_tintless_algo.so
@@ -152,8 +156,15 @@ vendor/lib/libqomx_jpegdec.so
 vendor/lib/libqomx_jpegenc.so
 vendor/lib/libqomx_jpegenc_pipe.so
 vendor/lib/libseemore.so
+vendor/lib/libshim_camera.so
 vendor/lib/libtm_interface.so
+vendor/lib/libtrueportrait.so
 vendor/lib/libubifocus.so
+
+# Camera - from Hydrogen 7.0/NRD90M/V10.3.2.0.NBCCNXM
+vendor/lib/libllvd_smore.so|740de4c339772df80858ddd9390f91ead71eadeb
+vendor/lib/libllvd_sw_tnr.so|406895e2ae614ac84a62d1758bce1810b99c5cda
+vendor/lib/libmmcamera_sw_tnr.so|59b0f350eb0cfa85399c296af14ac680ca99705e
 
 # Camera firmware
 system/etc/firmware/cpp_firmware_v1_10_0.fw:vendor/firmware/cpp_firmware_v1_10_0.fw

@@ -138,6 +138,7 @@ PRODUCT_PACKAGES += \
     camera.msm8996 \
     libgui_vendor \
     libstdc++.vendor \
+    libui_shim.vendor \
     vendor.qti.hardware.camera.device@1.0
 
 # Common init scripts
