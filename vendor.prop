@@ -72,6 +72,7 @@ vendor.audio.flac.sw.decoder.24bit=true
 # Bluetooth
 bluetooth.device.class_of_device=90,2,12
 bluetooth.hardware.power.operating_voltage_mv=3300
+bluetooth.hfp.client=1
 bluetooth.le.disable_apcf_extended_features=1
 bluetooth.profile.a2dp.source.enabled?=true
 bluetooth.profile.asha.central.enabled?=true
@@ -89,6 +90,9 @@ bluetooth.profile.pbap.server.enabled?=true
 bluetooth.profile.sap.server.enabled?=true
 bluetooth.sco.disable_enhanced_connection=1
 persist.vendor.qcom.bluetooth.soc=rome
+ro.vendor.bluetooth.emb_wp_mode=false
+ro.vendor.bluetooth.wipower=false
+ro.vendor.bt.bdaddr_path=/mnt/vendor/persist/bluetooth/bt_mac
 
 # Boot
 sys.vendor.shutdown.waittime=500
@@ -195,23 +199,25 @@ ro.vendor.extension_library=libqti-perfd-client.so
 # Radio
 ro.telephony.call_ring.multiple=false
 ro.telephony.default_cdma_sub=0
-ro.telephony.default_network=20,20
 persist.vendor.net.doxlat=true
-persist.vendor.radio.apm_sim_not_pwdn=1
-persist.vendor.radio.force_on_dc=true
-persist.vendor.radio.redir_party_num=1
-persist.vendor.radio.custom_ecc=1
-persist.vendor.radio.mt_sms_ack=30
-persist.vendor.radio.rat_on=combine
-persist.vendor.radio.sib16_support=1
-persist.vendor.radio.report_codec=1
 persist.vendor.radio.add_power_save=1
-persist.vendor.radio.data_ltd_sys_ind=1
-persist.vendor.radio.data_con_rprt=1
-telephony.lteOnCdmaDevice=1
-ro.telephony.use_old_mnc_mcc_format=true
-persist.vendor.radio.procedure_bytes=SKIP
 persist.vendor.radio.aosp_usr_pref_sel=true
+persist.vendor.radio.apm_sim_not_pwdn=1
+persist.vendor.radio.custom_ecc=1
+persist.vendor.radio.data_con_rprt=1
+persist.vendor.radio.data_ltd_sys_ind=1
+persist.vendor.radio.default_network=20,20
+persist.vendor.radio.force_on_dc=true
+persist.vendor.radio.hw_mbn_update=0
+persist.vendor.radio.sw_mbn_update=0
+persist.vendor.radio.mt_sms_ack=30
+persist.vendor.radio.procedure_bytes=SKIP
+persist.vendor.radio.rat_on=combine
+persist.vendor.radio.redir_party_num=1
+persist.vendor.radio.report_codec=1
+persist.vendor.radio.sib16_support=1
+ro.telephony.use_old_mnc_mcc_format=true
+telephony.lteOnCdmaDevice=1
 vendor.rild.libpath=/vendor/lib64/libril-qc-qmi-1.so
 
 # SoC
