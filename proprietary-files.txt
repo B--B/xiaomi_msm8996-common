@@ -455,6 +455,8 @@ vendor/lib64/hw/keystore.msm8996.so
 # Listen - from LA.UM.9.6.2.r1-04200-89xx.0
 vendor/lib/hw/sound_trigger.primary.msm8937.so:vendor/lib/hw/sound_trigger.primary.msm8996.so
 vendor/lib/libadpcmdec.so|7a38d6b28b27cf663681ad077614a03164418f91
+vendor/lib/libcapiv2svacnn.so|927d89e3c65bd6b1d1028e1dc7318d98e288f510
+vendor/lib/libcapiv2vop.so|1515e1e4d37c01e1c8d3b819add1b5ca71d22f43
 vendor/lib/libsmwrapper.so|f0ee761c02c888e77d947bb87d162d9379bc1530
 
 # Machine learning
