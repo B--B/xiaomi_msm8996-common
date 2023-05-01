@@ -97,9 +97,9 @@ PRODUCT_PACKAGES += \
     android.hardware.audio@7.1-impl:32 \
     android.hardware.audio.effect@7.0-impl:32 \
     android.hardware.audio.service \
-    android.hardware.bluetooth.audio-impl \
+    android.hardware.bluetooth.audio-impl:32 \
     audio.bluetooth.default \
-    audio.primary.msm8996 \
+    audio.primary.msm8996:32 \
     audio.r_submix.default \
     audio.usb.default \
     libaacwrapper \
@@ -110,8 +110,8 @@ PRODUCT_PACKAGES += \
     libqcomvoiceprocessing \
     libvolumelistener \
     tinymix.vendor \
-    libhfp \
-    libsndmonitor
+    libhfp:32 \
+    libsndmonitor:32
 
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/audio/audio_effects.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio_effects.xml \
