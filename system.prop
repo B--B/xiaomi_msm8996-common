@@ -6,6 +6,9 @@ audio.offload.video=true
 ro.config.media_vol_steps=25
 ro.config.vc_call_vol_steps=7
 
+# Bluetooth
+bluetooth.hfp.client=1
+
 # Camera
 persist.camera.gyro.disable=0
 persist.camera.imglib.fddsp=1
@@ -27,6 +30,26 @@ ro.frp.pst=/dev/block/bootdevice/by-name/frp
 
 # Graphics
 persist.demo.hdmirotationlock=false
+renderthread.skia.reduceopstasksplitting=true
+
+# IMS
+persist.vendor.ims.disableIMSLogs=1
+persist.vendor.ims.disableADBLogs=1
+persist.vendor.ims.disableDebugDataPathLogs=1
+persist.vendor.ims.disableDebugLogs=1
+persist.vendor.ims.disableSigHandler=1
+persist.vendor.ims.disableQXDMLogs=1
+
+# Set lmkd options
+ro.lmk.use_psi=false
+
+# Media
+media.aac_51_output_enabled=true
+mm.enable.smoothstreaming=true
+mmp.enable.3g2=true
+persist.mm.enable.prefetch=true
+vendor.video.disable.ubwc=1
+vidc.enc.dcvs.extra-buff-count=2
 
 # Mwqem
 persist.vendor.mwqem.enable=1
@@ -37,9 +60,13 @@ ril.subscription.types=NV,RUIM
 persist.net.doxlat=true
 persist.radio.apm_sim_not_pwdn=1
 persist.radio.multisim.config=dsds
+persist.vendor.net.doxlat=true
 
 # USB
 vendor.usb.controller=6a00000.dwc3
+
+# WFD
+media.wfd.max_resolution=5
 
 # Wifi
 wifi.interface=wlan0
