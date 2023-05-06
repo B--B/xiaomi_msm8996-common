@@ -50,6 +50,7 @@ mmp.enable.3g2=true
 persist.mm.enable.prefetch=true
 vendor.video.disable.ubwc=1
 vidc.enc.dcvs.extra-buff-count=2
+video.disable.ubwc=1
 
 # Mwqem
 persist.vendor.mwqem.enable=1
