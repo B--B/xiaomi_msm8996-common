@@ -27,11 +27,50 @@
 * IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 */
 
+/*
+ *  Changes from Qualcomm Innovation Center are provided under the following license:
+ *
+ *  Copyright (c) 2022 Qualcomm Innovation Center, Inc. All rights reserved.
+ *
+ *  Redistribution and use in source and binary forms, with or without
+ *  modification, are permitted (subject to the limitations in the
+ *  disclaimer below) provided that the following conditions are met:
+ *
+ *      * Redistributions of source code must retain the above copyright
+ *        notice, this list of conditions and the following disclaimer.
+ *
+ *      * Redistributions in binary form must reproduce the above
+ *        copyright notice, this list of conditions and the following
+ *        disclaimer in the documentation and/or other materials provided
+ *        with the distribution.
+ *
+ *      * Neither the name of Qualcomm Innovation Center, Inc. nor the names of its
+ *        contributors may be used to endorse or promote products derived
+ *        from this software without specific prior written permission.
+ *
+ *  NO EXPRESS OR IMPLIED LICENSES TO ANY PARTY'S PATENT RIGHTS ARE
+ *  GRANTED BY THIS LICENSE. THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT
+ *  HOLDERS AND CONTRIBUTORS "AS IS" AND ANY EXPRESS OR IMPLIED
+ *   WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF
+ *  MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED.
+ *  IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE FOR
+ *  ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
+ *  DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE
+ *  GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS
+ *  INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER
+ *  IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR
+ *  OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
+ *  IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+ */
+
 #ifndef __CONFIG_DEFS_H__
 #define __CONFIG_DEFS_H__
 
 #include <vector>
 #include <string>
+
+#include <errno.h>
+#include <cutils/native_handle.h>
 
 // #defines specifying the API level supported
 // Client can use these API level #ifdefs in their implementation to call the
@@ -42,6 +81,7 @@
 #define DISPLAY_CONFIG_API_LEVEL_1
 #define DISPLAY_CONFIG_API_LEVEL_2
 
+#define DISPLAY_CONFIG_CAMERA_SMOOTH_APIs_1_0
 #define DISPLAY_CONFIG_TILE_DISPLAY_APIS_1_0
 
 namespace DisplayConfig {
@@ -100,6 +140,21 @@ enum class TUIEventType : int {
   kPrepareTUITransition,
   kStartTUITransition,
   kEndTUITransition,
+};
+
+enum class CameraSmoothOp : int {
+  kOff,
+  kOn,
+};
+
+enum class RGBOrder : int {
+  kFSCUnknown = 0,
+  kFSCRGB = 1,
+  kFSCRBG = 2,
+  kFSCBGR = 3,
+  kFSCBRG = 4,
+  kFSCGBR = 5,
+  kFSCGRB = 6,
 };
 
 // Input and Output Params structures
@@ -266,6 +321,46 @@ struct WiderModePrefParams {
   WiderModePref mode_pref = WiderModePref::kNoPreference;
 };
 
+struct CameraSmoothInfo {
+  CameraSmoothOp op = CameraSmoothOp::kOff;
+  uint32_t fps = 0;
+};
+
+struct EnableCACParams {
+  uint32_t disp_id = 0;
+  bool enable = 0;
+  float red = 0;
+  float green = 0;
+  float blue = 0;
+};
+
+struct CacChannelRect {
+  float left = 0;
+  float top = 0;
+  float right = 0;
+  float bottom = 0;
+};
+
+struct CacEyeConfig {
+  CacChannelRect red_channel_src = {};
+  CacChannelRect red_channel_dst = {};
+  CacChannelRect green_channel_src = {};
+  CacChannelRect green_channel_dst = {};
+  CacChannelRect blue_channel_src = {};
+  CacChannelRect blue_channel_dst = {};
+};
+
+struct CacEyeConfigParams {
+  uint32_t disp_id = 0;
+  CacEyeConfig left = {};
+  CacEyeConfig right = {};
+};
+
+struct SkewVsyncParams {
+  uint32_t disp_id = 0;
+  uint32_t skew_vsync_val = 0;
+};
+
 /* Callback Interface */
 class ConfigCallback {
  public:
@@ -273,6 +368,7 @@ class ConfigCallback {
   virtual void NotifyQsyncChange(bool /* qsync_enabled */ , int /* refresh_rate */,
                                  int /* qsync_refresh_rate */) { }
   virtual void NotifyIdleStatus(bool /* is_idle */) { }
+  virtual void NotifyCameraSmoothInfo(CameraSmoothOp /* op */, uint32_t /* fps */) { }
 
  protected:
   virtual ~ConfigCallback() { }
@@ -302,6 +398,7 @@ class ConfigInterface {
   virtual int SetIdleTimeout(uint32_t /* value */) DEFAULT_RET
   virtual int GetHDRCapabilities(DisplayType /* dpy */, HDRCapsParams* /* caps */) DEFAULT_RET
   virtual int SetCameraLaunchStatus(uint32_t /* on */) DEFAULT_RET
+  virtual int SetCameraSmoothInfo(CameraSmoothOp /* op */, uint32_t /* fps */) DEFAULT_RET
   virtual int DisplayBWTransactionPending(bool* /* status */) DEFAULT_RET
   virtual int SetDisplayAnimating(uint64_t /* display_id */, bool /* animating */) DEFAULT_RET
   virtual int ControlIdlePowerCollapse(bool /* enable */, bool /* synchronous */) DEFAULT_RET
@@ -362,6 +459,15 @@ class ConfigInterface {
                                       uint32_t /* Display tile v location */) DEFAULT_RET
   virtual int SetWiderModePreference(uint64_t /* physical_disp_id */,
                                      WiderModePref /* mode_pref */) DEFAULT_RET
+  virtual int ControlCameraSmoothCallback(bool /* enable */) DEFAULT_RET
+  virtual int DummyDisplayConfigAPI() DEFAULT_RET
+  virtual int GetFSCRGBOrder(DisplayType /* dpy */,
+                             RGBOrder* /* fsc_rgb_color_order */) DEFAULT_RET
+  virtual int EnableCAC(uint32_t /* disp_id */, bool /* enable */, float /* red */,
+                        float /* green */, float /* blue */) DEFAULT_RET
+  virtual int SetCacEyeConfig(uint32_t /* disp_id */, const CacEyeConfig & /* left */,
+                              const CacEyeConfig & /* right */) DEFAULT_RET
+  virtual int SetSkewVsync(uint32_t /* disp_id */, uint32_t /* skew_vsync_val */) DEFAULT_RET
 
   // deprecated APIs
   virtual int GetDebugProperty(const std::string /* prop_name */,

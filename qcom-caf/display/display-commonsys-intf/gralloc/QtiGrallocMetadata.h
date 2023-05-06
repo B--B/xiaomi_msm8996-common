@@ -63,7 +63,7 @@
 #define QTI_CUSTOM_DIMENSIONS_HEIGHT 10022
 #define QTI_RGB_DATA_ADDRESS 10023
 #define QTI_COLORSPACE 10024
-//#define QTI_YUV_PLANE_INFO 10025
+#define QTI_YUV_PLANE_INFO 10025
 
 // Used to indicate to framework that internal definitions are used instead
 #define COMPRESSION_QTI_UBWC 20001
@@ -183,14 +183,6 @@ struct qti_ycbcr {
   uint32_t cStride;
   uint32_t chromaStep;
 };
-
-/* Color Space Macros */
-#define HAL_CSC_ITU_R_601 0
-#define HAL_CSC_ITU_R_601_FR 1
-#define HAL_CSC_ITU_R_709 2
-#define HAL_CSC_ITU_R_709_FR 3
-#define HAL_CSC_ITU_R_2020 4
-#define HAL_CSC_ITU_R_2020_FR 5
 
 #define METADATA_SET_SIZE 512
 

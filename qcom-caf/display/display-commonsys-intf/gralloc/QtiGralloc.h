@@ -124,7 +124,7 @@ static const MetadataType MetadataType_CustomDimensionsHeight = {VENDOR_QTI,
 static const MetadataType MetadataType_RgbDataAddress = {VENDOR_QTI, QTI_RGB_DATA_ADDRESS};
 
 static const MetadataType MetadataType_ColorSpace = {VENDOR_QTI, QTI_COLORSPACE};
-//static const MetadataType MetadataType_YuvPlaneInfo = {VENDOR_QTI, QTI_YUV_PLANE_INFO};
+static const MetadataType MetadataType_YuvPlaneInfo = {VENDOR_QTI, QTI_YUV_PLANE_INFO};
 // 0 is also used as invalid value in standard metadata
 static const MetadataType MetadataType_Invalid = {VENDOR_QTI, 0};
 
@@ -154,8 +154,8 @@ Error decodeVideoHistogramMetadata(hidl_vec<uint8_t> &in, VideoHistogramMetadata
 Error encodeVideoHistogramMetadata(VideoHistogramMetadata &in, hidl_vec<uint8_t> *out);
 Error decodeVideoTimestampInfo(hidl_vec<uint8_t> &in, VideoTimestampInfo *out);
 Error encodeVideoTimestampInfo(VideoTimestampInfo &in, hidl_vec<uint8_t> *out);
-//Error decodeYUVPlaneInfoMetadata(hidl_vec<uint8_t> &in, qti_ycbcr *out);
-//Error encodeYUVPlaneInfoMetadata(qti_ycbcr *in, hidl_vec<uint8_t> *out);
+Error decodeYUVPlaneInfoMetadata(hidl_vec<uint8_t> &in, qti_ycbcr *out);
+Error encodeYUVPlaneInfoMetadata(qti_ycbcr *in, hidl_vec<uint8_t> *out);
 }  // namespace qtigralloc
 
 #endif  //__QTIGRALLOC_H__
