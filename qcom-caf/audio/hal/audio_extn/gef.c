@@ -47,6 +47,7 @@
 #include <cutils/properties.h>
 #include "audio_extn.h"
 #include "audio_hw.h"
+#include <pthread.h>
 
 #ifdef DYNAMIC_LOG_ENABLED
 #include <log_xml_parser.h>
