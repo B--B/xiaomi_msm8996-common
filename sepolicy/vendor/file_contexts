@@ -64,3 +64,7 @@
 # Power HAL
 /sys/kernel/debug/system_stats                   u:object_r:debugfs_system_stats:s0
 /sys/devices/virtual/graphics/fb0/idle_state     u:object_r:sysfs_graphics:s0
+
+# Required by Pinner Service
+/vendor/lib(64)?/libadreno_app_profiles\.so      u:object_r:same_process_hal_file:s0
+/vendor/lib(64)?/libgpudataproducer\.so          u:object_r:same_process_hal_file:s0
