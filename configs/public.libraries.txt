@@ -1,2 +1,4 @@
+libqti-perfd-client.so
 libadsprpc.so
+libfastcvopt.so
 libOpenCL.so
