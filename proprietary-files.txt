@@ -248,7 +248,7 @@ vendor/etc/cne/wqeclient/VZW/VZW_profile6.xml|14d136e7fcc682311757d3edc0b9d3eaeb
 vendor/etc/cne/mwqem.conf|c51d3893b86ab89fae218f3a92c4f9c18ea401a8
 vendor/etc/cne/profileMwqem.xml|947917691684584b7e2ddf3588cd6f8e99f3804f
 vendor/etc/default-permissions/com.qualcomm.qti.cne.xml|c63c37d067e3009735fbc54d4603d43d7d6623e1
-vendor/etc/init/cnd.rc|3a5183df3479500fb729493bc56c71166fc10bce
+vendor/etc/init/cnd.rc|9dc5818ff9b3f4aae94c074713975844c77f8f2b
 vendor/lib64/libcacertclient.so|69ae73b9be13507ff39398ac5813ad709b8b7c32
 vendor/lib64/libcne.so|693161958cfac54f256a5ed1e2ec0392bdb31112
 vendor/lib64/libcneapiclient.so|b6479678e5b0e8b46d8df5eb8bd610aa17be00d0
@@ -294,7 +294,7 @@ system_ext/lib64/libdpmframework.so|39a3cea6de0295de37af18149de0fd5312ef898e
 system_ext/lib64/libdpmtcm.so|e4e0c6a979f76727cd0ed1d67950d9b35bbbc17b
 system_ext/priv-app/dpmserviceapp/dpmserviceapp.apk|9f988ff6a8c6676172d3d3740bd0b8616b7dc125
 vendor/bin/dpmQmiMgr|61a421804559b0e461439c19088acc01b871982a
-vendor/etc/init/dpmQmiMgr.rc|1538743661a5c48c15cd105beaad20f72953885a
+vendor/etc/init/dpmQmiMgr.rc|fe55baa94a879edbfabccbf6abb8284cf5bce69d
 vendor/lib64/com.qualcomm.qti.dpm.api@1.0.so|d9f1aa7f93b928f42499d613d20ccbc60f279097
 vendor/lib64/libdpmqmihal.so|41eb89e66ba065c43a5eb79cd3c72cef0ee167aa
 
@@ -323,7 +323,7 @@ vendor/lib64/libspl.so|f8bbe0322ce06a545f5dc79c888183ac61673b68
 
 # DRM - Widevine - from Coral - Tiramisu/TPP1.220114.016/8158200
 vendor/bin/hw/android.hardware.drm@1.4-service.widevine|1ad2e046be16d2ee422925dba60b8ef4d9d10e43
-vendor/etc/init/android.hardware.drm@1.4-service.widevine.rc|225dd006bfecf6c1dca6793fa1c13a455ce4eae6
+vendor/etc/init/android.hardware.drm@1.4-service.widevine.rc|467808b3578bf7a40901350cb7c2a1f9db5a340c
 vendor/etc/vintf/manifest/manifest_android.hardware.drm@1.4-service.widevine.xml|91d7c0996133556cb7f7c5d1b7e5d9e7f07b78b2
 vendor/lib64/libwvhidl.so|aa31972bf48749785f3e5d91aaafac21f226ac87
 
@@ -409,7 +409,7 @@ vendor/lib64/libscalar.so|c2b4383fe9d506cad9062f60ab97b0ef64acacfb
 # Graphics (SDM) - from LA.UM.10.6.2.r1-01600-89xx.0
 vendor/bin/hw/vendor.display.color@1.0-service|1f1d5cba21378c81f1c23c78d987d06c7613b794
 vendor/bin/mm-pp-dpps|083a05570aa6ec8c36e92a1294e34ca420b89437
-vendor/etc/init/vendor.display.color@1.0-service.rc|5ad673f879b3685a0e79b5633437e5499cb94f48
+vendor/etc/init/vendor.display.color@1.0-service.rc|bb6700d72ee8d1c5bd5ce1b6bd0cb79ac9454660
 vendor/lib64/libdisp-aba.so|1b27405e7d1101f40be242d99ab4da0ff9a271b0
 vendor/lib64/libhdr_tm.so|66f312694a60e9f917a6aafa04563b9c376b1411
 vendor/lib64/libsdedrm.so|d1876b91c534548cb4775d80cfb8bfee2fd7e1fd
@@ -507,7 +507,7 @@ vendor/lib64/libperipheral_client.so|0820ee76c595691935b7d8896471ea0b172b0f58
 product/app/PowerOffAlarm/PowerOffAlarm.apk:system_ext/app/PowerOffAlarm/PowerOffAlarm.apk|f0a86fc11b38c059912303857bc4c79155430bcc
 vendor/bin/hw/vendor.qti.hardware.alarm@1.0-service|37b4999095331f4f3dd6c118ee0bdea4bdf7f003
 vendor/bin/power_off_alarm|04e651db91ca2598f1bf50453fdb49a63463b2dc
-vendor/etc/init/vendor.qti.hardware.alarm@1.0-service.rc|a03a9a1c818595b19272ea6ffb466e23a7fc3b05
+vendor/etc/init/vendor.qti.hardware.alarm@1.0-service.rc|cc52088994df23f6763e99a3d92d564168ebb4b9
 vendor/lib64/hw/vendor.qti.hardware.alarm@1.0-impl.so|f2b57130987c65a1dc596bf83a2b09e086df9286
 vendor/lib64/vendor.qti.hardware.alarm@1.0.so|74675e4f720d75db031a0db4ca21463ebd331f34
 
@@ -599,12 +599,12 @@ vendor/bin/qrtr-ns|2b84b77bcd50e8c65c2151457f885eb434af4585
 vendor/bin/qti|5a270c9514c0fb6a0207700ff2f7dcc30ff906ae
 vendor/bin/rmt_storage|67694a89193cb33d52be46a090db104869cc40ad
 vendor/bin/tftp_server|791ed02bb98d7601601ae586f85dc4a986451e10
-vendor/etc/init/dataadpl.rc|cd4907d9bfd438fe5f5c86f5d6cec590ac0bac2a
-vendor/etc/init/dataqti.rc|6abfd1a850d782adbbb6f42c9d8ca870036b2ad1
+vendor/etc/init/dataadpl.rc|9c12ba8381396135fa821d5e4cd89315178af238
+vendor/etc/init/dataqti.rc|f7706d8a2fe2ad765bb12079ec472e7c755d4394
 vendor/etc/init/init-qcril-data.rc|890ac72fa49d0e52a263175a7b5b550539287800
-vendor/etc/init/netmgrd.rc|5c592bd2cf775462e147d3def97e99abbac4631e
-vendor/etc/init/vendor.qti.rmt_storage.rc|bc212c6353c2ded44ae4d759605fbbe55aa4fa3f
-vendor/etc/init/vendor.qti.tftp.rc|b27f188cbffba470a4510d50e46ff7c8446c22cb
+vendor/etc/init/netmgrd.rc|d6d41d6011cd9e4ba25ad77fb1362d7a280a2914
+vendor/etc/init/vendor.qti.rmt_storage.rc|92a246ac7dc01c08816a8f3ba6290a45c4a5ab31
+vendor/etc/init/vendor.qti.tftp.rc|206babcda7ad04242329875c64e6de6f9fdebccb
 vendor/etc/seccomp_policy/atfwd@2.0.policy|74fdb7d47bdb6d0cb06b13701a96a76c9171ab5d
 vendor/lib/libmdmdetect.so|c5c87b579f78d94543d87db8c1d7fec0ba2e6864
 vendor/lib64/libmdmdetect.so|4dee2a700aad658f3f30a6da069c867307ed371c
@@ -755,7 +755,7 @@ vendor/lib64/libtime_genoff.so|8bb116ad297a5e4a94da2f10509509cb6e863a5f
 
 # TUI - from LA.UM.9.6.2.r1-04200-89xx.0
 vendor/bin/hw/vendor.qti.hardware.tui_comm@1.0-service-qti|e8d97981d09a4e34907d13bcbbd10f03572c9218
-vendor/etc/init/vendor.qti.hardware.tui_comm@1.0-service-qti.rc|2cfc563d7e1579374f001c94588fae7835a12ffc
+vendor/etc/init/vendor.qti.hardware.tui_comm@1.0-service-qti.rc|7fa514d6af3510942f334d24506144f0da25c5b8
 vendor/lib/vendor.qti.hardware.tui_comm@1.0.so|933eb7026797f3dadad3d10fd69443b11f6563f3
 vendor/lib64/vendor.qti.hardware.tui_comm@1.0.so|16baab27397ad493e845515c20ac0c0c063c775d
 
