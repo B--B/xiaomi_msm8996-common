@@ -11,7 +11,13 @@ bluetooth.hfp.client=1
 
 # Camera
 persist.camera.gyro.disable=0
+persist.camera.iface.logs=0
 persist.camera.imglib.fddsp=1
+persist.camera.imglib.logs=0
+persist.camera.isp.clock.optmz=0
+persist.camera.isp.debug=0
+persist.camera.mct.debug=0
+persist.camera.sensor.debug=0
 
 # Charger
 ro.charger.enable_suspend=true
