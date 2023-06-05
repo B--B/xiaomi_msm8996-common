@@ -67,4 +67,3 @@
 
 # Required by Pinner Service
 /vendor/lib(64)?/libadreno_app_profiles\.so      u:object_r:same_process_hal_file:s0
-/vendor/lib(64)?/libgpudataproducer\.so          u:object_r:same_process_hal_file:s0
