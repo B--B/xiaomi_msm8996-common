@@ -168,6 +168,10 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     disable_configstore
 
+# Debug
+PRODUCT_PACKAGES_DEBUG := false
+PRODUCT_PACKAGES_DEBUG_ASAN := false
+
 # Dexpreopt
 PRODUCT_DEXPREOPT_SPEED_APPS += \
     SystemUIGoogle
