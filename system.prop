@@ -51,9 +51,6 @@ vendor.video.disable.ubwc=1
 vidc.enc.dcvs.extra-buff-count=2
 video.disable.ubwc=1
 
-# Mwqem
-persist.vendor.mwqem.enable=1
-
 # Radio
 DEVICE_PROVISIONED=1
 ril.subscription.types=NV,RUIM
