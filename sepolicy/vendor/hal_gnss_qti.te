@@ -1,3 +1,6 @@
 allow hal_gnss_qti self:capability net_bind_service;
 
 get_prop(hal_gnss_qti, vendor_pd_locater_dbg_prop)
+
+# xtra-daemon control
+get_prop(hal_gnss_qti, xtra_control_prop)
