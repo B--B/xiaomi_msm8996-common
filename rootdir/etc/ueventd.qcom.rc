@@ -430,3 +430,6 @@ firmware_directories /vendor/firmware_mnt/image/
 #QG device
 /dev/qg               0660   system     system
 /dev/qg_battery       0660   system     system
+
+# socinfo
+/sys/devices/soc0           serial_number            0000    root    root
