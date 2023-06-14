@@ -26,7 +26,7 @@ $(call inherit-product, vendor/xiaomi/msm8996-common/msm8996-common-vendor.mk)
 # Overlays
 DEVICE_PACKAGE_OVERLAYS += \
     $(LOCAL_PATH)/overlay \
-    $(LOCAL_PATH)/overlay-aosp
+    $(LOCAL_PATH)/overlay-lineage
 
 PRODUCT_ENFORCE_RRO_TARGETS := *
 
@@ -111,7 +111,7 @@ PRODUCT_PACKAGES += \
     libqcomvisualizer \
     libqcomvoiceprocessing \
     libvolumelistener \
-    tinymix.vendor \
+    tinymix \
     libhfp:32 \
     libsndmonitor:32
 
@@ -136,10 +136,6 @@ PRODUCT_PACKAGES += \
     android.hardware.bluetooth@1.0.vendor \
     vendor.qti.hardware.btconfigstore@1.0.vendor:64 \
     vendor.qti.hardware.btconfigstore@2.0.vendor:64
-
-# Bluetooth (shared dependencies)
-PRODUCT_PACKAGES += \
-    vendor.qti.hardware.fm@1.0.vendor
 
 # Call Recording
 TARGET_SUPPORTS_CALL_RECORDING := false
@@ -193,7 +189,7 @@ PRODUCT_PACKAGES += \
     memtrack.msm8996 \
     libdisplayconfig \
     libdisplayconfig.qti \
-    libgralloc.system.qti \
+    libgralloc.qti \
     libqdMetaData \
     libtinyxml \
     vendor.display.config@1.0.vendor \
@@ -279,10 +275,6 @@ PRODUCT_PACKAGES += \
 # Lights
 PRODUCT_PACKAGES += \
     android.hardware.light@2.0-service.xiaomi_8996
-
-# LineageHW
-PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/configs/permissions/xiaomi-privapp-permissions-lineagehw.xml:$(TARGET_COPY_OUT_PRODUCT)/etc/permissions/xiaomi-privapp-permissions-lineagehw.xml
 
 # LiveDisplay
 PRODUCT_PACKAGES += \

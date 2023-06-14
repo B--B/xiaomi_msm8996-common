@@ -27,6 +27,10 @@ import android.view.KeyEvent;
 
 import com.android.internal.os.DeviceKeyHandler;
 
+import lineageos.providers.LineageSettings;
+
+import org.lineageos.internal.util.FileUtils;
+
 public class KeyHandler implements DeviceKeyHandler {
 
     private static final String TAG = KeyHandler.class.getSimpleName();
@@ -59,7 +63,9 @@ public class KeyHandler implements DeviceKeyHandler {
     }
 
     public KeyEvent handleKeyEvent(KeyEvent event) {
-        boolean virtualKeysEnabled = false;
+        boolean virtualKeysEnabled = LineageSettings.System.getIntForUser(
+                mContext.getContentResolver(),
+                LineageSettings.System.FORCE_SHOW_NAVBAR, 0, UserHandle.USER_CURRENT) != 0;
         boolean fingerprintHomeButtonEnabled = FileUtils.isFileReadable(FP_HOME_NODE) &&
                 FileUtils.readOneLine(FP_HOME_NODE).equals("1");
 
