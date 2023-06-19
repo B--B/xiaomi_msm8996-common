@@ -62,7 +62,6 @@
 /(vendor|system/vendor)/bin/pixel\.dance\.sh     u:object_r:init_pixel_dance_exec:s0
 
 # Power HAL
-/sys/kernel/debug/system_stats                   u:object_r:debugfs_system_stats:s0
 /sys/devices/virtual/graphics/fb0/idle_state     u:object_r:sysfs_graphics:s0
 
 # Required by Pinner Service

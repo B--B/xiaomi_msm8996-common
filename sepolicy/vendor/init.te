@@ -1,5 +1,4 @@
 allow init adsprpcd_file:filesystem { mount relabelfrom relabelto };
 allow init adsprpcd_file:file mounton;
-allow init debugfs:file write;
 allow init socket_device:sock_file { unlink setattr create };
 allow init sysfs_mmc_host:file w_file_perms;
