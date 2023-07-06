@@ -362,6 +362,9 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     librecovery_updater_xiaomi
 
+# Release Keys
+PRODUCT_DEFAULT_DEV_CERTIFICATE := .android-certs/releasekey
+
 # RenderScript
 PRODUCT_PACKAGES += \
     android.hardware.renderscript@1.0-impl
