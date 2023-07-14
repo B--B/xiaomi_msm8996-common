@@ -17,8 +17,5 @@
     <!-- Max visible notification icons -->
     <integer name="config_maxVisibleNotificationIcons">6</integer>
     <integer name="config_maxVisibleNotificationIconsOnLock">7</integer>
-
-    <!-- Unlock ripple animation -->
-    <bool name="config_enableUnlockRippleAnimation">false</bool>
 </resources>
 
