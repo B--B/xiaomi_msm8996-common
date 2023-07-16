@@ -1513,7 +1513,6 @@ int QCamera3HardwareInterface::configureStreamsPerfLocked(
     /*EIS configuration*/
     bool eisSupported = false;
     bool oisSupported = false;
-    int32_t margin_index = -1;
     uint8_t eis_prop_set;
     uint32_t maxEisWidth = 0;
     uint32_t maxEisHeight = 0;
@@ -1527,7 +1526,6 @@ int QCamera3HardwareInterface::configureStreamsPerfLocked(
             (gCamCapability[mCameraId]->supported_is_types[i] == IS_TYPE_EIS_3_0))
         {
             eisSupported = true;
-            margin_index = (int32_t)i;
             break;
         }
     }
@@ -1917,9 +1915,7 @@ int QCamera3HardwareInterface::configureStreamsPerfLocked(
         uint32_t stream_usage = newStream->usage;
         mStreamConfigInfo.stream_sizes[mStreamConfigInfo.num_streams].width = (int32_t)newStream->width;
         mStreamConfigInfo.stream_sizes[mStreamConfigInfo.num_streams].height = (int32_t)newStream->height;
-        struct camera_info *p_info = NULL;
         pthread_mutex_lock(&gCamLock);
-        p_info = get_cam_info(mCameraId, &mStreamConfigInfo.sync_type);
         pthread_mutex_unlock(&gCamLock);
         if ((newStream->stream_type == CAMERA3_STREAM_BIDIRECTIONAL
                 || IS_USAGE_ZSL(newStream->usage)) &&
@@ -6135,7 +6131,7 @@ void QCamera3HardwareInterface::dumpMetadataToFile(tuning_params_t &meta,
     }
     //
 
-    if(enabled){
+    if (enabled) {
         char timeBuf[FILENAME_MAX];
         char buf[FILENAME_MAX];
         memset(buf, 0, sizeof(buf));
@@ -6158,40 +6154,39 @@ void QCamera3HardwareInterface::dumpMetadataToFile(tuning_params_t &meta,
         filePath.append(buf);
         int file_fd = open(filePath.string(), O_RDWR | O_CREAT, 0777);
         if (file_fd >= 0) {
-            ssize_t written_len = 0;
             meta.tuning_data_version = TUNING_DATA_VERSION;
             void *data = (void *)((uint8_t *)&meta.tuning_data_version);
-            written_len += write(file_fd, data, sizeof(uint32_t));
+            write(file_fd, data, sizeof(uint32_t));
             data = (void *)((uint8_t *)&meta.tuning_sensor_data_size);
             LOGD("tuning_sensor_data_size %d",(int)(*(int *)data));
-            written_len += write(file_fd, data, sizeof(uint32_t));
+            write(file_fd, data, sizeof(uint32_t));
             data = (void *)((uint8_t *)&meta.tuning_vfe_data_size);
             LOGD("tuning_vfe_data_size %d",(int)(*(int *)data));
-            written_len += write(file_fd, data, sizeof(uint32_t));
+            write(file_fd, data, sizeof(uint32_t));
             data = (void *)((uint8_t *)&meta.tuning_cpp_data_size);
             LOGD("tuning_cpp_data_size %d",(int)(*(int *)data));
-            written_len += write(file_fd, data, sizeof(uint32_t));
+            write(file_fd, data, sizeof(uint32_t));
             data = (void *)((uint8_t *)&meta.tuning_cac_data_size);
             LOGD("tuning_cac_data_size %d",(int)(*(int *)data));
-            written_len += write(file_fd, data, sizeof(uint32_t));
+            write(file_fd, data, sizeof(uint32_t));
             meta.tuning_mod3_data_size = 0;
             data = (void *)((uint8_t *)&meta.tuning_mod3_data_size);
             LOGD("tuning_mod3_data_size %d",(int)(*(int *)data));
-            written_len += write(file_fd, data, sizeof(uint32_t));
+            write(file_fd, data, sizeof(uint32_t));
             size_t total_size = meta.tuning_sensor_data_size;
             data = (void *)((uint8_t *)&meta.data);
-            written_len += write(file_fd, data, total_size);
+            write(file_fd, data, total_size);
             total_size = meta.tuning_vfe_data_size;
             data = (void *)((uint8_t *)&meta.data[TUNING_VFE_DATA_OFFSET]);
-            written_len += write(file_fd, data, total_size);
+            write(file_fd, data, total_size);
             total_size = meta.tuning_cpp_data_size;
             data = (void *)((uint8_t *)&meta.data[TUNING_CPP_DATA_OFFSET]);
-            written_len += write(file_fd, data, total_size);
+            write(file_fd, data, total_size);
             total_size = meta.tuning_cac_data_size;
             data = (void *)((uint8_t *)&meta.data[TUNING_CAC_DATA_OFFSET]);
-            written_len += write(file_fd, data, total_size);
+            write(file_fd, data, total_size);
             close(file_fd);
-        }else {
+        } else {
             LOGE("fail to open file for metadata dumping");
         }
     }
@@ -9732,13 +9727,11 @@ int QCamera3HardwareInterface::translateToHalMetadata
     // TNR
     if (frame_settings.exists(QCAMERA3_TEMPORAL_DENOISE_ENABLE) &&
         frame_settings.exists(QCAMERA3_TEMPORAL_DENOISE_PROCESS_TYPE)) {
-        uint8_t b_TnrRequested = 0;
         cam_denoise_param_t tnr;
         tnr.denoise_enable = frame_settings.find(QCAMERA3_TEMPORAL_DENOISE_ENABLE).data.u8[0];
         tnr.process_plates =
             (cam_denoise_process_type_t)frame_settings.find(
             QCAMERA3_TEMPORAL_DENOISE_PROCESS_TYPE).data.i32[0];
-        b_TnrRequested = tnr.denoise_enable;
         if (ADD_SET_PARAM_ENTRY_TO_BATCH(mParameters, CAM_INTF_PARM_TEMPORAL_DENOISE, tnr)) {
             rc = BAD_VALUE;
         }
