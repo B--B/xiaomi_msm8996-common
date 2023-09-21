@@ -365,10 +365,6 @@ PRODUCT_PACKAGES += \
 # Release Keys
 PRODUCT_DEFAULT_DEV_CERTIFICATE := .android-certs/releasekey
 
-# RenderScript
-PRODUCT_PACKAGES += \
-    android.hardware.renderscript@1.0-impl
-
 # RIL
 PRODUCT_PACKAGES += \
     android.hardware.radio@1.5.vendor:64 \
