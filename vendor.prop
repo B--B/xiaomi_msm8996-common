@@ -102,6 +102,11 @@ camera.disable_zsl_mode=1
 # CNE
 persist.vendor.cne.feature=1
 
+# Crypto
+ro.crypto.dm_default_key.options_format.version=1
+ro.crypto.volume.metadata.method=dm-default-key
+ro.crypto.volume.options=::v1
+
 # Dalvik
 dalvik.vm.dex2oat-filter=speed
 dalvik.vm.image-dex2oat-filter=speed
