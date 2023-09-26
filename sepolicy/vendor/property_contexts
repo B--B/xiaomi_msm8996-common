@@ -45,6 +45,9 @@ ubwc.no.compression        u:object_r:vendor_default_prop:s0
 persist.cnss-daemon.debug_level  u:object_r:cnss_prop:s0
 persist.vendor.wigig.npt.enable  u:object_r:cnss_prop:s0
 
+# Dolby
+persist.vendor.dolby.loglevel   u:object_r:vendor_dolby_loglevel_prop:s0
+
 #Fingerprint
 sys.domekey.down           u:object_r:vendor_fp_prop:s0
 

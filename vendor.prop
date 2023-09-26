@@ -69,6 +69,10 @@ vendor.audio.use.sw.ape.decoder=true
 vendor.audio.use.sw.alac.decoder=true
 vendor.audio.flac.sw.decoder.24bit=true
 
+# Audio (Dolby)
+persist.vendor.audio_fx.current=dolby
+ro.vendor.dolby.dax.version=DS1_2.2.0.0_r1
+
 # Bluetooth
 bluetooth.device.class_of_device=90,2,12
 bluetooth.hardware.power.operating_voltage_mv=3300
@@ -178,6 +182,7 @@ persist.log.tag.GoogleTagManager=S
 
 # Media
 debug.stagefright.omx_default_rank=0
+debug.stagefright.omx_default_rank.sw-audio=16
 media.stagefright.thumbnail.prefer_hw_codecs=true
 vendor.vidc.enc.disable.pq=true
 vendor.vidc.debug.level=0
