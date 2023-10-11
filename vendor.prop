@@ -103,6 +103,7 @@ camera.disable_zsl_mode=1
 persist.vendor.cne.feature=1
 
 # Crypto
+ro.crypto.allow_encrypt_override=true
 ro.crypto.volume.options=::v1
 
 # Dalvik
