@@ -670,24 +670,16 @@ system_ext/lib64/lib-imsvideocodec.so|3fa5444a061dd5af35f924744dc6a73d535cedf6
 system_ext/lib64/lib-imsvtutils.so|6df6279955493da11860bb048db38f01ec05c2aa
 system_ext/lib64/libimscamera_jni.so|f6b7647cfe080baeed006c932b495ff94b5685a7
 
-# Sensors - from LA.UM.9.6.2.r1-04200-89xx.0
-system_ext/lib/vendor.qti.hardware.sensorscalibrate@1.0.so|81934fd454fd30282ef1a8a90b7374317f6c42de
-system_ext/lib64/vendor.qti.hardware.sensorscalibrate@1.0.so|32257292ed8c5b2e2f905571b82bb26383a1a041
-vendor/bin/sensors.qti|04cede687413ba92210f908e796c423e012f974b
-vendor/etc/sensors/hals.conf|bf3677cbfa5ce5735662e8c259cb027969f65c87
-vendor/etc/sensors/sensor_def_qcomdev.conf|fa2c2a99d295343c024296ed8a5c32fa0525374b
-vendor/lib/libsensor1.so|d2f7ef0d9bc888973f5b10b828a988edd2675967
-vendor/lib/libsensor_reg.so|733a12b41dc0751b54c01a9ad980f0d039e45ab2
-vendor/lib/libsensor_thresh.so|3bb866371bfef90b5a606797f1a52df858882e9f
-vendor/lib/libsensor_user_cal.so|93f881be5b50f3ef12c07d82f5b29885b10dd80f
-vendor/lib/sensor_calibrate.so|d621d8951f66b82cc2f22e1e4673c74180480c2a
-vendor/lib/sensors.ssc.so
-vendor/lib64/libsensor1.so|f5f96c81d636df791ff8b3764a84dc61e44ba6cc
-vendor/lib64/libsensor_reg.so|b8cf5b75c30be2a591d69c84fe5639958b1f6569
-vendor/lib64/libsensor_thresh.so|2cd018f8198228c73992829f5e7f618ecbf7106e
-vendor/lib64/libsensor_user_cal.so|9493f9495f170ab043b0ea9fec8d0bba0cd7b9d9
-vendor/lib64/sensor_calibrate.so|219ee0b1bdcc6a3f0b9261f6fc31838916856c99
-vendor/lib64/sensors.ssc.so
+# Sensors - from Fairphone/FP3/FP3:13/6.A.018.0/gms-1f4b2a90:user/release-keys
+vendor/bin/sensors.qti|8b888059a03fdc6a21d456dc8bf60264584e5507
+vendor/lib/libsensor1.so|0c687697c9ecb0bcc054fe40e9d2b5b8b525718f
+vendor/lib/libsensor_reg.so|466b65a5986a471b47a281dd7d1867b0510ee3c0
+vendor/lib/sensor_calibrate.so|8ecc78579b7d6f62cc42fc285ba324c96a93a1fc
+vendor/lib/sensors.ssc.so|661ca9baed115c6e7934f2d37a0319aecd1b949a
+vendor/lib64/libsensor1.so|a0ce3d160c9a6ec0b0c42cabfb736e74cf3c4b73
+vendor/lib64/libsensor_reg.so|07d7574981477c733d3c509751aac7c2abe93762
+vendor/lib64/sensor_calibrate.so|572b90e2f5362144c62cdb503bcd9834eca48b10
+vendor/lib64/sensors.ssc.so|fc96a65a026fc220d96b3a9173f09d6e74df4e6a
 
 # Thermal - from op3 - PKQ1.181203.001
 vendor/bin/thermal-engine|b15c9e8fa54ebb15dfeb36c7fbc834a28b4c836e
