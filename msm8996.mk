@@ -345,6 +345,12 @@ PRODUCT_COPY_FILES += \
     system/core/libprocessgroup/profiles/cgroups_28.json:$(TARGET_COPY_OUT_VENDOR)/etc/cgroups.json \
     system/core/libprocessgroup/profiles/task_profiles_28.json:$(TARGET_COPY_OUT_VENDOR)/etc/task_profiles.json
 
+# Protobuf
+PRODUCT_PACKAGES += \
+    libprotobuf-cpp-full \
+    libprotobuf-cpp-full-vendorcompat \
+    libprotobuf-cpp-lite-vendorcompat
+
 # QMI
 PRODUCT_PACKAGES += \
     libjson
@@ -362,11 +368,11 @@ PRODUCT_DEFAULT_DEV_CERTIFICATE := .android-certs/releasekey
 
 # RIL
 PRODUCT_PACKAGES += \
-    android.hardware.radio@1.5.vendor:64 \
-    android.hardware.radio.config@1.2.vendor:64 \
-    android.hardware.radio.deprecated@1.0.vendor:64 \
-    android.hardware.secure_element@1.2.vendor:64 \
-    librmnetctl:64 \
+    android.hardware.radio@1.5.vendor \
+    android.hardware.radio.config@1.2.vendor \
+    android.hardware.radio.deprecated@1.0.vendor \
+    android.hardware.secure_element@1.2.vendor \
+    librmnetctl \
     libxml2
 
 # Sensors
