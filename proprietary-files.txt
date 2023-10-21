@@ -477,9 +477,6 @@ vendor/etc/init/vendor.qti.hardware.alarm@1.0-service.rc|cc52088994df23f6763e99a
 vendor/lib64/hw/vendor.qti.hardware.alarm@1.0-impl.so|f2b57130987c65a1dc596bf83a2b09e086df9286
 vendor/lib64/vendor.qti.hardware.alarm@1.0.so|74675e4f720d75db031a0db4ca21463ebd331f34
 
-# QCC - from LA.UM.9.6.3.r1-06200-89xx.0
-vendor/lib64/vendor.qti.hardware.qccsyshal@1.0.so|3ff445db2dd2db1a1068fe70a54a6c04fbdd3123
-
 # QMI (diag) - from LA.UM.9.6.3.r1-06200-89xx.0
 system_ext/lib64/libdiag_system.so|1e0006fd3be67cbb50fb28ecfec028bddcead4fe
 system_ext/lib64/vendor.qti.diaghal@1.0.so|abe51fdbdcbf3449012395cf0ade8aa8d267dbe6
