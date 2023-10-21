@@ -316,6 +316,24 @@ on property:sys.boot_completed=1
     #Reinit lmkd to reconfigure lmkd properties
     setprop lmkd.reinit 1
 
+on property:init.svc.surfaceflinger=stopped
+    stop ppd
+
+on property:init.svc.surfaceflinger=running
+    start ppd
+
+on property:init.svc.surfaceflinger=restarting
+    stop ppd
+
+on property:init.svc.zygote=stopped
+    stop ppd
+
+on property:init.svc.zygote=running
+    start ppd
+
+on property:init.svc.zygote=restarting
+    stop ppd
+
 service qcom-c_main-sh /vendor/bin/init.class_main.sh
     class main
     user root
@@ -432,10 +450,11 @@ service thermal-engine /vendor/bin/thermal-engine -c ${sys.qcom.thermalcfg:-/ven
     task_profiles ServiceCapacityLow
 
 service ppd /vendor/bin/mm-pp-dpps
-    class hal
+    class late_start
     user system
     group system graphics
     socket pps stream 0660 system system
+    disabled
     task_profiles ServiceCapacityLow
 
 on property:init.svc.surfaceflinger=restarting
