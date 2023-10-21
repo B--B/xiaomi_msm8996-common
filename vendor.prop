@@ -114,6 +114,7 @@ dalvik.vm.dex2oat64.enabled=true
 # Data modules
 persist.vendor.data.iwlan.enable=true
 persist.vendor.data.mode=concurrent
+persist.vendor.data.profile_update=true
 ro.vendor.use_data_netmgrd=true
 
 # Display
