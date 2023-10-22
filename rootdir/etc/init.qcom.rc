@@ -346,12 +346,6 @@ service irsc_util /vendor/bin/irsc_util "/vendor/etc/sec_config"
     task_profiles ServiceCapacityLow
     oneshot
 
-service vendor.atfwd /vendor/bin/ATFWD-daemon
-    class late_start
-    user system
-    group system radio
-    task_profiles ServiceCapacityLow
-
 service vendor.sensors.qti /vendor/bin/sensors.qti
     class core
     user system
