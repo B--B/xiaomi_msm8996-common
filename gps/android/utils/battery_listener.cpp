@@ -219,8 +219,8 @@ status_t AidlBatteryListenerImpl::init()
 }
 
 AidlBatteryListenerImpl::AidlBatteryListenerImpl(cb_fn_t cb) :
-    mCb(cb),
-    mDeathRecipient(AIBinder_DeathRecipient_new(AidlBatteryListenerImpl::serviceDied)) {
+    mDeathRecipient(AIBinder_DeathRecipient_new(AidlBatteryListenerImpl::serviceDied)),
+    mCb(cb) {
 }
 
 AidlBatteryListenerImpl::~AidlBatteryListenerImpl() {
