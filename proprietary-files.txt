@@ -54,6 +54,11 @@ vendor/lib/libaudcal.so|ea9f62700c66d8dbaf4575e567fa67046ee66a49
 vendor/lib/libaudioalsa.so|50d2e0a9599e3a6c44345956d672cc5f222e3653
 vendor/lib/libdrc.so|7dbd6cef13d7e8ad18b1a49aa92a7d83da24c96a
 
+# Audio - SoundFX - from Fairphone/FP3/FP3:13/6.A.018.0/gms-1f4b2a90:user/release-keys
+vendor/lib/soundfx/libqcbassboost.so|fbeb7fc080f5fce028eb34e021367037483d1819
+vendor/lib/soundfx/libqcreverb.so|92a1d4491fb3213e96db1201a9846b40968059cf
+vendor/lib/soundfx/libqcvirt.so|8730643ba19de92fc1d4578a532cae8deb73059b
+
 # ANT+ - from Fairphone/FP3/FP3:13/6.A.018.0/gms-1f4b2a90:user/release-keys
 system_ext/lib64/com.qualcomm.qti.ant@1.0.so|2bad2579ce576c46af6a50ee6687bd92fa7f76cd
 vendor/lib64/hw/com.dsi.ant@1.0-impl.so|6e2b594b44552b42000164c091af5cf7a4c508f5
