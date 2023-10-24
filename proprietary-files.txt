@@ -1,25 +1,23 @@
 # Common proprietary files - from gemini's MIUI package V10.2.2.0.OAAMIXM global stable version, unless pinned
 
-# ADSP - from LA.UM.9.6.2.r1-04200-89xx.0
-vendor/bin/adsprpcd|c8a45eb83a6d70dcbcc1b8ec574391b49e8ca8b9
-vendor/lib/libadsprpc.so|6156edc1744ddf2bcee00ace27a7183bb0c287f9
-vendor/lib/libadsp_default_listener.so|d34ee56137899b914b70d1933d6bdcabde8d8220
-vendor/lib/libfastcvadsp_stub.so|70772d0bc39617430e27a21f89fccd93cc757185
-vendor/lib/libfastcvopt.so|bfda931000e8a8e7dd167d3c47677e5d092aedc8
-vendor/lib/libmdsprpc.so|8f33856ebb848750e1819c166215db9af5f6cb79
-vendor/lib64/libadsprpc.so|58b7feab8173726837428ab58cd958e6b56fa1b5
-vendor/lib64/libadsp_default_listener.so|aa3b51b544032a250ab02687c0200152f80a23dd
-vendor/lib64/libfastcvadsp_stub.so|f4535845bc4f40e3cb8e79d090e5ed87b0acfbb0
-vendor/lib64/libfastcvopt.so|487fc5c4b486579c11af0570d4a99507099ee6f2
-vendor/lib64/libmdsprpc.so|7d16c9824bda0a94ce5e68099c4c8ccfb1c545c5
-
-# DSP - from LA.UM.9.6.2.r1-04200-89xx.0
-vendor/bin/dspservice|c7809e32581d5c6efac65a3a7689f43526c17bb8
+# ADSP - from Fairphone/FP3/FP3:13/6.A.018.0/gms-1f4b2a90:user/release-keys
+vendor/bin/adsprpcd|5e246a6f5d2dca27e29b233a17e4673532191b95
+vendor/bin/dspservice|a7344fc3d27a49df30858ebc3f73ee5818e752d4
 vendor/etc/init/vendor.qti.adsprpc-guestos-service.rc|8f0eb84d3eb5fc0f683ef7b975b75044d56f513e
 vendor/etc/init/vendor.qti.hardware.dsp@1.0-service.rc|fbf2bb38ca6bdddf98c7123da9e1f263a4eec55f
 vendor/etc/seccomp_policy/vendor.qti.hardware.dsp.policy|f060101b26d3674bb173e5fc95e118f56a8ac15d
-vendor/lib/vendor.qti.hardware.dsp@1.0.so|3326828ea7f6f8139429d2cd0379e80f5ca5178d
-vendor/lib64/vendor.qti.hardware.dsp@1.0.so|95b26a4a29f1443ec389be6ca80151a0aec96b36
+vendor/lib/libadsp_default_listener.so|4baca0fcd9a7e7eb6c3030d6ac2a8d6554c508ae
+vendor/lib/libadsprpc.so|e0bc6ba5d66f918ffef39d2ba8cdd6055686ce43
+vendor/lib/libfastcvadsp_stub.so|886e33a28a32f6a143081ab07deb186fd379408f
+vendor/lib/libfastcvopt.so|c5bd1dd6c1fe02964f75f44ad05b472951a327f1
+vendor/lib/libmdsprpc.so|36c4319420dbb531b4a66c786059bd3f5d4c4689
+vendor/lib/vendor.qti.hardware.dsp@1.0.so|d2a8ce26770cc99c288d7dfce9ac2c054be0c90d
+vendor/lib64/libadsp_default_listener.so|3ebcf635d6cdc447b8ecd40ea76bda39bf82c308
+vendor/lib64/libadsprpc.so|53e5e6d473eaf60ad20df9aecdf6daeb07019027
+vendor/lib64/libfastcvadsp_stub.so|a7dd1371e6f8f888d3a411cbbc6778c6a0271984
+vendor/lib64/libfastcvopt.so|b68d2ce2a17193a5c91cadb1291fa9ea69ee80b2
+vendor/lib64/libmdsprpc.so|f2cf241d1ea01ad13da6232717abceee138347a6
+vendor/lib64/vendor.qti.hardware.dsp@1.0.so|b6fa958d634eed5748c8f359b9104e2edf5aa20f
 
 # ADSP - from Oneplus 3T PKQ1.181203.001
 vendor/lib/libadsp_hvx_callback_skel.so
@@ -47,15 +45,14 @@ vendor/lib/rfsa/adsp/libscveT2T_skel.so|91b9200dbb982abf0d6b440668252d892a616f66
 # Audio libraries - from MIUI V10.2.2.0.OAAMIXM
 vendor/lib/libacdbloader.so|be45395be21d69e9810827cdec2c6d7c383ce143
 
-# Audio libraries - from LA.UM.9.6.2.r1-04200-89xx.0
-vendor/lib/libacdb-fts.so|fee2b1f0b93c28f5ef0a4d65736cca01c4275975
-vendor/lib/libacdbrtac.so|50f9c46c1ed2758338db567b00e8eee1889ab21a
-vendor/lib/libadiertac.so|5c80bbb7ae8fb329ec4c2518c4e336b010bd57dc
-vendor/lib/libadm.so|a5e6c65b7133440b4550234db4454e4c81627f66
-vendor/lib/libaudcal.so|4fa1da9616f7470caa79f905740daff66922b584
-vendor/lib/libaudioalsa.so|58feb2c5cbc4ac6e23ef4896c87785bed8db3c80
-vendor/lib/libdrc.so|303d67b5bfea162ae994d3817de317258035c42a
-vendor/lib/libqtigef.so|80fb4a524d9d11c6e94c337ea263256f816f1f39
+# Audio libraries - from Fairphone/FP3/FP3:13/6.A.018.0/gms-1f4b2a90:user/release-keys
+vendor/lib/libacdb-fts.so|458980ecf3ba88c4e6d4862af727ac8b52a8c943
+vendor/lib/libacdbrtac.so|2bfe2d2c49833b37dee10d2776d97bb368d5a1a5
+vendor/lib/libadiertac.so|53b70da188c6aee0333a1f4d368f7ac8ffba3fae
+vendor/lib/libadm.so|0c12ba8a37d5c01f49d58c36b9fb84354ae568a9
+vendor/lib/libaudcal.so|ea9f62700c66d8dbaf4575e567fa67046ee66a49
+vendor/lib/libaudioalsa.so|50d2e0a9599e3a6c44345956d672cc5f222e3653
+vendor/lib/libdrc.so|7dbd6cef13d7e8ad18b1a49aa92a7d83da24c96a
 
 # AV Enhancements - from LA.UM.9.6.2.r1-04100-89xx.0
 system_ext/lib/libavenhancements.so|248d6cf0db255fb2cf5e077e7127f510036f7ec0
