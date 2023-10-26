@@ -134,6 +134,7 @@ TARGET_USES_MKE2FS := true
 TARGET_TAP_TO_WAKE_NODE := "/proc/touchpanel/double_tap_enable"
 
 # Properties
+TARGET_ODM_PROP := $(VENDOR_PATH)/odm.prop
 TARGET_PRODUCT_PROP += $(VENDOR_PATH)/product.prop
 TARGET_SYSTEM_EXT_PROP := $(VENDOR_PATH)/system_ext.prop
 TARGET_SYSTEM_PROP += $(VENDOR_PATH)/system.prop
