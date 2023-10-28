@@ -368,7 +368,8 @@ PRODUCT_PACKAGES += \
 
 # QTI
 PRODUCT_PACKAGES += \
-    libqti_vndfwk_detect.vendor
+    libqti_vndfwk_detect.vendor \
+    libvndfwk_detect_jni.qti.vendor
 
 # Recovery
 PRODUCT_PACKAGES += \
