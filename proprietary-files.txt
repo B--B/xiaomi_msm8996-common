@@ -461,10 +461,10 @@ vendor/lib/libOmxWmaDec.so|f93ed022df05fbf6b7cbda0bd88eebfac47f47da
 vendor/lib/libvqzip.so|c56eaffef2066339493fa6810930e58556891027
 vendor/lib64/libmmosal.so|d400435a7bb49c1589efd0a63274cbf6d53f0c7b
 
-# Peripheral manager - from LA.UM.9.6.2.r1-04200-89xx.0
-vendor/bin/pm-proxy|782599642da7fbfc21f5e9a9965d898efeb75859
-vendor/bin/pm-service|212168358c65533c434e54be7b6fed0fd02a099c
-vendor/lib64/libperipheral_client.so|0820ee76c595691935b7d8896471ea0b172b0f58
+# Peripheral manager - from Fairphone/FP3/FP3:13/6.A.018.0/gms-1f4b2a90:user/release-keys
+vendor/bin/pm-proxy|910437c11108aa66e803bbc760ce3998d141a6b4
+vendor/bin/pm-service|98827a6bf6693033a7c767e3fb4f097b9075a0ef
+vendor/lib64/libperipheral_client.so|9bfd41e276e16b8f7c6808f3d87531fc5be4cdd5
 
 # Power-off alarm - from caymanslm - SKQ1.211103.001
 product/app/PowerOffAlarm/PowerOffAlarm.apk:system_ext/app/PowerOffAlarm/PowerOffAlarm.apk|f0a86fc11b38c059912303857bc4c79155430bcc
