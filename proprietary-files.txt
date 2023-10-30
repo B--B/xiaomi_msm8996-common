@@ -95,8 +95,8 @@ vendor/lib64/vendor.qti.hardware.bluetooth_sar@1.1.so|117b74f1df4ee67297f431ae47
 
 # Camera
 vendor/bin/mm-qcamera-daemon
-vendor/lib/libblurbuster.so
-vendor/lib/libchromaflash.so
+vendor/lib/libblurbuster.so|b94cddc30302876285ec11ddb61568ecba9e4b2d
+vendor/lib/libchromaflash.so|f440c0e673a63b05e801590597bea363f358bc73
 vendor/lib/libflash_pmic.so
 vendor/lib/libjpegdhw.so
 vendor/lib/libjpegdmahw.so
@@ -128,7 +128,7 @@ vendor/lib/libmmcamera_eztune_module.so
 vendor/lib/libmmcamera_facedetection_lib.so
 vendor/lib/libmmcamera_faceproc.so
 vendor/lib/libmmcamera_faceproc2.so
-vendor/lib/libmmcamera_hdr_gb_lib.so
+vendor/lib/libmmcamera_hdr_gb_lib.so|5b38f19d3eed53493e44fd1d73c0ea7a0a118f4b
 vendor/lib/libmmcamera_hvx_add_constant.so
 vendor/lib/libmmcamera_hvx_grid_sum.so
 vendor/lib/libmmcamera_hvx_zzHDR.so
@@ -154,20 +154,20 @@ vendor/lib/libmmjpeg.so
 vendor/lib/libmmlib2d_interface.so
 vendor/lib/libmmqjpeg_codec.so
 vendor/lib/libmmqjpegdma.so
-vendor/lib/libmorpho_easy_hdr.so
+vendor/lib/libmorpho_easy_hdr.so|ee7282c44f003c8979643d451fcae8036717a7a2
 vendor/lib/libmorpho_hdr_checker.so
-vendor/lib/libmorpho_image_stab4.so
-vendor/lib/libmpbase.so
-vendor/lib/liboptizoom.so
+vendor/lib/libmorpho_image_stab4.so|481190d27108420fb19fd89b2e7a678dee80e383
+vendor/lib/libmpbase.so|fb69b68dd46cbd39d17d45e39505d22a2ba26e5d
+vendor/lib/liboptizoom.so|8c27c659bc98ee325d7d146d37262a8f8807ac0d
 vendor/lib/libqomx_jpegdec.so
 vendor/lib/libqomx_jpegenc.so
 vendor/lib/libqomx_jpegenc_pipe.so
-vendor/lib/libseemore.so
+vendor/lib/libseemore.so|c11d7ef552da01aebebb4af0626ef27a5b1ce93a
 vendor/lib/libshim_camera.so
 vendor/lib/libtm_interface.so
-vendor/lib/libtrueportrait.so
--vendor/lib/libts_detected_face_hal.so|247470e7610f93b0a21d943f5e47ab61a032b1e0
--vendor/lib/libts_face_beautify_hal.so|4b8700003fd32f5a6a650821b86ed33e73992d10
+vendor/lib/libtrueportrait.so|26f706e1eada29c93951ddc386cdcc3f40a56ab8
+-vendor/lib/libts_detected_face_hal.so|d000a683dd5d2b8a16201e1ef6d68234d76d2f9f
+-vendor/lib/libts_face_beautify_hal.so|4cc684d316706d4645d6e06ef6a46e15f988067d
 vendor/lib/libubifocus.so
 
 # Camera - from Hydrogen 7.0/NRD90M/V10.3.2.0.NBCCNXM
