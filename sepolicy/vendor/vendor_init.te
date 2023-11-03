@@ -16,3 +16,4 @@ allow vendor_init vendor_nfc_prop:property_service set;
 allow vendor_init vendor_power_prop:property_service set;
 set_prop(vendor_init, vendor_power_prop)
 set_prop(vendor_init, vendor_nfc_prop)
+set_prop(vendor_init, vendor_dataqdp_prop)
