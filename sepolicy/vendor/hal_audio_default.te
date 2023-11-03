@@ -4,7 +4,3 @@ allow hal_audio_default acdbdelta_vendor_data_file:dir rw_dir_perms;
 allow hal_audio_default acdbdelta_vendor_data_file:file create_file_perms;
 
 allow hal_audio_default sysfs:dir { read open };
-
-# Dolby
-allow hal_audio_default hal_dms_default:binder { transfer call };
-allow hal_audio_default hal_dms_hwservice:hwservice_manager find;
