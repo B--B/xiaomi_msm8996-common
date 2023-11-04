@@ -6,11 +6,3 @@ allow system_app sysfs_fpc_wakeup:file rw_file_perms;
 
 # Allow PocketMode to work
 allow system_app sysfs_fpc_proximity:file rw_file_perms;
-
-get_prop(system_app, qemu_hw_prop)
-
-# Google system apps
-allow system_app proc_pagetypeinfo:file rw_file_perms;
-allow system_app proc_vmallocinfo:file rw_file_perms;
-allow system_app sysfs_zram:dir search;
-allow system_app sysfs_zram:file rw_file_perms;
