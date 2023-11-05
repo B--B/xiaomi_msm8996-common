@@ -53,6 +53,7 @@ vendor/lib/libadm.so|0c12ba8a37d5c01f49d58c36b9fb84354ae568a9
 vendor/lib/libaudcal.so|ea9f62700c66d8dbaf4575e567fa67046ee66a49
 vendor/lib/libaudioalsa.so|50d2e0a9599e3a6c44345956d672cc5f222e3653
 vendor/lib/libdrc.so|7dbd6cef13d7e8ad18b1a49aa92a7d83da24c96a
+vendor/lib/libqtigef.so|80fb4a524d9d11c6e94c337ea263256f816f1f39
 
 # Audio - SoundFX - from Fairphone/FP3/FP3:13/6.A.018.0/gms-1f4b2a90:user/release-keys
 vendor/lib/soundfx/libqcbassboost.so|fbeb7fc080f5fce028eb34e021367037483d1819
