@@ -105,6 +105,9 @@ LOC_HIDL_VERSION := 4.0
 # HIDL
 DEVICE_MANIFEST_FILE := $(VENDOR_PATH)/manifest.xml
 DEVICE_MATRIX_FILE := $(VENDOR_PATH)/compatibility_matrix.xml
+DEVICE_FRAMEWORK_COMPATIBILITY_MATRIX_FILE := \
+    $(VENDOR_PATH)/framework_compatibility_matrix.xml \
+    vendor/aosp/config/device_framework_matrix.xml
 
 # IPA
 USE_DEVICE_SPECIFIC_DATA_IPA_CFG_MGR := true
