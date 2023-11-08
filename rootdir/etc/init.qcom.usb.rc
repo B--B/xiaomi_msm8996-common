@@ -1,4 +1,4 @@
-# Copyright (c) 2011-2016, 2018-2020 The Linux Foundation. All rights reserved.
+# Copyright (c) 2011-2016, 2018-2021 The Linux Foundation. All rights reserved.
 #
 # Redistribution and use in source and binary forms, with or without
 # modification, are permitted provided that the following conditions are
@@ -95,6 +95,9 @@ on boot
     write /config/usb_gadget/g1/os_desc/b_vendor_code 0x1
     write /config/usb_gadget/g1/os_desc/qw_sign "MSFT100"
     write /config/usb_gadget/g1/functions/diag.diag/serial ${ro.serialno}
+    write /config/usb_gadget/g1/functions/rndis.rndis/class ef
+    write /config/usb_gadget/g1/functions/rndis.rndis/subclass 04
+    write /config/usb_gadget/g1/functions/rndis.rndis/protocol 01
     symlink /config/usb_gadget/g1/configs/b.1 /config/usb_gadget/g1/os_desc/b.1
     mkdir /dev/usb-ffs 0775 shell system
     mkdir /dev/usb-ffs/adb 0770 shell system
@@ -1419,7 +1422,7 @@ on property:sys.usb.ffs.ready=1 && property:sys.usb.config=diag,diag_mdm,adb && 
     write /config/usb_gadget/g1/idProduct 0x90D9
     write /config/usb_gadget/g1/functions/diag.diag/pid 0x90d9
     symlink /config/usb_gadget/g1/functions/${vendor.usb.diag.func.name}.diag /config/usb_gadget/g1/configs/b.1/f1
-    symlink /config/usb_gadget/g1/functions/${vendor.usb.diag.func.name}.diag_mdm /config/usb_gadget/g1/configs/b.1/f2
+    symlink /config/usb_gadget/g1/functions/${vendor.usb.diag.func.name}.${vendor.usb.diag_mdm.inst.name:-diag_mdm} /config/usb_gadget/g1/configs/b.1/f2
     symlink /config/usb_gadget/g1/functions/ffs.adb /config/usb_gadget/g1/configs/b.1/f3
     write /config/usb_gadget/g1/UDC ${sys.usb.controller}
     setprop sys.usb.state ${sys.usb.config}
