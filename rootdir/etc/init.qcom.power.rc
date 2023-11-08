@@ -56,6 +56,13 @@ on boot
     chown system system /dev/cpuset/camera-daemon/tasks
     chmod 0664 /dev/cpuset/camera-daemon/tasks
 
+    #USB controller configuration
+    setprop vendor.usb.rndis.func.name "rndis"
+    setprop vendor.usb.rmnet.func.name "rmnet_bam"
+    setprop vendor.usb.rmnet.inst.name "rmnet_bam_dmux"
+    setprop vendor.usb.dpl.inst.name "dpl_bam_dmux"
+    setprop vendor.usb.qdss.inst.name "qdss"
+
 on charger
     wait /dev/block/platform/soc/${ro.boot.bootdevice}
     # Enable UFS powersaving
