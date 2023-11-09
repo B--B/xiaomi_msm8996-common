@@ -11,7 +11,7 @@
         <name>android.hardware.audio.sounddose</name>
         <version>1</version>
         <interface>
-            <name>IBluetoothAudioProviderFactory</name>
+            <name>ISoundDoseFactory</name>
             <instance>default</instance>
         </interface>
     </hal>
