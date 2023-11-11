@@ -67,15 +67,6 @@ persist.radio.apm_sim_not_pwdn=1
 persist.radio.multisim.config=dsds
 persist.vendor.net.doxlat=true
 
-# SurfaceFlinger
-debug.sf.use_phase_offsets_as_durations=1
-debug.sf.late.sf.duration=10500000
-debug.sf.late.app.duration=16600000
-debug.sf.early.sf.duration=16600000
-debug.sf.early.app.duration=16600000
-debug.sf.earlyGl.sf.duration=16600000
-debug.sf.earlyGl.app.duration=16600000
-
 # USB
 vendor.usb.controller=6a00000.dwc3
 
