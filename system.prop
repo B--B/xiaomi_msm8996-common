@@ -18,9 +18,6 @@ persist.camera.isp.debug=0
 persist.camera.mct.debug=0
 persist.camera.sensor.debug=0
 
-# Charger
-ro.charger.enable_suspend=true
-
 # Data modules
 persist.data.netmgrd.qos.enable=true
 
