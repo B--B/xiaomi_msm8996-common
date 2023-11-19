@@ -377,7 +377,7 @@ PRODUCT_PACKAGES += \
     librecovery_updater_xiaomi
 
 # Release Keys
-PRODUCT_DEFAULT_DEV_CERTIFICATE := vendor/bb-priv/keys/releasekey
+PRODUCT_DEFAULT_DEV_CERTIFICATE := vendor/lineage-priv/keys/releasekey
 
 # RIL
 PRODUCT_PACKAGES += \
