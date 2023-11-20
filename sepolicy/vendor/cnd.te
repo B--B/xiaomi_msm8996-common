@@ -1,1 +1,3 @@
+allow cnd diag_device:chr_file rw_file_perms;
+
 get_prop(cnd, vendor_mwqem_prop)
