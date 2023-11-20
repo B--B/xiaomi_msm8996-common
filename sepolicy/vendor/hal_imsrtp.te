@@ -1,1 +1,3 @@
 binder_call(hal_imsrtp, radio)
+
+allow hal_imsrtp diag_device:chr_file rw_file_perms;
