@@ -7,3 +7,5 @@ allow mm-qcamerad camera_socket:dir w_dir_perms;
 allow mm-qcamerad camera_socket:sock_file { create unlink write };
 
 allow mm-qcamerad public_adsprpcd_file:file { getattr read open };
+
+get_prop(mm-qcamerad, camera_prop)
