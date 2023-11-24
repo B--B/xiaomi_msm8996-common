@@ -39,9 +39,6 @@ function blob_fixup() {
     system_ext/etc/permissions/qti_libpermissions.xml)
         sed -i "s/name=\"android.hidl.manager-V1.0-java/name=\"android.hidl.manager@1.0-java/g" "${2}"
         ;;
-    system_ext/lib64/libdpmframework.so)
-        sed -i "s/libhidltransport.so/libcutils-v29.so\x00\x00\x00/" "${2}"
-        ;;
     vendor/bin/imsrcsd)
         sed -i "s/libhidltransport.so/libbase_shim.so\x00\x00\x00\x00/" "${2}"
         ;;
