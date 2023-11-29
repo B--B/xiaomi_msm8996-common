@@ -8,6 +8,7 @@ ro.config.vc_call_vol_steps=7
 
 # Bluetooth
 bluetooth.hfp.client=1
+bluetooth.sco.disable_enhanced_connection=true
 
 # Camera
 persist.camera.iface.logs=0

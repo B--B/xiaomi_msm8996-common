@@ -106,7 +106,6 @@ bluetooth.profile.pan.nap.enabled?=true
 bluetooth.profile.pan.panu.enabled?=true
 bluetooth.profile.pbap.server.enabled?=true
 bluetooth.profile.sap.server.enabled?=true
-bluetooth.sco.disable_enhanced_connection=1
 persist.vendor.qcom.bluetooth.soc=rome
 ro.vendor.bluetooth.emb_wp_mode=false
 ro.vendor.bluetooth.wipower=false
