@@ -23,6 +23,9 @@ source "${HELPER}"
 
 function blob_fixup() {
     case "${1}" in
+    vendor/lib64/libdlbdsservice.so)
+        "${PATCHELF}" --replace-needed "libstagefright_foundation.so" "libstagefright_foundation-v33.so" "${2}"
+        ;;
     system_ext/etc/init/dpmd.rc)
         sed -i "s/\/system\/product\/bin\//\/system\/system_ext\/bin\//g" "${2}"
         ;;
