@@ -75,6 +75,7 @@ vendor.voice.voip.conc.disabled=true
 
 # Audio (Dolby)
 persist.vendor.audio_fx.current=dolby
+ro.vendor.audio.dolby.dax.support=true
 ro.vendor.dolby.dax.version=DS1_2.2.0.0_r1
 
 # Bluetooth
