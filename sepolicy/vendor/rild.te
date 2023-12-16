@@ -1,3 +1,5 @@
+allow rild qtidataservices_app:binder call;
+
 set_prop(rild, vendor_radio_prop)
 
 userdebug_or_eng(`
