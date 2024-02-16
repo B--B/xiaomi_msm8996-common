@@ -1,3 +1,13 @@
+# ACDB
+persist.vendor.audio.calfile0=/vendor/etc/acdbdata/adsp_avs_config.acdb
+persist.vendor.audio.calfile1=/vendor/etc/acdbdata/Forte/Forte_Bluetooth_cal.acdb
+persist.vendor.audio.calfile2=/vendor/etc/acdbdata/Forte/Forte_General_cal.acdb
+persist.vendor.audio.calfile3=/vendor/etc/acdbdata/Forte/Forte_Global_cal.acdb
+persist.vendor.audio.calfile4=/vendor/etc/acdbdata/Forte/Forte_Handset_cal.acdb
+persist.vendor.audio.calfile5=/vendor/etc/acdbdata/Forte/Forte_Hdmi_cal.acdb
+persist.vendor.audio.calfile6=/vendor/etc/acdbdata/Forte/Forte_Headset_cal.acdb
+persist.vendor.audio.calfile7=/vendor/etc/acdbdata/Forte/Forte_Speaker_cal.acdb
+
 # Adreno
 ro.hardware.vulkan=adreno
 ro.hardware.egl=adreno
