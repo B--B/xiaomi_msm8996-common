@@ -39,6 +39,7 @@
         </receiver>
 
         <service android:name=".DozeService"
+                 android:exported="true"
                  android:permission="XiaomiDozeService">
         </service>
 
