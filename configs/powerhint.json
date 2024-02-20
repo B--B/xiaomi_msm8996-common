@@ -226,6 +226,15 @@
         "100"
       ],
       "HoldFd": true
+    },
+    {
+      "Name": "EnergyAware",
+      "Path": "/proc/sys/kernel/sched_energy_aware",
+      "Values": [
+        "0",
+        "1"
+      ],
+      "ResetOnInit": true
     }
   ],
   "Actions": [
@@ -282,6 +291,12 @@
       "Node": "CPUBWMinFreq",
       "Duration": 0,
       "Value": "5195"
+    },
+    {
+      "PowerHint": "LAUNCH",
+      "Node": "EnergyAware",
+      "Duration": 3000,
+      "Value": "0"
     },
     {
       "PowerHint": "LAUNCH",
@@ -348,6 +363,12 @@
       "Node": "GPUIdleTimer",
       "Duration": 3000,
       "Value": "10000"
+    },
+    {
+      "PowerHint": "CAMERA_LAUNCH",
+      "Node": "EnergyAware",
+      "Duration": 1000,
+      "Value": "0"
     },
     {
       "PowerHint": "CAMERA_LAUNCH",
@@ -473,6 +494,12 @@
       "PowerHint": "CAMERA_STREAMING_4K",
       "Node": "CPUBWHystLength",
       "Duration": 0,
+      "Value": "0"
+    },
+    {
+      "PowerHint": "CAMERA_SHOT",
+      "Node": "EnergyAware",
+      "Duration": 1000,
       "Value": "0"
     },
     {
