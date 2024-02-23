@@ -241,5 +241,8 @@ ro.lmk.critical_upgrade=true
 ro.lmk.upgrade_pressure=40
 ro.lmk.downgrade_pressure=60
 
+# SSR
+persist.vendor.ssr.restart_level=ALL_ENABLE
+
 # Zygote
 zygote.critical_window.minute=10

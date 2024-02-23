@@ -441,6 +441,15 @@ service ppd /vendor/bin/mm-pp-dpps
     disabled
     task_profiles ServiceCapacityLow
 
+service vendor.ssr_setup /vendor/bin/ssr_setup
+    user root
+    group root
+    oneshot
+    disabled
+
+on property:persist.vendor.ssr.restart_level=*
+    start vendor.ssr_setup
+
 on property:init.svc.surfaceflinger=restarting
     stop vendor.hwcomposer-2-1
     start vendor.hwcomposer-2-1
