@@ -467,7 +467,7 @@ vendor/etc/seccomp_policy/mediaextractor.policy|4234a844e9b1aef37397c8cfbd195669
 
 # Peripheral manager - from Fairphone/FP3/FP3:13/6.A.018.0/gms-1f4b2a90:user/release-keys
 -vendor/bin/pm-proxy|910437c11108aa66e803bbc760ce3998d141a6b4
--vendor/bin/pm-service|98827a6bf6693033a7c767e3fb4f097b9075a0ef
+-vendor/bin/pm-service|c094ca887c9aebc2c3ba7f53ae00f993d8dda377
 -vendor/lib64/libperipheral_client.so|9bfd41e276e16b8f7c6808f3d87531fc5be4cdd5
 
 # Power-off alarm - from caymanslm - SKQ1.211103.001
