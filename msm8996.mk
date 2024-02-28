@@ -294,7 +294,7 @@ PRODUCT_PACKAGES += \
 
 # LineageHW
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/configs/permissions/xiaomi-privapp-permissions-lineagehw.xml:$(TARGET_COPY_OUT_PRODUCT)/etc/permissions/xiaomi-privapp-permissions-lineagehw.xml
+    $(LOCAL_PATH)/configs/permissions/xiaomi-privapp-permissions-lineagehw.xml:$(TARGET_COPY_OUT_SYSTEM_EXT)/etc/permissions/xiaomi-privapp-permissions-lineagehw.xml
 
 # Lineage Health
 PRODUCT_PACKAGES += \
