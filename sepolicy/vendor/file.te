@@ -1,5 +1,4 @@
 type acdbdelta_vendor_data_file, file_type, data_file_type;
-type audio_socket, file_type;
 type camera_socket, file_type, core_data_file_type, data_file_type;
 type fpc_data_file, core_data_file_type, data_file_type, file_type;
 type persist_usf_cal_file, file_type;
