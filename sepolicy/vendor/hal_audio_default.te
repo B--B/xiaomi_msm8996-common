@@ -3,8 +3,6 @@ r_dir_file(hal_audio_default, persist_usf_cal_file)
 allow hal_audio_default acdbdelta_vendor_data_file:dir rw_dir_perms;
 allow hal_audio_default acdbdelta_vendor_data_file:file create_file_perms;
 
-allow hal_audio_default audio_socket:sock_file rw_file_perms;
-
 allow hal_audio_default diag_device:chr_file rw_file_perms;
 
 allow hal_audio_default sysfs:dir { read open };
