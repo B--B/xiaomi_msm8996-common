@@ -1,6 +1,5 @@
 genfscon proc /buttons       u:object_r:proc_buttons:s0
 genfscon proc /touchpanel    u:object_r:proc_touchpanel:s0
-genfscon proc /wakelocks     u:object_r:proc_wakelocks:s0
 
 genfscon proc /sys/kernel/sched_boost u:object_r:proc_sysctl_schedboost:s0
 genfscon proc /sys/kernel/sched_energy_aware u:object_r:proc_sched:s0
