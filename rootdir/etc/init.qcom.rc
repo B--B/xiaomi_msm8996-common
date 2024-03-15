@@ -298,6 +298,10 @@ on boot
     # Wifi firmware reload path
     chown wifi wifi /sys/module/wlan/parameters/fwpath
 
+    # Dolby
+    mkdir /data/vendor/dolby 0770 media media
+    mkdir /data/vendor/multimedia 0775 system system
+
 on property:sys.boot_completed=1
     # Set allocstall_threshold to 0
     write /sys/module/vmpressure/parameters/allocstall_threshold 0
