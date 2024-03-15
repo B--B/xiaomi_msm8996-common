@@ -8,7 +8,3 @@ allow hal_audio_default diag_device:chr_file rw_file_perms;
 allow hal_audio_default sysfs:dir { read open };
 
 dontaudit hal_audio_default diag_device:chr_file rw_file_perms;
-
-# Dolby
-allow hal_audio_default hal_dms_default:binder { transfer call };
-allow hal_audio_default hal_dms_hwservice:hwservice_manager find;
