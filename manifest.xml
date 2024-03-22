@@ -97,11 +97,6 @@ IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
         <fqname>@1.2::ISap/slot2</fqname>
     </hal>
     <hal format="hidl">
-        <name>android.hardware.radio.config</name>
-        <transport>hwbinder</transport>
-        <fqname>@1.1::IRadioConfig/default</fqname>
-    </hal>
-    <hal format="hidl">
        <name>android.hardware.secure_element</name>
        <transport>hwbinder</transport>
         <fqname>@1.2::ISecureElement/SIM1</fqname>
