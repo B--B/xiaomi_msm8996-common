@@ -221,6 +221,8 @@ static char *default_rx_backend = NULL;
 
 #define  AUDIO_PARAMETER_IS_HW_DECODER_SESSION_ALLOWED  "is_hw_dec_session_allowed"
 
+extern const char * const use_case_table[AUDIO_USECASE_MAX];
+
 char dsp_only_decoders_mime[][MAX_MIME_TYPE_LENGTH] = {
     "audio/x-ms-wma" /* wma*/ ,
     "audio/x-ms-wma-lossless" /* wma lossless */ ,
